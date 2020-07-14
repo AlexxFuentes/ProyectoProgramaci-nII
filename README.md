@@ -1,2 +1,2 @@
-# ProyectoProgramaci-nII
-Proyecto: Transacciones Bancarias
+# ProyectoProgramacion II
+PROYECTO : TRANSACCIONES BANCARIAS
