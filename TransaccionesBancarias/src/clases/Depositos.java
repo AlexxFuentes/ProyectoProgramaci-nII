@@ -13,18 +13,18 @@ public class Depositos {
 	 private TipoCuenta _tipoCuenta;
      private double _monto;
      private Usuario _usuario;
-     private CuentaBancaria _cuentaBancaria;
+     private Depositar _depositar;
      
 	public Depositos() {
 		super();
 	}
 
-	public Depositos(TipoCuenta tipoCuenta, double monto, Usuario usuario, CuentaBancaria cuentaBancaria) {
+	public Depositos(TipoCuenta tipoCuenta, double monto, Usuario usuario, Depositar depositar) {
 		super();
 		this._tipoCuenta = tipoCuenta;
 		this._monto = monto;
 		this._usuario = usuario;
-		this._cuentaBancaria = cuentaBancaria;
+		this._depositar = depositar;
 	}
 
 	public TipoCuenta get_tipoCuenta() {
@@ -51,23 +51,20 @@ public class Depositos {
 		this._usuario = _usuario;
 	}
 
-	public CuentaBancaria get_cuentaBancaria() {
-		return _cuentaBancaria;
+	public Depositar get_depositar() {
+		return _depositar;
 	}
 
-	public void set_cuentaBancaria(CuentaBancaria _cuentaBancaria) {
-		this._cuentaBancaria = _cuentaBancaria;
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
 	}
 
 	@Override
 	public String toString() {
 		return "Depositos [_tipoCuenta=" + _tipoCuenta + ", _monto=" + _monto + ", _usuario=" + _usuario
-				+ ", _cuentaBancaria=" + _cuentaBancaria + "]";
+				+ ", _depositar=" + _depositar + "]";
 	}
+
 	
-	
-     
-     
-     
      
 }

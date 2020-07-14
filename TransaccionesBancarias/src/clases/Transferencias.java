@@ -15,7 +15,8 @@ public class Transferencias {
     private String _tipoMoneda;
     private TransferenciasEntreCuentas _transferenciasEntreCuentas;
     private TransferenciasInterbancarias _transferenciasInterbancarias;
-    private CuentaBancaria _cuentaBancaria;
+    private Depositar _depositar;
+    private Retirar _retirar;
     
 	public Transferencias() {
 		super();
@@ -23,14 +24,15 @@ public class Transferencias {
 
 	public Transferencias(String nacionales, String internacionales, String tipoMoneda,
 			TransferenciasEntreCuentas transferenciasEntreCuentas,
-			TransferenciasInterbancarias transferenciasInterbancarias, CuentaBancaria cuentaBancaria) {
+			TransferenciasInterbancarias transferenciasInterbancarias, Depositar depositar, Retirar retirar) {
 		super();
 		this._nacionales = nacionales;
 		this._internacionales = internacionales;
 		this._tipoMoneda = tipoMoneda;
 		this._transferenciasEntreCuentas = transferenciasEntreCuentas;
 		this._transferenciasInterbancarias = transferenciasInterbancarias;
-		this._cuentaBancaria = cuentaBancaria;
+		this._depositar = depositar;
+		this._retirar = retirar;
 	}
 
 	public String get_nacionales() {
@@ -73,22 +75,29 @@ public class Transferencias {
 		this._transferenciasInterbancarias = _transferenciasInterbancarias;
 	}
 
-	public CuentaBancaria get_cuentaBancaria() {
-		return _cuentaBancaria;
+	public Depositar get_depositar() {
+		return _depositar;
 	}
 
-	public void set_cuentaBancaria(CuentaBancaria _cuentaBancaria) {
-		this._cuentaBancaria = _cuentaBancaria;
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
+	}
+
+	public Retirar get_retirar() {
+		return _retirar;
+	}
+
+	public void set_retirar(Retirar _retirar) {
+		this._retirar = _retirar;
 	}
 
 	@Override
 	public String toString() {
 		return "Transferencias [_nacionales=" + _nacionales + ", _internacionales=" + _internacionales
 				+ ", _tipoMoneda=" + _tipoMoneda + ", _transferenciasEntreCuentas=" + _transferenciasEntreCuentas
-				+ ", _transferenciasInterbancarias=" + _transferenciasInterbancarias + ", _cuentaBancaria="
-				+ _cuentaBancaria + "]";
+				+ ", _transferenciasInterbancarias=" + _transferenciasInterbancarias + ", _depositar=" + _depositar
+				+ ", _retirar=" + _retirar + "]";
 	}
-    
-    
-    
+
+	
 }

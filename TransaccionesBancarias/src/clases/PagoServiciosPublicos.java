@@ -14,19 +14,19 @@ public class PagoServiciosPublicos {
 	  private ServiciosPublicos _servicioaPagar;
 	    private int _tasaSeguridad;
 	    private TipoCuenta _tipoCuenta;
-	    private CuentaBancaria _cuentaBancaria;
+	    private Depositar _depositar;
 	    
 		public PagoServiciosPublicos() {
 			super();
 		}
 
-		public PagoServiciosPublicos(ServiciosPublicos servicioaPagar, int tasaSeguridad, TipoCuenta tipoCuenta,
-				CuentaBancaria cuentaBancaria) {
+		public PagoServiciosPublicos(ServiciosPublicos _servicioaPagar, int _tasaSeguridad, TipoCuenta _tipoCuenta,
+				Depositar _depositar) {
 			super();
-			this._servicioaPagar = servicioaPagar;
-			this._tasaSeguridad = tasaSeguridad;
-			this._tipoCuenta = tipoCuenta;
-			this._cuentaBancaria = cuentaBancaria;
+			this._servicioaPagar = _servicioaPagar;
+			this._tasaSeguridad = _tasaSeguridad;
+			this._tipoCuenta = _tipoCuenta;
+			this._depositar = _depositar;
 		}
 
 		public ServiciosPublicos get_servicioaPagar() {
@@ -53,18 +53,18 @@ public class PagoServiciosPublicos {
 			this._tipoCuenta = _tipoCuenta;
 		}
 
-		public CuentaBancaria get_cuentaBancaria() {
-			return _cuentaBancaria;
+		public Depositar get_depositar() {
+			return _depositar;
 		}
 
-		public void set_cuentaBancaria(CuentaBancaria _cuentaBancaria) {
-			this._cuentaBancaria = _cuentaBancaria;
+		public void set_depositar(Depositar _depositar) {
+			this._depositar = _depositar;
 		}
 
 		@Override
 		public String toString() {
 			return "PagoServiciosPublicos [_servicioaPagar=" + _servicioaPagar + ", _tasaSeguridad=" + _tasaSeguridad
-					+ ", _tipoCuenta=" + _tipoCuenta + ", _cuentaBancaria=" + _cuentaBancaria + "]";
+					+ ", _tipoCuenta=" + _tipoCuenta + ", _depositar=" + _depositar + "]";
 		}
 
 		

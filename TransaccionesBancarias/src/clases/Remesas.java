@@ -13,18 +13,18 @@ public class Remesas {
 	  private double _montoRemesa;
 	    private Usuario _usuario;
 	    private String _tipodeMoneda;
-	    private CuentaBancaria _cuentaBancaria;
+	    private Retirar _retirar;
 	    
 		public Remesas() {
 			super();
 		}
 
-		public Remesas(double montoRemesa, Usuario usuario, String tipodeMoneda, CuentaBancaria cuentaBancaria) {
+		public Remesas(double montoRemesa, Usuario usuario, String tipodeMoneda, Retirar retirar) {
 			super();
 			this._montoRemesa = montoRemesa;
 			this._usuario = usuario;
 			this._tipodeMoneda = tipodeMoneda;
-			this._cuentaBancaria = cuentaBancaria;
+			this._retirar = retirar;
 		}
 
 		public double get_montoRemesa() {
@@ -51,21 +51,19 @@ public class Remesas {
 			this._tipodeMoneda = _tipodeMoneda;
 		}
 
-		public CuentaBancaria get_cuentaBancaria() {
-			return _cuentaBancaria;
+		public Retirar get_retirar() {
+			return _retirar;
 		}
 
-		public void set_cuentaBancaria(CuentaBancaria _cuentaBancaria) {
-			this._cuentaBancaria = _cuentaBancaria;
+		public void set_retirar(Retirar _retirar) {
+			this._retirar = _retirar;
 		}
 
 		@Override
 		public String toString() {
 			return "Remesas [_montoRemesa=" + _montoRemesa + ", _usuario=" + _usuario + ", _tipodeMoneda="
-					+ _tipodeMoneda + ", _cuentaBancaria=" + _cuentaBancaria + "]";
+					+ _tipodeMoneda + ", _retirar=" + _retirar + "]";
 		}
-	    
+
 		
-	    
-	    
 }
