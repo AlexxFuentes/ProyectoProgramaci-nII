@@ -12,7 +12,6 @@ package clases;
 public class TipoCuenta {
 	private CuentaAhorro _cuentaahorro;
 	private CuentaCorrientePersonal _cuentacorrientepersonal;
-	private CuentaCorrienteEmpresarial _cuentacorrienteempresa;
 	private CuentaCheques _cuentacheques;
 	private CuentaNomina _cuentanomina;
 	
@@ -23,12 +22,11 @@ public class TipoCuenta {
 
 
 	public TipoCuenta(CuentaAhorro cuentaahorro, CuentaCorrientePersonal cuentacorrientepersonal,
-			CuentaCorrienteEmpresarial cuentacorrienteempresa, CuentaCheques cuentacheques,
+			 CuentaCheques cuentacheques,
 			CuentaNomina cuentanomina) {
 		super();
 		this._cuentaahorro = cuentaahorro;
 		this._cuentacorrientepersonal = cuentacorrientepersonal;
-		this._cuentacorrienteempresa = cuentacorrienteempresa;
 		this._cuentacheques = cuentacheques;
 		this._cuentanomina = cuentanomina;
 	}
@@ -54,16 +52,6 @@ public class TipoCuenta {
 	}
 
 
-	public CuentaCorrienteEmpresarial get_cuentacorrienteempresa() {
-		return _cuentacorrienteempresa;
-	}
-
-
-	public void set_cuentacorrienteempresa(CuentaCorrienteEmpresarial _cuentacorrienteempresa) {
-		this._cuentacorrienteempresa = _cuentacorrienteempresa;
-	}
-
-
 	public CuentaCheques get_cuentacheques() {
 		return _cuentacheques;
 	}
@@ -86,14 +74,9 @@ public class TipoCuenta {
 
 	public String toString() {
 		return "TipoCuenta [_cuentaahorro=" + _cuentaahorro + ", _cuentacorrientepersonal=" + _cuentacorrientepersonal
-				+ ", _cuentacorrienteempresa=" + _cuentacorrienteempresa + ", _cuentacheques=" + _cuentacheques
+				+ ", _cuentacheques=" + _cuentacheques
 				+ ", _cuentanomina=" + _cuentanomina + "]";
 	}
 	
 	
-	
-	
-	
-	
-
 }

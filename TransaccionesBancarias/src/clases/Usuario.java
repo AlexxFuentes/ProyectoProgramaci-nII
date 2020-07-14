@@ -15,6 +15,7 @@ public class Usuario {
 	private String _telefono;
 	private String _contrasena;
 	private String _rtn;
+	private String _correo;
 	private TipoCuenta _tipoCuenta;
 	
 	
@@ -24,7 +25,7 @@ public class Usuario {
 
 
 	public Usuario(String nombre, String apellido, String direccion, String telefono, String contrasena,
-			String rtn, TipoCuenta tipoCuenta) {
+			String rtn, String correo, TipoCuenta tipoCuenta) {
 		super();
 		this._nombre = nombre;
 		this._apellido = apellido;
@@ -32,7 +33,18 @@ public class Usuario {
 		this._telefono = telefono;
 		this._contrasena = contrasena;
 		this._rtn = rtn;
+		this._correo = correo;
 		this._tipoCuenta = tipoCuenta;
+	}
+
+
+	public String get_correo() {
+		return _correo;
+	}
+
+
+	public void set_correo(String _correo) {
+		this._correo = _correo;
 	}
 
 
@@ -104,13 +116,10 @@ public class Usuario {
 	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
 		this._tipoCuenta = _tipoCuenta;
 	}
-	
-	
-
 
 	public String toString() {
 		return "Usuario [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
-				+ ", _telefono=" + _telefono + ", _contrasena=" + _contrasena + ", _rtn=" + _rtn + ", _tipoCuenta="
+				+ ", _telefono=" + _telefono + ", _contrasena=" + _contrasena + ", _rtn=" + _rtn + ", _correo=" + _correo + ", _tipoCuenta="
 				+ _tipoCuenta + "]";
 	}
 	
