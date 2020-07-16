@@ -11,19 +11,15 @@ package clases;
 
 public class ConsultarSaldo {
       private Usuario _usuario;
-      private TipoCuenta _tipoCuenta;
-      private NumeroCuenta _numeroCuenta;
       private double _saldoFinal;
       
 	public ConsultarSaldo() {
 		super();
 	}
 
-	public ConsultarSaldo(Usuario usuario, TipoCuenta tipoCuenta, NumeroCuenta numeroCuenta, double saldoFinal) {
+	public ConsultarSaldo(Usuario usuario, double saldoFinal) {
 		super();
 		this._usuario = usuario;
-		this._tipoCuenta = tipoCuenta;
-		this._numeroCuenta = numeroCuenta;
 		this._saldoFinal = saldoFinal;
 	}
 
@@ -33,22 +29,6 @@ public class ConsultarSaldo {
 
 	public void set_usuario(Usuario _usuario) {
 		this._usuario = _usuario;
-	}
-
-	public TipoCuenta get_tipoCuenta() {
-		return _tipoCuenta;
-	}
-
-	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
-		this._tipoCuenta = _tipoCuenta;
-	}
-
-	public NumeroCuenta get_numeroCuenta() {
-		return _numeroCuenta;
-	}
-
-	public void set_numeroCuenta(NumeroCuenta _numeroCuenta) {
-		this._numeroCuenta = _numeroCuenta;
 	}
 
 	public double get_saldoFinal() {
@@ -61,8 +41,8 @@ public class ConsultarSaldo {
 
 	@Override
 	public String toString() {
-		return "ConsultarSaldo [_usuario=" + _usuario + ", _tipoCuenta=" + _tipoCuenta + ", _numeroCuenta="
-				+ _numeroCuenta + ", _saldoFinal=" + _saldoFinal + "]";
+		return "ConsultarSaldo [_usuario=" + _usuario + ", _saldoFinal=" + _saldoFinal + "]";
+			
 	}
       
       
