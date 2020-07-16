@@ -16,11 +16,8 @@ public class Usuario {
 	private NumeroCuenta _numerocuenta;
 	private String _contrasena;
 	private String _rtn;
-<<<<<<< HEAD
 	private String _correoelectronico;
-=======
 	private String _correo;
->>>>>>> 732fc2007a800175e41d98470a1bd6e27c1a6644
 	private TipoCuenta _tipoCuenta;
 	private CrearCuenta _crearcuenta;
 	
@@ -29,7 +26,7 @@ public class Usuario {
 		super();
 	}
 
-<<<<<<< HEAD
+
 	//METODO CONSTRUCTO
 	public Usuario(String _nombre, String _apellido, String _direccion, String _telefono, NumeroCuenta _numerocuenta,
 			String _contrasena, String _rtn, String _correoelectronico, TipoCuenta _tipoCuenta,
@@ -49,7 +46,6 @@ public class Usuario {
 
 	//GETTER AND SETTER
 	
-=======
 
 	public Usuario(String nombre, String apellido, String direccion, String telefono, String contrasena,
 			String rtn, String correo, TipoCuenta tipoCuenta) {
@@ -69,13 +65,10 @@ public class Usuario {
 		return _correo;
 	}
 
-
 	public void set_correo(String _correo) {
 		this._correo = _correo;
 	}
 
-
->>>>>>> 732fc2007a800175e41d98470a1bd6e27c1a6644
 	public String get_nombre() {
 		return _nombre;
 	}
@@ -147,7 +140,6 @@ public class Usuario {
 	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
 		this._tipoCuenta = _tipoCuenta;
 	}
-<<<<<<< HEAD
 
 	public CrearCuenta get_crearcuenta() {
 		return _crearcuenta;
@@ -156,21 +148,16 @@ public class Usuario {
 	public void set_crearcuenta(CrearCuenta _crearcuenta) {
 		this._crearcuenta = _crearcuenta;
 	}
-=======
->>>>>>> 732fc2007a800175e41d98470a1bd6e27c1a6644
 
+	
 	//SOBREESCRITURA DEL TOSTRING
 	@Override
 	public String toString() {
 		return "Usuario [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
-<<<<<<< HEAD
 				+ ", _telefono=" + _telefono + ", _numerocuenta=" + _numerocuenta + ", _contrasena=" + _contrasena
-				+ ", _rtn=" + _rtn + ", _correoelectronico=" + _correoelectronico + ", _tipoCuenta=" + _tipoCuenta
-				+ ", _crearcuenta=" + _crearcuenta + "]";
-=======
-				+ ", _telefono=" + _telefono + ", _contrasena=" + _contrasena + ", _rtn=" + _rtn + ", _correo=" + _correo + ", _tipoCuenta="
-				+ _tipoCuenta + "]";
->>>>>>> 732fc2007a800175e41d98470a1bd6e27c1a6644
+				+ ", _rtn=" + _rtn + ", _correoelectronico=" + _correoelectronico + ", _correo=" + _correo
+				+ ", _tipoCuenta=" + _tipoCuenta + ", _crearcuenta=" + _crearcuenta + "]";
 	}
+
 	
 }
