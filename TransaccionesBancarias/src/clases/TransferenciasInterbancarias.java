@@ -13,7 +13,8 @@ public class TransferenciasInterbancarias {
 	private TipoCuenta _tipoCuenta;
     private Usuario _usuario;
     private String _cuentaAtransferir;
-    private CuentaBancaria _cuentaBancaria;
+    private Depositar _depositar;
+    private Retirar _retirar;
     private String _bancoDeDestino;
     
 	public TransferenciasInterbancarias() {
@@ -21,12 +22,13 @@ public class TransferenciasInterbancarias {
 	}
 
 	public TransferenciasInterbancarias(TipoCuenta tipoCuenta, Usuario usuario, String cuentaAtransferir,
-			CuentaBancaria cuentaBancaria, String bancoDeDestino) {
+			Depositar depositar, Retirar retirar, String bancoDeDestino) {
 		super();
 		this._tipoCuenta = tipoCuenta;
 		this._usuario = usuario;
 		this._cuentaAtransferir = cuentaAtransferir;
-		this._cuentaBancaria = cuentaBancaria;
+		this._depositar = depositar;
+		this._retirar = retirar;
 		this._bancoDeDestino = bancoDeDestino;
 	}
 
@@ -54,12 +56,20 @@ public class TransferenciasInterbancarias {
 		this._cuentaAtransferir = _cuentaAtransferir;
 	}
 
-	public CuentaBancaria get_cuentaBancaria() {
-		return _cuentaBancaria;
+	public Depositar get_depositar() {
+		return _depositar;
 	}
 
-	public void set_cuentaBancaria(CuentaBancaria _cuentaBancaria) {
-		this._cuentaBancaria = _cuentaBancaria;
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
+	}
+
+	public Retirar get_retirar() {
+		return _retirar;
+	}
+
+	public void set_retirar(Retirar _retirar) {
+		this._retirar = _retirar;
 	}
 
 	public String get_bancoDeDestino() {
@@ -73,11 +83,9 @@ public class TransferenciasInterbancarias {
 	@Override
 	public String toString() {
 		return "TransferenciasInterbancarias [_tipoCuenta=" + _tipoCuenta + ", _usuario=" + _usuario
-				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _cuentaBancaria=" + _cuentaBancaria
+				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _depositar=" + _depositar + ", _retirar=" + _retirar
 				+ ", _bancoDeDestino=" + _bancoDeDestino + "]";
 	}
+
 	
-	
-    
-    
 }

@@ -12,16 +12,21 @@ package clases;
 
 public class CuentaCorrientePersonal {
 	private Usuario _usuario;
-	private CuentaBancaria _cuentabancaria;
+	private Depositar _depositar;
+	private Retirar _retirar;
+	private ConsultarSaldo _consultarSaldo;
 	
 	public CuentaCorrientePersonal() {
 		
 	}
 
-	public CuentaCorrientePersonal(Usuario usuario, CuentaBancaria cuentabancaria) {
+	public CuentaCorrientePersonal(Usuario usuario, Depositar depositar, Retirar retirar,
+			ConsultarSaldo consultarSaldo) {
 		super();
 		this._usuario = usuario;
-		this._cuentabancaria = cuentabancaria;
+		this._depositar = depositar;
+		this._retirar = retirar;
+		this._consultarSaldo = consultarSaldo;
 	}
 
 	public Usuario get_usuario() {
@@ -32,16 +37,35 @@ public class CuentaCorrientePersonal {
 		this._usuario = _usuario;
 	}
 
-	public CuentaBancaria get_cuentabancaria() {
-		return _cuentabancaria;
+	public Depositar get_depositar() {
+		return _depositar;
 	}
 
-	public void set_cuentabancaria(CuentaBancaria _cuentabancaria) {
-		this._cuentabancaria = _cuentabancaria;
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
 	}
 
+	public Retirar get_retirar() {
+		return _retirar;
+	}
+
+	public void set_retirar(Retirar _retirar) {
+		this._retirar = _retirar;
+	}
+
+	public ConsultarSaldo get_consultarSaldo() {
+		return _consultarSaldo;
+	}
+
+	public void set_consultarSaldo(ConsultarSaldo _consultarSaldo) {
+		this._consultarSaldo = _consultarSaldo;
+	}
+
+	@Override
 	public String toString() {
-		return "CuentaCorrientePersonal [_usuario=" + _usuario + ", _cuentabancaria=" + _cuentabancaria + "]";
+		return "CuentaCorrientePersonal [_usuario=" + _usuario + ", _depositar=" + _depositar + ", _retirar=" + _retirar
+				+ ", _consultarSaldo=" + _consultarSaldo + "]";
 	}
 
+	
 }
