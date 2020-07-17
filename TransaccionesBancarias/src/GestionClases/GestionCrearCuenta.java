@@ -102,4 +102,18 @@ public class GestionCrearCuenta {
 	public CrearCuenta getPosicion(int posicion) {
 		return listaCrearCuenta.get(posicion);
 	}
+	
+	/**
+	 * MÉTODO PARA VERIFICAR CONTRASEÑAS Y NOMBRES DE USUARIO
+	 * @param constrasena
+	 * @param contrasena1
+	 * @return true - SI LAS DATOS SON IGUALES, CASO CONTRARIO return false
+	 */
+	public boolean Confirmar(String Dato1, String Dato2) {
+		if(Dato1.equals(Dato2)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 }
