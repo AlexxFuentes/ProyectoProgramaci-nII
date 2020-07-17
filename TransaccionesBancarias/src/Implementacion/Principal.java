@@ -10,12 +10,13 @@ public class Principal {
 		
 		//INSTANCIAS DE SCANNER
 		Scanner sc = new Scanner(System.in);//Para lectura de cadena
-		//Scanner scnum = new Scanner(System.in);
+		Scanner scnum = new Scanner(System.in);
 		
 		//VARIABLES A UTILIZAR
 		byte opcionPrincipal; 
 		String nombres, apellidos, constrasena, constrasenaconfirm, correo, direccion, rtn, telefono, usuario, usuarioConfir,
 		      numCuenta;
+		double montoInicial;
 		
 		//CENTINELAS
 		boolean centinalaPrincipal = true, centinelaContraseña = true, centinelaUsuario = true;
@@ -76,6 +77,9 @@ public class Principal {
 					}
 				}
 				System.out.println("Número de cuenta: " + gestionnumerocuenta.GeneraNumeroCuenta());
+				
+				System.out.println("Monto incial:");
+				montoInicial = scnum.nextDouble();
 			
 				break;
 			case 2: //INGRESAR USUARIO Y CONTRASEÑA

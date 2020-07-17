@@ -14,17 +14,24 @@ public class Referencia {
 	private String _apellido;
 	private String _direccion;
 	private String _telefono;
+	private String  _correoElectronico;
+	private String _rtn;
 	
+	//CONSTRUCTOR POR DEFECTO
 	public Referencia() {
-		
+		super();
 	}
 
-	public Referencia(String nombre, String apellido, String direccion, String telefono) {
+	//CONSTRUCTOR DE LA CLASE CON TODOS LOS CAMPOS
+	public Referencia(String _nombre, String _apellido, String _direccion, String _telefono, String _correoElectronico,
+			String _rtn) {
 		super();
-		this._nombre = nombre;
-		this._apellido = apellido;
-		this._direccion = direccion;
-		this._telefono = telefono;
+		this._nombre = _nombre;
+		this._apellido = _apellido;
+		this._direccion = _direccion;
+		this._telefono = _telefono;
+		this._correoElectronico = _correoElectronico;
+		this._rtn = _rtn;
 	}
 
 	public String get_nombre() {
@@ -59,14 +66,27 @@ public class Referencia {
 		this._telefono = _telefono;
 	}
 
+	public String get_correoElectronico() {
+		return _correoElectronico;
+	}
+
+	public void set_correoElectronico(String _correoElectronico) {
+		this._correoElectronico = _correoElectronico;
+	}
+
+	public String get_rtn() {
+		return _rtn;
+	}
+
+	public void set_rtn(String _rtn) {
+		this._rtn = _rtn;
+	}
+	
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
 		return "Referencia [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
-				+ ", _telefono=" + _telefono + "]";
+				+ ", _telefono=" + _telefono + ", _correoElectronico=" + _correoElectronico + ", _rtn=" + _rtn + "]";
 	}
-	
-	
-	
-	
 
 }
