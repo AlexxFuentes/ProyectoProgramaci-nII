@@ -14,10 +14,14 @@ import clases.NumeroCuenta;
 
 public class GestionUsuario {
 	
-	//ATRIBUTOS
+	//ATRIBUTOS (COLECCIÓN)
 	private LinkedList<Usuario> listaUsuario = new LinkedList<>();
 	
-	public LinkedList<Usuario> getEstudiante(){
+	/**
+	 * MÉTODO QUE OBTIENE UN USUARIO DE LA COLECCIÓN
+	 * @return ELEMETO COLECCIÓN
+	 */
+	public LinkedList<Usuario> getUsuario(){
 		return listaUsuario;
 	}
 	
