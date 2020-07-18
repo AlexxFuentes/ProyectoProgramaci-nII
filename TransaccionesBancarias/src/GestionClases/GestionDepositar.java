@@ -4,8 +4,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.Depositar;
-import clases.Usuario;
-import clases.CrearCuenta;
 
 
 public class GestionDepositar {
@@ -29,16 +27,16 @@ public class GestionDepositar {
 	 * @param depModificado
 	 * @return usuarioEncontrado
 	 */
-	public Depositar BuscarDeposito(String rtn) {
+	public Depositar BuscarDeposito(double monto) {
 		Depositar MontoBuscado = null;
 		
 		for(int i=0;i<lstDepositar.size();i++) {
-			if(lstDepositar) {
-				posicion = i;
+			if(lstDepositar.get(i).get_monto() == monto) {
+				MontoBuscado = lstDepositar.get(i);
 				break;
 			}
 		}
-		return posicion;
+		return MontoBuscado;
 	}
 	
 	/**
@@ -47,7 +45,7 @@ public class GestionDepositar {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	public boolean AgregarDeposito(Depositar deposito) {
-		if(BuscarDeposito(deposito.get_monto()) == -1) {
+		if(BuscarDeposito(deposito.get_monto()) == null) {
 			return false;
 		}else {
 			lstDepositar.add(deposito);
@@ -66,10 +64,9 @@ public class GestionDepositar {
 		if(posicion<0 || posicion>lstDepositar.size()) {
 			return false;
 		}else {
-			int posicionEncontrada = BuscarDeposito(depositoModificado);
 			
-			if(posicionEncontrada == -1 || posicionEncontrada == posicion) {
-				lstDepositar.set(posicion, posicionEncontrada);
+			if(BuscarDeposito(depositoModificado.get_monto()) != null) {
+				lstDepositar.set(posicion, depositoModificado);
 				return true;
 			}else {
 				return false;
@@ -85,12 +82,11 @@ public class GestionDepositar {
 	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-
-	public boolean Eliminar(double monto) {
-		if(monto==-1) {
+	public boolean EliminarMonto(Depositar depositoModificado) {
+		if(BuscarDeposito(depositoModificado.get_monto()) == null) {
 			return false;
 		}else {
-			lstDepositar.remove(monto);
+			lstDepositar.remove(BuscarDeposito(depositoModificado.get_monto()));
 			return true;
 		}
 	}
@@ -104,4 +100,14 @@ public class GestionDepositar {
 			System.out.println(lstDepositar.get(i));
 		}
 	}
+	
+	/**
+	 * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCIÓN DEPOSITAR
+	 * @param posicion
+	 * @return POSICIÓN O INDICE DE LA COLECIÓN
+	 */
+	public Depositar getPosicion(int posicion) {
+		return lstDepositar.get(posicion);
+	}
+	
 }
