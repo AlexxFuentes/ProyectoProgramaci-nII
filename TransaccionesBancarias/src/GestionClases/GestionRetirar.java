@@ -5,18 +5,18 @@ import java.util.LinkedList;
 import clases.Retirar;
 
 public class GestionRetirar {
-	private LinkedList<Retirar> lstRetirar=new LinkedList<>();
+	private LinkedList<Retirar> listaRetirar=new LinkedList<>();
 
 	public GestionRetirar() {
 		super();
 	}
 
-	public LinkedList<Retirar> getLstRetirar() {
-		return lstRetirar;
+	public LinkedList<Retirar> getListaRetirar() {
+		return listaRetirar;
 	}
 
 	public void setLstRetirar(LinkedList<Retirar> lstRetirar) {
-		this.lstRetirar = lstRetirar;
+		this.listaRetirar = lstRetirar;
 	}
 	
 	/**
@@ -27,9 +27,9 @@ public class GestionRetirar {
 	public Retirar BuscarRetiro(double monto) {
 		Retirar MontoBuscado = null;
 		
-		for(int i=0;i<lstRetirar.size();i++) {
-			if(lstRetirar.get(i).get_monto() == monto) {
-				MontoBuscado = lstRetirar.get(i);
+		for(int i=0;i<listaRetirar.size();i++) {
+			if(listaRetirar.get(i).get_montoRetirar() == monto) {
+				MontoBuscado = listaRetirar.get(i);
 				break;
 			}
 		}
@@ -42,10 +42,10 @@ public class GestionRetirar {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	public boolean AgregarRetiro(Retirar retiro) {
-		if(BuscarRetiro(retiro.get_monto()) == null) {
+		if(BuscarRetiro(retiro.get_montoRetirar()) == null) {
 			return false;
 		}else {
-			lstRetirar.add(retiro);
+			listaRetirar.add(retiro);
 			return true;
 		}
 		
@@ -58,12 +58,12 @@ public class GestionRetirar {
 	 */
 	
 	public boolean ModificarRetiro(Retirar retiroModificado, int posicion ) {
-		if(posicion<0 || posicion>lstRetirar.size()) {
+		if(posicion<0 || posicion>listaRetirar.size()) {
 			return false;
 		}else {
 			
-			if(BuscarRetiro(retiroModificado.get_monto()) != null) {
-				lstRetirar.set(posicion, retiroModificado);
+			if(BuscarRetiro(retiroModificado.get_montoRetirar()) != null) {
+				listaRetirar.set(posicion, retiroModificado);
 				return true;
 			}else {
 				return false;
@@ -80,10 +80,10 @@ public class GestionRetirar {
 	 */
 	
 	public boolean EliminarMonto(Retirar retiroModificado) {
-		if(BuscarRetiro(retiroModificado.get_monto()) == null) {
+		if(BuscarRetiro(retiroModificado.get_montoRetirar()) == null) {
 			return false;
 		}else {
-			lstRetirar.remove(BuscarRetiro(retiroModificado.get_monto()));
+			listaRetirar.remove(BuscarRetiro(retiroModificado.get_montoRetirar()));
 			return true;
 		}
 	}
@@ -93,8 +93,8 @@ public class GestionRetirar {
 	 * METODO PARA IMPRIMIR TODO
 	 */
 	public void imprimirTodos() {
-		for(int i=0;i<lstRetirar.size();i++) {
-			System.out.println(lstRetirar.get(i));
+		for(int i=0;i<listaRetirar.size();i++) {
+			System.out.println(listaRetirar.get(i));
 		}
 	}
 	
@@ -104,7 +104,7 @@ public class GestionRetirar {
 	 * @return POSICIÓN O INDICE DE LA COLECIÓN
 	 */
 	public Retirar getPosicion(int posicion) {
-		return lstRetirar.get(posicion);
+		return listaRetirar.get(posicion);
 	}
 	
 }

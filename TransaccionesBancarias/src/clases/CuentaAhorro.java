@@ -12,7 +12,7 @@ package clases;
 
 public class CuentaAhorro {
 	
-	private Usuario _usuario;
+	private TipoCuenta _tipoCuenta;
 	private double _interesremunerado;
 	private Depositar _depositar;
 	private Retirar _retirar;
@@ -25,10 +25,10 @@ public class CuentaAhorro {
 	}
 
 
-	public CuentaAhorro(Usuario _usuario, double _interesremunerado, Depositar _depositar, Retirar _retirar,
+	public CuentaAhorro(TipoCuenta _tipoCuenta, double _interesremunerado, Depositar _depositar, Retirar _retirar,
 			ConsultarSaldo _consultarSaldo, NumeroCuenta _numeroCuenta) {
 		super();
-		this._usuario = _usuario;
+		this._tipoCuenta = _tipoCuenta;
 		this._interesremunerado = _interesremunerado;
 		this._depositar = _depositar;
 		this._retirar = _retirar;
@@ -37,13 +37,13 @@ public class CuentaAhorro {
 	}
 
 
-	public Usuario get_usuario() {
-		return _usuario;
+	public TipoCuenta get_tipoCuenta() {
+		return _tipoCuenta;
 	}
 
 
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
+	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+		this._tipoCuenta = _tipoCuenta;
 	}
 
 
@@ -99,8 +99,10 @@ public class CuentaAhorro {
 
 	@Override
 	public String toString() {
-		return "CuentaAhorro [_usuario=" + _usuario + ", _interesremunerado=" + _interesremunerado + ", _depositar="
-				+ _depositar + ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo + ", _numeroCuenta="
-				+ _numeroCuenta + "]";
+		return "CuentaAhorro [_tipoCuenta=" + _tipoCuenta + ", _interesremunerado=" + _interesremunerado
+				+ ", _depositar=" + _depositar + ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo
+				+ ", _numeroCuenta=" + _numeroCuenta + "]";
 	}
+
+
 }

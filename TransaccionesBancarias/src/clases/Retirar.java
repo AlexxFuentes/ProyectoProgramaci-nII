@@ -10,39 +10,50 @@ package clases;
  * */
 
 public class Retirar {
-    private Usuario _usuario;
-    private double _monto;
+	private TipoCuenta _tipoCuenta;
+    private double _montoRetirar;
+    private double _saldoFinal;
     
 	public Retirar() {
 		super();
 	}
 
-	public Retirar(Usuario usuario, double monto) {
+	public Retirar(TipoCuenta _tipoCuenta, double _montoRetirar, double _saldoFinal) {
 		super();
-		this._usuario = usuario;
-		this._monto = monto;
+		this._tipoCuenta = _tipoCuenta;
+		this._montoRetirar = _montoRetirar;
+		this._saldoFinal = _saldoFinal;
 	}
 
-	public Usuario get_usuario() {
-		return _usuario;
+	public TipoCuenta get_tipoCuenta() {
+		return _tipoCuenta;
 	}
 
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
+	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+		this._tipoCuenta = _tipoCuenta;
 	}
 
-	public double get_monto() {
-		return _monto;
+	public double get_montoRetirar() {
+		return _montoRetirar;
 	}
 
-	public void set_monto(double _monto) {
-		this._monto = _monto;
+	public void set_montoRetirar(double _montoRetirar) {
+		this._montoRetirar = _montoRetirar;
+	}
+
+	public double get_saldoFinal() {
+		return _saldoFinal;
+	}
+
+	public void set_saldoFinal(double _saldoFinal) {
+		this._saldoFinal = _saldoFinal;
 	}
 
 	@Override
 	public String toString() {
-		return "Retirar [_usuario=" + _usuario + ", _monto=" + _monto+ "]";
+		return "Retirar [_tipoCuenta=" + _tipoCuenta + ", _montoRetirar=" + _montoRetirar + ", _saldoFinal="
+				+ _saldoFinal + "]";
 	}
-    
-    
+
+	
 }

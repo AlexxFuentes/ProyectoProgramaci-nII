@@ -40,7 +40,7 @@ public class GestionCuentaNomina {
 	public CuentaNomina BuscarCuentaNomina(NumeroCuenta numCuenta) {
 		CuentaNomina CuentaNominaBuscada = null;
 		for(int i = 0; i < listaCuentaNomina.size(); i++) {
-			if( listaCuentaNomina.get(i).get_usuario().get_tipocuenta().get_cuentanomina().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaNomina.get(i).get_tipoCuenta().get_cuentanomina().get_numeroCuenta().equals(numCuenta)) {
 				CuentaNominaBuscada = listaCuentaNomina.get(i);
 			}
 		}
@@ -53,7 +53,7 @@ public class GestionCuentaNomina {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_NOMINA, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaNomina(CuentaNomina cuentaNomina) {
-		if(BuscarCuentaNomina(cuentaNomina.get_usuario().get_tipocuenta().get_cuentanomina().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaNomina(cuentaNomina.get_tipoCuenta().get_cuentanomina().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaNomina.add(cuentaNomina);
 			return true;
 		}else {

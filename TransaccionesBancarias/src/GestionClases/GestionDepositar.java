@@ -7,19 +7,19 @@ import clases.Depositar;
 
 
 public class GestionDepositar {
-	private LinkedList<Depositar> lstDepositar = new LinkedList<>();
+	private LinkedList<Depositar> listatDepositar = new LinkedList<>();
 
 	public GestionDepositar() {
 		super();
 	}
 
-	public LinkedList<Depositar> getLstDepositar() {
-		return lstDepositar;
+	public LinkedList<Depositar> getListaDepositar() {
+		return listatDepositar;
 	}
 
 	public void setLstDepositar(LinkedList<Depositar> lstDepositar) {
 		
-		this.lstDepositar = lstDepositar;
+		this.listatDepositar = lstDepositar;
 	}
 	
 	/**
@@ -30,9 +30,9 @@ public class GestionDepositar {
 	public Depositar BuscarDeposito(double monto) {
 		Depositar MontoBuscado = null;
 		
-		for(int i=0;i<lstDepositar.size();i++) {
-			if(lstDepositar.get(i).get_monto() == monto) {
-				MontoBuscado = lstDepositar.get(i);
+		for(int i=0;i<listatDepositar.size();i++) {
+			if(listatDepositar.get(i).get_montodepositado() == monto) {
+				MontoBuscado = listatDepositar.get(i);
 				break;
 			}
 		}
@@ -45,10 +45,10 @@ public class GestionDepositar {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	public boolean AgregarDeposito(Depositar deposito) {
-		if(BuscarDeposito(deposito.get_monto()) == null) {
+		if(BuscarDeposito(deposito.get_montodepositado()) == null) {
 			return false;
 		}else {
-			lstDepositar.add(deposito);
+			listatDepositar.add(deposito);
 			return true;
 		}
 		
@@ -61,12 +61,12 @@ public class GestionDepositar {
 	 */
 	
 	public boolean ModificarDeposito(Depositar depositoModificado, int posicion ) {
-		if(posicion<0 || posicion>lstDepositar.size()) {
+		if(posicion<0 || posicion>listatDepositar.size()) {
 			return false;
 		}else {
 			
-			if(BuscarDeposito(depositoModificado.get_monto()) != null) {
-				lstDepositar.set(posicion, depositoModificado);
+			if(BuscarDeposito(depositoModificado.get_montodepositado()) != null) {
+				listatDepositar.set(posicion, depositoModificado);
 				return true;
 			}else {
 				return false;
@@ -82,11 +82,11 @@ public class GestionDepositar {
 	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public boolean EliminarMonto(Depositar depositoModificado) {
-		if(BuscarDeposito(depositoModificado.get_monto()) == null) {
+	public boolean EliminarMonto(Depositar depositoEliminado) {
+		if(BuscarDeposito(depositoEliminado.get_montodepositado()) == null) {
 			return false;
 		}else {
-			lstDepositar.remove(BuscarDeposito(depositoModificado.get_monto()));
+			listatDepositar.remove(BuscarDeposito(depositoEliminado.get_montodepositado()));
 			return true;
 		}
 	}
@@ -96,8 +96,8 @@ public class GestionDepositar {
 	 * METODO PARA IMPRIMIR TODO
 	 */
 	public void imprimirTodos() {
-		for(int i=0;i<lstDepositar.size();i++) {
-			System.out.println(lstDepositar.get(i));
+		for(int i=0;i<listatDepositar.size();i++) {
+			System.out.println(listatDepositar.get(i));
 		}
 	}
 	
@@ -107,7 +107,7 @@ public class GestionDepositar {
 	 * @return POSICIÓN O INDICE DE LA COLECIÓN
 	 */
 	public Depositar getPosicion(int posicion) {
-		return lstDepositar.get(posicion);
+		return listatDepositar.get(posicion);
 	}
 	
 }

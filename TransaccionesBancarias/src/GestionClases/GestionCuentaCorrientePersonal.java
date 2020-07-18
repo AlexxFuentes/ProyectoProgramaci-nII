@@ -43,7 +43,7 @@ public class GestionCuentaCorrientePersonal {
 	public CuentaCorrientePersonal BuscarCuentaCorrientePersonal(NumeroCuenta numCuenta) {
 		CuentaCorrientePersonal CuentaCorrientePersonalBuscada = null;
 		for(int i = 0; i < listaCuentaCorrientePersonal.size(); i++) {
-			if( listaCuentaCorrientePersonal.get(i).get_usuario().get_tipocuenta().get_cuentacorrientepersonal().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaCorrientePersonal.get(i).get_tipoCuenta().get_cuentacheques().get_numeroCuenta().equals(numCuenta)) {
 				CuentaCorrientePersonalBuscada = listaCuentaCorrientePersonal.get(i);
 			}
 		}
@@ -56,7 +56,7 @@ public class GestionCuentaCorrientePersonal {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_CORRIENTE_PERSONAL, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaCorrientePersonal(CuentaCorrientePersonal cuentaCorrientePersonal) {
-		if(BuscarCuentaCorrientePersonal(cuentaCorrientePersonal.get_usuario().get_tipocuenta().get_cuentacorrientepersonal().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaCorrientePersonal(cuentaCorrientePersonal.get_tipoCuenta().get_cuentacheques().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaCorrientePersonal.add(cuentaCorrientePersonal);
 			return true;
 		}else {

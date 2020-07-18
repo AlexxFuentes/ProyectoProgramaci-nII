@@ -40,7 +40,7 @@ public class GestionCuentaAhorro {
 	public CuentaAhorro BuscarCuentaAhorro(NumeroCuenta numCuenta) {
 		CuentaAhorro CuentaAhorroBuscada = null;
 		for(int i = 0; i < listaCuentaAhorro.size(); i++) {
-			if( listaCuentaAhorro.get(i).get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaAhorro.get(i).get_tipoCuenta().get_cuentaahorro().get_numeroCuenta().equals(numCuenta)) {
 				CuentaAhorroBuscada = listaCuentaAhorro.get(i);
 			}
 		}
@@ -53,7 +53,7 @@ public class GestionCuentaAhorro {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_AHORRO, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaAhorro(CuentaAhorro cuentaAhorro) {
-		if(BuscarCuentaAhorro(cuentaAhorro.get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaAhorro(cuentaAhorro.get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaAhorro.add(cuentaAhorro);
 			return true;
 		}else {

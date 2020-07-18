@@ -12,7 +12,7 @@ package clases;
 
 public class CuentaNomina {
 	
-	private Usuario _usuario;
+	private TipoCuenta _tipoCuenta;
 	private String _empresa;
 	private Depositar _depositar;
 	private Retirar _retirar;
@@ -25,10 +25,10 @@ public class CuentaNomina {
 	}
 
 
-	public CuentaNomina(Usuario _usuario, String _empresa, Depositar _depositar, Retirar _retirar,
+	public CuentaNomina(TipoCuenta _tipoCuenta, String _empresa, Depositar _depositar, Retirar _retirar,
 			ConsultarSaldo _consultarSaldo, NumeroCuenta _numeroCuenta) {
 		super();
-		this._usuario = _usuario;
+		this._tipoCuenta = _tipoCuenta;
 		this._empresa = _empresa;
 		this._depositar = _depositar;
 		this._retirar = _retirar;
@@ -37,13 +37,13 @@ public class CuentaNomina {
 	}
 
 
-	public Usuario get_usuario() {
-		return _usuario;
+	public TipoCuenta get_tipoCuenta() {
+		return _tipoCuenta;
 	}
 
 
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
+	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+		this._tipoCuenta = _tipoCuenta;
 	}
 
 
@@ -99,9 +99,11 @@ public class CuentaNomina {
 
 	@Override
 	public String toString() {
-		return "CuentaNomina [_usuario=" + _usuario + ", _empresa=" + _empresa + ", _depositar=" + _depositar
+		return "CuentaNomina [_tipoCuenta=" + _tipoCuenta + ", _empresa=" + _empresa + ", _depositar=" + _depositar
 				+ ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo + ", _numeroCuenta=" + _numeroCuenta
 				+ "]";
 	}
+	
+	
 	
 }

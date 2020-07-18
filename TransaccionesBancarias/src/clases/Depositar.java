@@ -10,60 +10,51 @@ package clases;
  * */
 
 public class Depositar {
-        private double _monto;
-        private Usuario _usuario;
-        private CrearCuenta _crearCuenta;
-        
-        
+	
+		private TipoCuenta _tipoCuenta;
+        private double _montodepositado;
+        private double _saldoFinal;
+
+
 		public Depositar() {
 			super();
 		}
-
-
-		public Depositar(double _monto, Usuario _usuario, CrearCuenta _crearCuenta) {
+        
+		public Depositar(TipoCuenta _tipoCuenta, double _montodeposito, double _saldoFinal) {
 			super();
-			this._monto = _monto;
-			this._usuario = _usuario;
-			this._crearCuenta = _crearCuenta;
+			this._tipoCuenta = _tipoCuenta;
+			this._montodepositado = _montodeposito;
+			this._saldoFinal = _saldoFinal;
 		}
 
-
-		public double get_monto() {
-			return _monto;
+		public TipoCuenta get_tipoCuenta() {
+			return _tipoCuenta;
 		}
 
-
-		public void set_monto(double _monto) {
-			this._monto = _monto;
+		public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+			this._tipoCuenta = _tipoCuenta;
 		}
 
-
-		public Usuario get_usuario() {
-			return _usuario;
+		public double get_montodepositado() {
+			return _montodepositado;
 		}
 
-
-		public void set_usuario(Usuario _usuario) {
-			this._usuario = _usuario;
+		public void set_montodepositado(double _montodeposito) {
+			this._montodepositado = _montodeposito;
 		}
 
-
-		public CrearCuenta get_crearCuenta() {
-			return _crearCuenta;
+		public double get_saldoFinal() {
+			return _saldoFinal;
 		}
 
-
-		public void set_crearCuenta(CrearCuenta _crearCuenta) {
-			this._crearCuenta = _crearCuenta;
+		public void set_saldoFinal(double _saldoFinal) {
+			this._saldoFinal = _saldoFinal;
 		}
-
 
 		@Override
 		public String toString() {
-			return "Depositar [_monto=" + _monto + ", _usuario=" + _usuario + ", _crearCuenta=" + _crearCuenta + "]";
+			return "Depositar [_tipoCuenta=" + _tipoCuenta + ", _montodeposito=" + _montodepositado + ", _saldoFinal="
+					+ _saldoFinal + "]";
 		}
-        
-		
-        
 		
 }

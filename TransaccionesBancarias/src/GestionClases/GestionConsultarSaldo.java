@@ -3,9 +3,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.ConsultarSaldo;
-import clases.NumeroCuenta;
-import clases.PagoServiciosPublicos;
-import clases.Usuario;
 
 public class GestionConsultarSaldo {
 	private LinkedList<ConsultarSaldo> lstConsultarSaldo=new LinkedList<>();
@@ -23,13 +20,31 @@ public class GestionConsultarSaldo {
 	}
 	
 	/**
+	 * Método utilizado para buscar la consulta de saldo
+	 * @param 
+	 * @return true - si todo se realizó correctamente , caso contrario retorna false
+	 */
+	
+	public ConsultarSaldo BuscarConsultarSaldo(double montoConsultado) {
+		ConsultarSaldo usuarioEncontrado = null;
+		//int posicion=-1;
+		for(int i=0;i<lstConsultarSaldo.size();i++) {
+			if(lstConsultarSaldo.get(i).get_montoConsultar() == montoConsultado) {
+			    usuarioEncontrado = lstConsultarSaldo.get(i);
+				break;
+			}
+		}
+		return usuarioEncontrado;
+	}
+	
+	/**
 	 * Método utilizado para agregar la consulta de saldo
 	 * @param consultarSaldo de la cuenta
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public boolean Agregar(ConsultarSaldo consultarSaldo) {
-		if(BuscarConsultarSaldo(consultarSaldo.get_usuario())==null) {
+	public boolean AgregarColsulaSaldo(ConsultarSaldo consultarSaldo) {
+		if(BuscarConsultarSaldo(consultarSaldo.get_montoConsultar())==null) {
 			lstConsultarSaldo.add(consultarSaldo);
 			return true;
 		}else {
@@ -44,11 +59,11 @@ public class GestionConsultarSaldo {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public boolean Modificar(ConsultarSaldo consultaModificada, int posicion ) {
+	public boolean ModificarConsultaSaldo(ConsultarSaldo consultaModificada, int posicion ) {
 		if(posicion<0 || posicion>lstConsultarSaldo.size()) {
 			return false;
 		}else {
-			ConsultarSaldo posicionEncontrada=BuscarConsultarSaldo(consultaModificada.get_usuario());
+			ConsultarSaldo posicionEncontrada = BuscarConsultarSaldo(consultaModificada.get_montoConsultar());
 			
 			if(posicionEncontrada==null) {
 				lstConsultarSaldo.set(posicion, consultaModificada);
@@ -67,33 +82,17 @@ public class GestionConsultarSaldo {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public boolean Eliminar(NumeroCuenta numeroCuenta) {
-		if(numeroCuenta==null) {
+	public boolean EliminarConsultaSaldo(ConsultarSaldo ConsultaEliminadnar) {
+		if(BuscarConsultarSaldo(ConsultaEliminadnar.get_montoConsultar()) == null) {
 			return false;
 		}else {
-			lstConsultarSaldo.remove(numeroCuenta);
+			lstConsultarSaldo.remove(ConsultaEliminadnar);
 			return true;
 		}
 	}
 	
 	
-	/**
-	 * Método utilizado para buscar la consulta de saldo
-	 * @param 
-	 * @return true - si todo se realizó correctamente , caso contrario retorna false
-	 */
 	
-	public ConsultarSaldo BuscarConsultarSaldo(Usuario usuario) {
-		ConsultarSaldo usuarioEncontrado = null;
-		//int posicion=-1;
-		for(int i=0;i<lstConsultarSaldo.size();i++) {
-			if(lstConsultarSaldo.get(i).get_usuario().equals(usuario)) {
-			    usuarioEncontrado=lstConsultarSaldo.get(i);
-				break;
-			}
-		}
-		return usuarioEncontrado;
-	}
 	
 	/**
 	 * Metodo para imprimir todo

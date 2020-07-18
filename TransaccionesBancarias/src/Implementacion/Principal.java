@@ -16,6 +16,8 @@ public class Principal {
 		byte opcionPrincipal, opcionTipoCuenta; 
 		String nombres, apellidos, constrasena, constrasenaconfirm, correo, direccion, rtn, telefono, usuario, usuarioConfir,
 		      numCuenta;
+		
+		String nombresReferencia, apellidoReferencia, direccionReferencia, telefonoReferencia, correoReferencia, rtnReferencia;
 		double montoInicial;
 		
 		//CENTINELAS
@@ -57,33 +59,8 @@ public class Principal {
 				System.out.println("Correo electronico: ");
 				correo = sc.nextLine();
 				
-				while(centinelaContraseña) {//CREAR CONTRASEÑA
-					System.out.println("Contraseña: ");
-					constrasena = sc.nextLine();
-					System.out.println("Confirmar contraseña: ");
-					constrasenaconfirm = sc.nextLine();
-					
-					if(gestioncrearcuenta.Confirmar(constrasena, constrasenaconfirm)) {
-						centinelaContraseña = false;
-					}else {
-						System.out.println("Las constraseñas no coinciden.");
-					}
-				}
-				while(centinelaUsuario) {//CREAR NOMBRE DE USUARIO
-					System.out.println("Usuario: ");
-					usuario = sc.nextLine();
-					System.out.println("Confirmar Usuario: ");
-					usuarioConfir = sc.nextLine();
-					
-					if(gestioncrearcuenta.Confirmar(usuario, usuarioConfir)) {
-						centinelaUsuario = false;
-					}else {
-						System.out.println("Los nombres de usuario no coinciden.");
-					}
-				}
-				System.out.println("Número de cuenta: " + gestionnumerocuenta.GeneraNumeroCuenta());
 				
-				
+				//CREAR CUENTA
 				while(centinelaTipoCuenta) {
 					System.out.println("Seleccione Tipo de cuenta a crear: ");
 					System.out.println("1. Cuenta de ahorro.");
@@ -92,15 +69,10 @@ public class Principal {
 					System.out.println("4. Cuenta nomina.");
 					opcionTipoCuenta = scnum.nextByte();
 					
-					//TipoCuenta tipocuenta1 = null;
-					CrearCuenta crearcuenta1 = new CrearCuenta();
-					
-					//Usuario usuario1 = new Usuario(nombres, apellidos,direccion, telefono, rtn ,correo, crearcuenta1);
 					
 					switch(opcionTipoCuenta) {
 					case 1: //CUENTA DE AHORRO
-						//CuentaAhorro cuentaAhorro1 = new CuentaAhorro();
-						//GestionDepositar deposito1 = new GestionDepositar();
+						
 						
 						
 						System.out.println("Apertura de Cuenta de Ahorro");
@@ -132,6 +104,32 @@ public class Principal {
 							break;
 					}
 				}
+				
+				while(centinelaContraseña) {//CREAR CONTRASEÑA
+					System.out.println("Contraseña: ");
+					constrasena = sc.nextLine();
+					System.out.println("Confirmar contraseña: ");
+					constrasenaconfirm = sc.nextLine();
+					
+					if(gestioncrearcuenta.Confirmar(constrasena, constrasenaconfirm)) {
+						centinelaContraseña = false;
+					}else {
+						System.out.println("Las constraseñas no coinciden.");
+					}
+				}
+				while(centinelaUsuario) {//CREAR NOMBRE DE USUARIO
+					System.out.println("Usuario: ");
+					usuario = sc.nextLine();
+					System.out.println("Confirmar Usuario: ");
+					usuarioConfir = sc.nextLine();
+					
+					if(gestioncrearcuenta.Confirmar(usuario, usuarioConfir)) {
+						centinelaUsuario = false;
+					}else {
+						System.out.println("Los nombres de usuario no coinciden.");
+					}
+				}
+				
 				
 				//CrearCuenta crearcuenta1 = new CrearCuenta();
 				//Usuario usuario1 = new Usuario(nombres, apellidos,direccion, telefono, rtn ,correo, crearcuenta1);
