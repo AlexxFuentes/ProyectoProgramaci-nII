@@ -15,18 +15,21 @@ public class PagoServiciosPublicos {
 	    private int _tasaSeguridad;
 	    private TipoCuenta _tipoCuenta;
 	    private Depositar _depositar;
+	    private Retirar _retirar;
+
 	    
 		public PagoServiciosPublicos() {
 			super();
 		}
 
-		public PagoServiciosPublicos(ServiciosPublicos _servicioaPagar, int _tasaSeguridad, TipoCuenta _tipoCuenta,
-				Depositar _depositar) {
+		public PagoServiciosPublicos(ServiciosPublicos servicioaPagar, int tasaSeguridad, TipoCuenta tipoCuenta,
+				Depositar depositar, Retirar retirar) {
 			super();
-			this._servicioaPagar = _servicioaPagar;
-			this._tasaSeguridad = _tasaSeguridad;
-			this._tipoCuenta = _tipoCuenta;
-			this._depositar = _depositar;
+			this._servicioaPagar = servicioaPagar;
+			this._tasaSeguridad = tasaSeguridad;
+			this._tipoCuenta = tipoCuenta;
+			this._depositar = depositar;
+			this._retirar = retirar;
 		}
 
 		public ServiciosPublicos get_servicioaPagar() {
@@ -61,10 +64,19 @@ public class PagoServiciosPublicos {
 			this._depositar = _depositar;
 		}
 
+		
+		public Retirar get_retirar() {
+			return _retirar;
+		}
+
+		public void set_retirar(Retirar _retirar) {
+			this._retirar = _retirar;
+		}
+
 		@Override
 		public String toString() {
 			return "PagoServiciosPublicos [_servicioaPagar=" + _servicioaPagar + ", _tasaSeguridad=" + _tasaSeguridad
-					+ ", _tipoCuenta=" + _tipoCuenta + ", _depositar=" + _depositar + "]";
+					+ ", _tipoCuenta=" + _tipoCuenta + ", _depositar=" + _depositar + ", _retirar=" + _retirar + "]";
 		}
 
 		

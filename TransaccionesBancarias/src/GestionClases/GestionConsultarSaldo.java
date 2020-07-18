@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import clases.ConsultarSaldo;
 import clases.NumeroCuenta;
+import clases.PagoServiciosPublicos;
 import clases.Usuario;
 
 public class GestionConsultarSaldo {
@@ -70,7 +71,7 @@ public class GestionConsultarSaldo {
 		if(numeroCuenta==null) {
 			return false;
 		}else {
-			lstConsultarSaldo.removeLastOccurrence(numeroCuenta);
+			lstConsultarSaldo.remove(numeroCuenta);
 			return true;
 		}
 	}
@@ -103,4 +104,12 @@ public class GestionConsultarSaldo {
 		}
 	}
 	
+	/**
+	 * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCIÓN PagoServiciosPublicos
+	 * @param posicion
+	 * @return POSICIÓN O INDICE DE LA COLECIÓN
+	 */
+	public ConsultarSaldo getPosicion(int posicion) {
+		return lstConsultarSaldo.get(posicion);
+	}
 }

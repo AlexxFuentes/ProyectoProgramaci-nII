@@ -14,7 +14,6 @@ public class ServiciosPublicos {
     private double _telefonia;
     private double _cable;
     private double _internet;
-    private double _impuestos;
     private double _energia;
     private double _aguaPotable;
     private Seguros _seguros;
@@ -23,13 +22,12 @@ public class ServiciosPublicos {
 		super();
 	}
 
-	public ServiciosPublicos(double telefonia, double cable, double internet, double impuestos, double energia,
+	public ServiciosPublicos(double telefonia, double cable, double internet, double energia,
 			double aguaPotable, Seguros seguros) {
 		super();
 		this._telefonia = telefonia;
 		this._cable = cable;
 		this._internet = internet;
-		this._impuestos = impuestos;
 		this._energia = energia;
 		this._aguaPotable = aguaPotable;
 		this._seguros = seguros;
@@ -59,13 +57,6 @@ public class ServiciosPublicos {
 		this._internet = _internet;
 	}
 
-	public double get_impuestos() {
-		return _impuestos;
-	}
-
-	public void set_impuestos(double _impuestos) {
-		this._impuestos = _impuestos;
-	}
 
 	public double get_energia() {
 		return _energia;
@@ -94,7 +85,7 @@ public class ServiciosPublicos {
 	@Override
 	public String toString() {
 		return "ServiciosPublicos [_telefonia=" + _telefonia + ", _cable=" + _cable + ", _internet=" + _internet
-				+ ", _impuestos=" + _impuestos + ", _energia=" + _energia + ", _aguaPotable=" + _aguaPotable
+				+ ", _energia=" + _energia + ", _aguaPotable=" + _aguaPotable
 				+ ", _seguros=" + _seguros + "]";
 	}
     

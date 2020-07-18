@@ -10,10 +10,10 @@ package clases;
  * */
 
 public class TransferenciasInterbancarias {
-	private TipoCuenta _tipoCuenta;
     private Usuario _usuario;
     private String _cuentaAtransferir;
-    private Depositar _depositar;
+    private double _monto;
+    private String _tipoMoneda;
     private Retirar _retirar;
     private String _bancoDeDestino;
     
@@ -21,24 +21,18 @@ public class TransferenciasInterbancarias {
 		super();
 	}
 
-	public TransferenciasInterbancarias(TipoCuenta tipoCuenta, Usuario usuario, String cuentaAtransferir,
-			Depositar depositar, Retirar retirar, String bancoDeDestino) {
+	public TransferenciasInterbancarias(double monto, Usuario usuario, String cuentaAtransferir, 
+			String tipoMoneda, Retirar retirar, String bancoDeDestino) {
 		super();
-		this._tipoCuenta = tipoCuenta;
+		this._monto = monto;
 		this._usuario = usuario;
 		this._cuentaAtransferir = cuentaAtransferir;
-		this._depositar = depositar;
+		this._tipoMoneda = tipoMoneda;
 		this._retirar = retirar;
 		this._bancoDeDestino = bancoDeDestino;
 	}
 
-	public TipoCuenta get_tipoCuenta() {
-		return _tipoCuenta;
-	}
-
-	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
-		this._tipoCuenta = _tipoCuenta;
-	}
+	
 
 	public Usuario get_usuario() {
 		return _usuario;
@@ -56,12 +50,22 @@ public class TransferenciasInterbancarias {
 		this._cuentaAtransferir = _cuentaAtransferir;
 	}
 
-	public Depositar get_depositar() {
-		return _depositar;
+	
+
+	public double get_monto() {
+		return _monto;
 	}
 
-	public void set_depositar(Depositar _depositar) {
-		this._depositar = _depositar;
+	public void set_monto(double _monto) {
+		this._monto = _monto;
+	}
+
+	public String get_tipoMoneda() {
+		return _tipoMoneda;
+	}
+
+	public void set_tipoMoneda(String _tipoMoneda) {
+		this._tipoMoneda = _tipoMoneda;
 	}
 
 	public Retirar get_retirar() {
@@ -82,8 +86,8 @@ public class TransferenciasInterbancarias {
 
 	@Override
 	public String toString() {
-		return "TransferenciasInterbancarias [_tipoCuenta=" + _tipoCuenta + ", _usuario=" + _usuario
-				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _depositar=" + _depositar + ", _retirar=" + _retirar
+		return "TransferenciasInterbancarias [_monto=" + _monto + ", _usuario=" + _usuario
+				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _tipoMoneda=" + _tipoMoneda + ", _retirar=" + _retirar
 				+ ", _bancoDeDestino=" + _bancoDeDestino + "]";
 	}
 

@@ -20,22 +20,24 @@ public class TransferenciasEntreCuentas {
 		super();
 	}
 
-	public TransferenciasEntreCuentas(TipoCuenta tipoCuenta, Usuario usuario, String cuentaAtransferir,
+	public TransferenciasEntreCuentas(double monto, Usuario usuario, String cuentaAtransferir,
 			Depositar depositar, Retirar retirar) {
 		super();
-		this._tipoCuenta = tipoCuenta;
+		this._monto = monto;
 		this._usuario = usuario;
 		this._cuentaAtransferir = cuentaAtransferir;
 		this._depositar = depositar;
 		this._retirar = retirar;
 	}
 
-	public TipoCuenta get_tipoCuenta() {
-		return _tipoCuenta;
+
+
+	public double get_monto() {
+		return _monto;
 	}
 
-	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
-		this._tipoCuenta = _tipoCuenta;
+	public void set_monto(double _monto) {
+		this._monto = _monto;
 	}
 
 	public Usuario get_usuario() {
@@ -72,7 +74,7 @@ public class TransferenciasEntreCuentas {
 
 	@Override
 	public String toString() {
-		return "TransferenciasEntreCuentas [_tipoCuenta=" + _tipoCuenta + ", _usuario=" + _usuario
+		return "TransferenciasEntreCuentas [_monto=" + _monto +"_usuario=" + _usuario
 				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _depositar=" + _depositar + ", _retirar=" + _retirar
 				+ "]";
 	}
