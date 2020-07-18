@@ -15,10 +15,7 @@ public class Usuario {
 	private String _telefono;
 	private String _rtn;
 	private String _correoelectronico;
-	private CrearCuenta _crearCuenta;
-	private Depositar _depositar;
-	//private NumeroCuenta _numeroCuenta;
-	//private TipoCuenta _tipocuenta;
+	private TipoCuenta _tipocuenta;
 	
 	//METODO CONSTRUCTOR POR DEFECTO
 	public Usuario() {
@@ -26,7 +23,7 @@ public class Usuario {
 	}
 
 	public Usuario(String _nombre, String _apellido, String _direccion, String _telefono, String _rtn,
-			String _correoelectronico, CrearCuenta _crearCuenta, Depositar _depositar) {
+			String _correoelectronico, TipoCuenta _tipocuenta) {
 		super();
 		this._nombre = _nombre;
 		this._apellido = _apellido;
@@ -34,8 +31,7 @@ public class Usuario {
 		this._telefono = _telefono;
 		this._rtn = _rtn;
 		this._correoelectronico = _correoelectronico;
-		this._crearCuenta = _crearCuenta;
-		this._depositar = _depositar;
+		this._tipocuenta = _tipocuenta;
 	}
 
 	public String get_nombre() {
@@ -86,29 +82,21 @@ public class Usuario {
 		this._correoelectronico = _correoelectronico;
 	}
 
-	public CrearCuenta get_crearCuenta() {
-		return _crearCuenta;
+	public TipoCuenta get_tipocuenta() {
+		return _tipocuenta;
 	}
 
-	public void set_crearCuenta(CrearCuenta _crearCuenta) {
-		this._crearCuenta = _crearCuenta;
-	}
-
-	public Depositar get_depositar() {
-		return _depositar;
-	}
-
-	public void set_depositar(Depositar _depositar) {
-		this._depositar = _depositar;
+	public void set_tipocuenta(TipoCuenta _tipocuenta) {
+		this._tipocuenta = _tipocuenta;
 	}
 
 	@Override
 	public String toString() {
 		return "Usuario [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
 				+ ", _telefono=" + _telefono + ", _rtn=" + _rtn + ", _correoelectronico=" + _correoelectronico
-				+ ", _crearCuenta=" + _crearCuenta + ", _depositar=" + _depositar + "]";
+				+ ", _tipocuenta=" + _tipocuenta + "]";
 	}
 
-	
+
 	
 }

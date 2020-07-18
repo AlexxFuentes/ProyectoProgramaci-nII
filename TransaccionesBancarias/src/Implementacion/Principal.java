@@ -93,6 +93,9 @@ public class Principal {
 					opcionTipoCuenta = scnum.nextByte();
 					
 					//TipoCuenta tipocuenta1 = null;
+					CrearCuenta crearcuenta1 = new CrearCuenta();
+					
+					//Usuario usuario1 = new Usuario(nombres, apellidos,direccion, telefono, rtn ,correo, crearcuenta1);
 					
 					switch(opcionTipoCuenta) {
 					case 1: //CUENTA DE AHORRO
