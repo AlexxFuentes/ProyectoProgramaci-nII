@@ -16,6 +16,17 @@ public class GestionCrearCuenta {
 	//ATRIBUTO (COLECCIÓN)
 	LinkedList<CrearCuenta> listaCrearCuenta = new LinkedList<>();
 	
+	//CONSTRUCTOR POR DEFECTO 
+	public GestionCrearCuenta() {
+		super();
+	}
+
+	//CONSTRUCTOR DE LA CLASE
+	public GestionCrearCuenta(LinkedList<CrearCuenta> listaCrearCuenta) {
+		super();
+		this.listaCrearCuenta = listaCrearCuenta;
+	}
+
 	/**
 	 * MÉTODO QUE OBTIENE CREAR CUENTA DE LA COLECCIÓN
 	 * @return listaCrearCuenta
@@ -44,6 +55,7 @@ public class GestionCrearCuenta {
 	 * @param crearcuenta
 	 * @return true - SI SE CREA LA CUENTA, CASO CONTRARIO return false
 	 */
+	/*
 	public boolean AgregarUsuario(CrearCuenta crearcuenta) {
 		
 		if(BuscarNumeroCuenta(crearcuenta.get_numerocuenta()) == null) {//Si el usuario no esta agregado
@@ -53,6 +65,7 @@ public class GestionCrearCuenta {
 			return false;
 		}
 	}
+	*/
 	
 	/**
 	 * MÉTODO QUE ELIMINA USUARIO CREADO 
@@ -60,8 +73,7 @@ public class GestionCrearCuenta {
 	 * @return true - SI SE ELIMINO CORRECTAMENTE, CASO CONTRARIO return false.
 	 */
 	public boolean EliminarUsuarioCreado(NumeroCuenta numCuenta) {
-		CrearCuenta UsuarioEncontrado = null;
-		UsuarioEncontrado = BuscarNumeroCuenta(numCuenta);
+		CrearCuenta UsuarioEncontrado = BuscarNumeroCuenta(numCuenta);
 		
 		if(UsuarioEncontrado == null) {
 			return false;
@@ -113,6 +125,15 @@ public class GestionCrearCuenta {
 			return true;
 		}else {
 			return false;
+		}
+	}
+	
+	/**
+	 * MÉTODO PARA IMPRIMIR TODA LA COLECCIÓN
+	 */
+	public void imprimirTodos() {
+		for(int i=0;i<listaCrearCuenta.size();i++) {
+			System.out.println(listaCrearCuenta.get(i));
 		}
 	}
 }

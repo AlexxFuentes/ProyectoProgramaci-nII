@@ -17,6 +17,17 @@ public class GestionUsuario {
 	//ATRIBUTOS (COLECCIÓN)
 	private LinkedList<Usuario> listaUsuario = new LinkedList<>();
 	
+	//CONSTRUCTOR POR DEFECTO
+	public GestionUsuario() {
+		super();
+	}
+	
+	//CONSTRUCTOR DE LA CLASE CON TODOS LOS CAMPOS
+	public GestionUsuario(LinkedList<Usuario> listaUsuario) {
+		super();
+		this.listaUsuario = listaUsuario;
+	}
+
 	/**
 	 * MÉTODO QUE OBTIENE UN USUARIO DE LA COLECCIÓN
 	 * @return ELEMETO COLECCIÓN
