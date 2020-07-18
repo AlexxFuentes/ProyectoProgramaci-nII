@@ -41,7 +41,7 @@ public class GestionCuentaCheques {
 	public CuentaCheques BuscarCuentaCheques(NumeroCuenta numCuenta) {
 		CuentaCheques CuentaChequesBuscada = null;
 		for(int i = 0; i < listaCuentaCheques.size(); i++) {
-			if( listaCuentaCheques.get(i).get_usuario().get_crearCuenta().get_numerocuenta().equals(numCuenta)) {
+			if( listaCuentaCheques.get(i).get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta().equals(numCuenta)) {
 				CuentaChequesBuscada = listaCuentaCheques.get(i);
 			}
 		}
@@ -54,7 +54,7 @@ public class GestionCuentaCheques {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_CHEQUES, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaCheques(CuentaCheques cuentaCheques) {
-		if(BuscarCuentaCheques(cuentaCheques.get_usuario().get_crearCuenta().get_numerocuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaCheques(cuentaCheques.get_usuario().get_tipocuenta().get_cuentacheques().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaCheques.add(cuentaCheques);
 			return true;
 		}else {
@@ -88,7 +88,7 @@ public class GestionCuentaCheques {
 			return false;
 		}else {
 			
-			if(BuscarCuentaCheques(CuentaChequeModificado.get_usuario().get_crearCuenta().get_numerocuenta()) != null) {
+			if(BuscarCuentaCheques(CuentaChequeModificado.get_numeroCuenta()) != null) {
 				listaCuentaCheques.set(posicion, CuentaChequeModificado);
 				return true;
 			}else {

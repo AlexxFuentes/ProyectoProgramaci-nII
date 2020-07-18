@@ -11,71 +11,112 @@ package clases;
  * */
 
 public class CuentaCheques {
+	
+	private Usuario _usuario;
 	private double _interesremunerado;
 	private Depositar _depositar;
 	private Retirar _retirar;
 	private ConsultarSaldo _consultarSaldo;
-	private Usuario _usuario;
+	private NumeroCuenta _numeroCuenta;
 	
+	
+
 	public CuentaCheques() {
-		
-	}
-
-	public CuentaCheques(double interesremunerado, Depositar depositar, Retirar retirar,
-			ConsultarSaldo consultarSaldo, Usuario usuario) {
 		super();
-		this._interesremunerado = interesremunerado;
-		this._depositar = depositar;
-		this._retirar = retirar;
-		this._consultarSaldo = consultarSaldo;
-		this._usuario = usuario;
 	}
 
-	public double get_interesremunerado() {
-		return _interesremunerado;
-	}
 
-	public void set_interesremunerado(double _interesremunerado) {
+
+	public CuentaCheques(Usuario _usuario, double _interesremunerado, Depositar _depositar, Retirar _retirar,
+			ConsultarSaldo _consultarSaldo, NumeroCuenta _numeroCuenta) {
+		super();
+		this._usuario = _usuario;
 		this._interesremunerado = _interesremunerado;
-	}
-
-	public Depositar get_depositar() {
-		return _depositar;
-	}
-
-	public void set_depositar(Depositar _depositar) {
 		this._depositar = _depositar;
-	}
-
-	public Retirar get_retirar() {
-		return _retirar;
-	}
-
-	public void set_retirar(Retirar _retirar) {
 		this._retirar = _retirar;
-	}
-
-	public ConsultarSaldo get_consultarSaldo() {
-		return _consultarSaldo;
-	}
-
-	public void set_consultarSaldo(ConsultarSaldo _consultarSaldo) {
 		this._consultarSaldo = _consultarSaldo;
+		this._numeroCuenta = _numeroCuenta;
 	}
+
+
 
 	public Usuario get_usuario() {
 		return _usuario;
 	}
 
+
+
 	public void set_usuario(Usuario _usuario) {
 		this._usuario = _usuario;
 	}
 
-	@Override
-	public String toString() {
-		return "CuentaCheques [_interesremunerado=" + _interesremunerado + ", _depositar=" + _depositar + ", _retirar="
-				+ _retirar + ", _consultarSaldo=" + _consultarSaldo + ", _usuario=" + _usuario + "]";
+
+
+	public double get_interesremunerado() {
+		return _interesremunerado;
 	}
 
+
+
+	public void set_interesremunerado(double _interesremunerado) {
+		this._interesremunerado = _interesremunerado;
+	}
+
+
+
+	public Depositar get_depositar() {
+		return _depositar;
+	}
+
+
+
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
+	}
+
+
+
+	public Retirar get_retirar() {
+		return _retirar;
+	}
+
+
+
+	public void set_retirar(Retirar _retirar) {
+		this._retirar = _retirar;
+	}
+
+
+
+	public ConsultarSaldo get_consultarSaldo() {
+		return _consultarSaldo;
+	}
+
+
+
+	public void set_consultarSaldo(ConsultarSaldo _consultarSaldo) {
+		this._consultarSaldo = _consultarSaldo;
+	}
+
+
+
+	public NumeroCuenta get_numeroCuenta() {
+		return _numeroCuenta;
+	}
+
+
+
+	public void set_numeroCuenta(NumeroCuenta _numeroCuenta) {
+		this._numeroCuenta = _numeroCuenta;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "CuentaCheques [_usuario=" + _usuario + ", _interesremunerado=" + _interesremunerado + ", _depositar="
+				+ _depositar + ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo + ", _numeroCuenta="
+				+ _numeroCuenta + "]";
+	}
 	
 }

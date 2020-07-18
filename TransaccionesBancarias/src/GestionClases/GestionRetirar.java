@@ -3,7 +3,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.Retirar;
-import clases.Usuario;
 
 public class GestionRetirar {
 	private LinkedList<Retirar> lstRetirar=new LinkedList<>();

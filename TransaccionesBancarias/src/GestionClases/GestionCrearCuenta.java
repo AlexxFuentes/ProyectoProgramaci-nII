@@ -44,28 +44,36 @@ public class GestionCrearCuenta {
 		CrearCuenta numerocuentaBuscada = null;
 
 		for(int i = 0; i < listaCrearCuenta.size(); i++) {
-			if( listaCrearCuenta.get(i).get_numerocuenta().equals(numerocuenta)) {
+			if( listaCrearCuenta.get(i).get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta().equals(numerocuenta) ||
+				listaCrearCuenta.get(i).get_usuario().get_tipocuenta().get_cuentacheques().get_numeroCuenta().equals(numerocuenta) ||
+				listaCrearCuenta.get(i).get_usuario().get_tipocuenta().get_cuentacorrientepersonal().get_numeroCuenta().equals(numerocuenta) ||
+				listaCrearCuenta.get(i).get_usuario().get_tipocuenta().get_cuentanomina().get_numeroCuenta().equals(numerocuenta)) {
+				
 				numerocuentaBuscada = listaCrearCuenta.get(i);
 			}
 		}
 		return numerocuentaBuscada;
 	}
+	
 	/**
 	 * MÉTODO QUE CREA NUEVA CUENTA
 	 * @param crearcuenta
 	 * @return true - SI SE CREA LA CUENTA, CASO CONTRARIO return false
 	 */
-	/*
-	public boolean AgregarUsuario(CrearCuenta crearcuenta) {
+	
+	public boolean AgregarNuevaCuenta(CrearCuenta crearcuenta) {
 		
-		if(BuscarNumeroCuenta(crearcuenta.get_numerocuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarNumeroCuenta(crearcuenta.get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta()) == null || 
+				              crearcuenta.get_usuario().get_tipocuenta().get_cuentacheques().get_numeroCuenta() == null ||
+				              crearcuenta.get_usuario().get_tipocuenta().get_cuentacorrientepersonal().get_numeroCuenta() == null ||
+				              crearcuenta.get_usuario().get_tipocuenta().get_cuentanomina().get_numeroCuenta() == null) {//Si el número de cuenta no esta agregado, se agrega
 			listaCrearCuenta.add(crearcuenta);
 			return true;
 		}else {
 			return false;
 		}
 	}
-	*/
+	
 	
 	/**
 	 * MÉTODO QUE ELIMINA USUARIO CREADO 
@@ -94,9 +102,13 @@ public class GestionCrearCuenta {
 		if(posicion<0 || posicion>listaCrearCuenta.size()) {
 			return false;
 		}else {
-			CrearCuenta UsuarioEncontrado = BuscarNumeroCuenta(usuarioModificado.get_numerocuenta());
-	
-			if(UsuarioEncontrado != null) {
+			CrearCuenta UsuarioEncontrado = BuscarNumeroCuenta(usuarioModificado.get_usuario().get_tipocuenta().get_cuentaahorro().get_numeroCuenta());
+			CrearCuenta UsuarioEncontrado1 = BuscarNumeroCuenta(usuarioModificado.get_usuario().get_tipocuenta().get_cuentacheques().get_numeroCuenta());
+			CrearCuenta UsuarioEncontrado2 = BuscarNumeroCuenta(usuarioModificado.get_usuario().get_tipocuenta().get_cuentacorrientepersonal().get_numeroCuenta());
+			CrearCuenta UsuarioEncontrado3 = BuscarNumeroCuenta(usuarioModificado.get_usuario().get_tipocuenta().get_cuentanomina().get_numeroCuenta());
+			
+			
+			if(UsuarioEncontrado != null || UsuarioEncontrado1 != null || UsuarioEncontrado2 != null || UsuarioEncontrado3 != null) {
 				listaCrearCuenta.set(posicion, usuarioModificado);
 				return true;
 			}else {
