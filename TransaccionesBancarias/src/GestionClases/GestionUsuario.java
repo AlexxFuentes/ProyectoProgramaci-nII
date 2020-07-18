@@ -32,11 +32,9 @@ public class GestionUsuario {
 	 */
 	public Usuario BuscarUsuario(NumeroCuenta numCuenta) {
 		Usuario usuarioBuscado = null;
-		
 		for(int i = 0; i < listaUsuario.size(); i++) {
-			if( listaUsuario.get(i).get_numerocuenta().equals(numCuenta) ) {
+			if( listaUsuario.get(i).get_crearCuenta().get_numerocuenta().equals(numCuenta)) {
 				usuarioBuscado = listaUsuario.get(i);
-				
 			}
 		}
 		return usuarioBuscado;
@@ -48,11 +46,8 @@ public class GestionUsuario {
 	 * @return true - SI SE AGREGO CORRECTAMENTE AL USUARIO, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarUsuario(Usuario usuario) {
-		
-		if(BuscarUsuario(usuario.get_numerocuenta()) == null) {//Si el usuario no esta agregado
-			
+		if(BuscarUsuario(usuario.get_crearCuenta().get_numerocuenta()) == null) {//Si el usuario no esta agregado
 			listaUsuario.add(usuario);
-			
 			return true;
 		}else {
 			return false;
@@ -65,13 +60,10 @@ public class GestionUsuario {
 	 * @return false - SI NO SE ENCONTRO EL USUARIO, CASO CONTRARIO return true.
 	 */
 	public boolean EliminarUsuario(NumeroCuenta numCuenta) {
-		Usuario UsuarioEncontrado = null;
-		UsuarioEncontrado = BuscarUsuario(numCuenta);
-		
-		if(UsuarioEncontrado == null) {
+		if(BuscarUsuario(numCuenta) == null) {//USUARIO NO ENCONTRADO
 			return false;
 		}else {
-			listaUsuario.remove(BuscarUsuario(numCuenta));
+			listaUsuario.remove(BuscarUsuario(numCuenta));//ELIMINA USUARIO ENCONTRADO
 			return true;
 		}
 	}
@@ -87,9 +79,8 @@ public class GestionUsuario {
 		if(posicion<0 || posicion>listaUsuario.size()) {
 			return false;
 		}else {
-			Usuario UsuarioEncontrado = BuscarUsuario(usuarioModificado.get_numerocuenta());
-	
-			if(UsuarioEncontrado != null) {
+			
+			if(BuscarUsuario(usuarioModificado.get_crearCuenta().get_numerocuenta()) != null) {
 				listaUsuario.set(posicion, usuarioModificado);
 				return true;
 			}else {

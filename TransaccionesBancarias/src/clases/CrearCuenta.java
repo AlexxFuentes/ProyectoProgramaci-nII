@@ -14,48 +14,39 @@ public class CrearCuenta {
 	
 	//ATRIBUTOS
 	private Usuario _usuario;
-	private double _montoinicial;
+	//private double _montoinicial;
 	private TipoCuenta _tipocuenta;
 	private Referencia _referencia;
 	private String _nombreUsuario;
-	private String __nombreUsuarioConfir;
+	private String _nombreUsuarioConfir;
 	private String _contrasena;
 	private String _Confirmarcontrasena;
+	private NumeroCuenta _numerocuenta;
 	
 	//CONSTRUCTOR POR DEFECTO
 	public CrearCuenta() {
 		super();
 	}
 
-	//CONSTRUCTOR DE LA CLASE
-	public CrearCuenta(Usuario _usuario, double _montoinicial, TipoCuenta _tipocuenta, Referencia _referencia,
-			String _nombreUsuario, String __nombreUsuarioConfir, String _contrasena, String _Confirmarcontrasena) {
+	public CrearCuenta(Usuario _usuario, TipoCuenta _tipocuenta, Referencia _referencia, String _nombreUsuario,
+			String _nombreUsuarioConfir, String _contrasena, String _Confirmarcontrasena, NumeroCuenta _numerocuenta) {
 		super();
 		this._usuario = _usuario;
-		this._montoinicial = _montoinicial;
 		this._tipocuenta = _tipocuenta;
 		this._referencia = _referencia;
 		this._nombreUsuario = _nombreUsuario;
-		this.__nombreUsuarioConfir = __nombreUsuarioConfir;
+		this._nombreUsuarioConfir = _nombreUsuarioConfir;
 		this._contrasena = _contrasena;
 		this._Confirmarcontrasena = _Confirmarcontrasena;
+		this._numerocuenta = _numerocuenta;
 	}
 
-	//SETTER AND GETTER
 	public Usuario get_usuario() {
 		return _usuario;
 	}
 
 	public void set_usuario(Usuario _usuario) {
 		this._usuario = _usuario;
-	}
-
-	public double get_montoinicial() {
-		return _montoinicial;
-	}
-
-	public void set_montoinicial(double _montoinicial) {
-		this._montoinicial = _montoinicial;
 	}
 
 	public TipoCuenta get_tipocuenta() {
@@ -82,12 +73,12 @@ public class CrearCuenta {
 		this._nombreUsuario = _nombreUsuario;
 	}
 
-	public String get__nombreUsuarioConfir() {
-		return __nombreUsuarioConfir;
+	public String get_nombreUsuarioConfir() {
+		return _nombreUsuarioConfir;
 	}
 
-	public void set__nombreUsuarioConfir(String __nombreUsuarioConfir) {
-		this.__nombreUsuarioConfir = __nombreUsuarioConfir;
+	public void set_nombreUsuarioConfir(String _nombreUsuarioConfir) {
+		this._nombreUsuarioConfir = _nombreUsuarioConfir;
 	}
 
 	public String get_contrasena() {
@@ -106,13 +97,21 @@ public class CrearCuenta {
 		this._Confirmarcontrasena = _Confirmarcontrasena;
 	}
 
-	//SOBREESCRITURA DE TOSTRING
+	public NumeroCuenta get_numerocuenta() {
+		return _numerocuenta;
+	}
+
+	public void set_numerocuenta(NumeroCuenta _numerocuenta) {
+		this._numerocuenta = _numerocuenta;
+	}
+
 	@Override
 	public String toString() {
-		return "CrearCuenta [_usuario=" + _usuario + ", _montoinicial=" + _montoinicial + ", _tipocuenta=" + _tipocuenta
-				+ ", _referencia=" + _referencia + ", _nombreUsuario=" + _nombreUsuario + ", __nombreUsuarioConfir="
-				+ __nombreUsuarioConfir + ", _contrasena=" + _contrasena + ", _Confirmarcontrasena="
-				+ _Confirmarcontrasena + "]";
+		return "CrearCuenta [_usuario=" + _usuario + ", _tipocuenta=" + _tipocuenta + ", _referencia=" + _referencia
+				+ ", _nombreUsuario=" + _nombreUsuario + ", _nombreUsuarioConfir=" + _nombreUsuarioConfir
+				+ ", _contrasena=" + _contrasena + ", _Confirmarcontrasena=" + _Confirmarcontrasena + ", _numerocuenta="
+				+ _numerocuenta + "]";
 	}
+
 	
 }

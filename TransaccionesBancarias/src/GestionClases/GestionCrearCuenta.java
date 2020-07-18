@@ -16,7 +16,6 @@ public class GestionCrearCuenta {
 	//ATRIBUTO (COLECCIÓN)
 	LinkedList<CrearCuenta> listaCrearCuenta = new LinkedList<>();
 	
-	
 	/**
 	 * MÉTODO QUE OBTIENE CREAR CUENTA DE LA COLECCIÓN
 	 * @return listaCrearCuenta
@@ -30,15 +29,15 @@ public class GestionCrearCuenta {
 	 * @param numCuenta
 	 * @return null - SI NO EXISTE LA CUENTA, CASO CONTRARIO return OBJETOCREARCUENTA
 	 */
-	public CrearCuenta BuscarCuenta(NumeroCuenta numCuenta) {//busca Usuario por número de cuenta
-		CrearCuenta cuentaBuscar = null;
-		
+	public CrearCuenta BuscarNumeroCuenta(NumeroCuenta numerocuenta) {//busca Usuario por número de cuenta
+		CrearCuenta numerocuentaBuscada = null;
+
 		for(int i = 0; i < listaCrearCuenta.size(); i++) {
-			if( listaCrearCuenta.get(i).get_usuario().get_numerocuenta().equals(numCuenta) ) {
-				cuentaBuscar = listaCrearCuenta.get(i);
+			if( listaCrearCuenta.get(i).get_numerocuenta().equals(numerocuenta)) {
+				numerocuentaBuscada = listaCrearCuenta.get(i);
 			}
 		}
-		return cuentaBuscar;
+		return numerocuentaBuscada;
 	}
 	/**
 	 * MÉTODO QUE CREA NUEVA CUENTA
@@ -47,7 +46,7 @@ public class GestionCrearCuenta {
 	 */
 	public boolean AgregarUsuario(CrearCuenta crearcuenta) {
 		
-		if(BuscarCuenta(crearcuenta.get_usuario().get_numerocuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarNumeroCuenta(crearcuenta.get_numerocuenta()) == null) {//Si el usuario no esta agregado
 			listaCrearCuenta.add(crearcuenta);
 			return true;
 		}else {
@@ -62,12 +61,12 @@ public class GestionCrearCuenta {
 	 */
 	public boolean EliminarUsuarioCreado(NumeroCuenta numCuenta) {
 		CrearCuenta UsuarioEncontrado = null;
-		UsuarioEncontrado = BuscarCuenta(numCuenta);
+		UsuarioEncontrado = BuscarNumeroCuenta(numCuenta);
 		
 		if(UsuarioEncontrado == null) {
 			return false;
 		}else {
-			listaCrearCuenta.remove(BuscarCuenta(numCuenta));
+			listaCrearCuenta.remove(BuscarNumeroCuenta(numCuenta));
 			return true;
 		}
 	}
@@ -83,7 +82,7 @@ public class GestionCrearCuenta {
 		if(posicion<0 || posicion>listaCrearCuenta.size()) {
 			return false;
 		}else {
-			CrearCuenta UsuarioEncontrado = BuscarCuenta(usuarioModificado.get_usuario().get_numerocuenta());
+			CrearCuenta UsuarioEncontrado = BuscarNumeroCuenta(usuarioModificado.get_numerocuenta());
 	
 			if(UsuarioEncontrado != null) {
 				listaCrearCuenta.set(posicion, usuarioModificado);

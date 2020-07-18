@@ -29,7 +29,7 @@ public class GestionTipoCuenta {
 	 * @return null, SI NO SE AGREGA TIPO DE CUENTA, CASO CONTRARIO return OBJETO TIPO DE CUENTA
 	 */
 	public TipoCuenta BucarTipoCuenta(TipoCuenta tipocuenta) {
-		tipocuenta = null;
+		 tipocuenta = null;
 		
 		for(int i = 0; i < listaTipoCuenta.size(); i++) {
 			if( listaTipoCuenta.get(i).equals(tipocuenta)) {
@@ -66,9 +66,8 @@ public class GestionTipoCuenta {
 		if(posicion<0 || posicion>listaTipoCuenta.size()) {
 			return false;
 		}else {
-			TipoCuenta TipoCuentaEncontrada = BucarTipoCuenta(tipoCuentaModificar);
 	
-			if(TipoCuentaEncontrada != null) {
+			if(BucarTipoCuenta(tipoCuentaModificar) != null) {
 				listaTipoCuenta.set(posicion, tipoCuentaModificar);
 				return true;
 			}else {

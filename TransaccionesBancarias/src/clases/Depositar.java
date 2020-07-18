@@ -10,25 +10,15 @@ package clases;
  * */
 
 public class Depositar {
-        private Usuario _usuario;
         private double _monto;
         
 		public Depositar() {
 			super();
 		}
 
-		public Depositar(Usuario usuario, double monto) {
+		public Depositar(double _monto) {
 			super();
-			this._usuario = usuario;
-			this._monto = monto;
-		}
-
-		public Usuario get_usuario() {
-			return _usuario;
-		}
-
-		public void set_usuario(Usuario _usuario) {
-			this._usuario = _usuario;
+			this._monto = _monto;
 		}
 
 		public double get_monto() {
@@ -39,12 +29,10 @@ public class Depositar {
 			this._monto = _monto;
 		}
 
-	
-
 		@Override
 		public String toString() {
-			return "Depositar [_usuario=" + _usuario + ", _monto=" + _monto +"]";
+			return "Depositar [_monto=" + _monto + "]";
 		}
-        
-        
+
+		
 }
