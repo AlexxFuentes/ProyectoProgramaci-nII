@@ -98,6 +98,7 @@ public class Usuario {
 				+ ", _telefono=" + _telefono + ", _rtn=" + _rtn + ", _correoelectronico=" + _correoelectronico
 				+ ", _crearCuenta=" + _crearCuenta + "]";
 	}
-
+	
+	
 	
 }

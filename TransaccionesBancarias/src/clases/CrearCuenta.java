@@ -14,7 +14,6 @@ public class CrearCuenta {
 	
 	//ATRIBUTOS
 	private Usuario _usuario;
-	//private double _montoinicial;
 	private TipoCuenta _tipocuenta;
 	private Referencia _referencia;
 	private String _nombreUsuario;
@@ -22,6 +21,7 @@ public class CrearCuenta {
 	private String _contrasena;
 	private String _Confirmarcontrasena;
 	private NumeroCuenta _numerocuenta;
+	//private double _montoinicial;
 	
 	//CONSTRUCTOR POR DEFECTO
 	public CrearCuenta() {
