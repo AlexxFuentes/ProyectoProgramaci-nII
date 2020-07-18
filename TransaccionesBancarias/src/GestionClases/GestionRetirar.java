@@ -21,35 +21,50 @@ public class GestionRetirar {
 	}
 	
 	/**
-	 * Método utilizado para agregar retiro
-	 * @param retiro de la cuenta
+	 * METODO UTILIZADO PARA BUSCAR RETIRO
+	 * @param retModificado
+	 * @return usuarioEncontrado
+	 */
+	public Retirar BuscarRetiro(double monto) {
+		Retirar MontoBuscado = null;
+		
+		for(int i=0;i<lstRetirar.size();i++) {
+			if(lstRetirar.get(i).get_monto() == monto) {
+				MontoBuscado = lstRetirar.get(i);
+				break;
+			}
+		}
+		return MontoBuscado;
+	}
+	
+	/**
+	 * Método utilizado para agregar deposito
+	 * @param depoito de la cuenta
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
-	
-	public boolean Agregar(Retirar retiro) {
-		if(BuscarRetiro(retiro.get_usuario())==null) {
+	public boolean AgregarRetiro(Retirar retiro) {
+		if(BuscarRetiro(retiro.get_monto()) == null) {
+			return false;
+		}else {
 			lstRetirar.add(retiro);
 			return true;
-		}else {
-			return false;
 		}
 		
 	}
 	
 	/**
-	 * Método utilizado para modificar el retiro
-	 * @param retModificado
+	 * Método utilizado para modificar el deposito
+	 * @param retiroModificado
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public boolean Modificar(Retirar retModificado, int posicion ) {
+	public boolean ModificarRetiro(Retirar retiroModificado, int posicion ) {
 		if(posicion<0 || posicion>lstRetirar.size()) {
 			return false;
 		}else {
-			Retirar posicionEncontrada=BuscarRetiro(retModificado.get_usuario());
 			
-			if(posicionEncontrada==null) {
-				lstRetirar.set(posicion, retModificado);
+			if(BuscarRetiro(retiroModificado.get_monto()) != null) {
+				lstRetirar.set(posicion, retiroModificado);
 				return true;
 			}else {
 				return false;
@@ -60,45 +75,37 @@ public class GestionRetirar {
 	}
 		
 	/**
-	 * Método utilizado para eliminar el retiro
-	 * @param numero de cuenta del usuario
-	 * @return true - si todo se realizó correctamente , caso contrario retorna false
+	 * METODO UTILIZADO PARA ELIMINAR RETIRO
+	 * @param MONTO 
+	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public boolean Eliminar(Usuario usuario) {
-		if(usuario==null) {
+	public boolean EliminarMonto(Retirar retiroModificado) {
+		if(BuscarRetiro(retiroModificado.get_monto()) == null) {
 			return false;
 		}else {
-			lstRetirar.removeLastOccurrence(usuario);
+			lstRetirar.remove(BuscarRetiro(retiroModificado.get_monto()));
 			return true;
 		}
 	}
 	
 	
 	/**
-	 * Método utilizado para buscar el deposito
-	 * @param usuario
-	 * @return usuarioEncontrado
-	 */
-	
-	public Retirar BuscarRetiro(Usuario usuario) {
-		Retirar usuarioEncontrado = null;
-		//int posicion=-1;
-		for(int i=0;i<lstRetirar.size();i++) {
-			if(lstRetirar.get(i).get_usuario().equals(usuario)) {
-			    usuarioEncontrado=lstRetirar.get(i);
-				break;
-			}
-		}
-		return usuarioEncontrado;
-	}
-	
-	/**
-	 * Metodo para imprimir todo
+	 * METODO PARA IMPRIMIR TODO
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<lstRetirar.size();i++) {
 			System.out.println(lstRetirar.get(i));
 		}
 	}
+	
+	/**
+	 * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCIÓN RETIRAR
+	 * @param posicion
+	 * @return POSICIÓN O INDICE DE LA COLECIÓN
+	 */
+	public Retirar getPosicion(int posicion) {
+		return lstRetirar.get(posicion);
+	}
+	
 }

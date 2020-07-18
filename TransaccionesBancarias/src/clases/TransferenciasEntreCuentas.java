@@ -10,7 +10,7 @@ package clases;
  * */
 
 public class TransferenciasEntreCuentas {
-	private TipoCuenta _tipoCuenta;
+	private double _monto;
     private Usuario _usuario;
     private String _cuentaAtransferir;
     private Depositar _depositar;
