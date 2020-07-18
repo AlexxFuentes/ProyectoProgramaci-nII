@@ -93,7 +93,7 @@ public class GestionDepositar {
 	
 	
 	/**
-	 * Metodo para imprimir todo
+	 * METODO PARA IMPRIMIR TODO
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<lstDepositar.size();i++) {
