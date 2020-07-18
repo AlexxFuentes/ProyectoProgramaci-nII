@@ -29,7 +29,7 @@ public class GestionConsultarSaldo {
 		ConsultarSaldo usuarioEncontrado = null;
 		//int posicion=-1;
 		for(int i=0;i<lstConsultarSaldo.size();i++) {
-			if(lstConsultarSaldo.get(i).get_montoConsultar() == montoConsultado) {
+			if(lstConsultarSaldo.get(i).get_saldoFinal() == montoConsultado) {
 			    usuarioEncontrado = lstConsultarSaldo.get(i);
 				break;
 			}
@@ -44,7 +44,7 @@ public class GestionConsultarSaldo {
 	 */
 	
 	public boolean AgregarColsulaSaldo(ConsultarSaldo consultarSaldo) {
-		if(BuscarConsultarSaldo(consultarSaldo.get_montoConsultar())==null) {
+		if(BuscarConsultarSaldo(consultarSaldo.get_saldoFinal())==null) {
 			lstConsultarSaldo.add(consultarSaldo);
 			return true;
 		}else {
@@ -63,7 +63,7 @@ public class GestionConsultarSaldo {
 		if(posicion<0 || posicion>lstConsultarSaldo.size()) {
 			return false;
 		}else {
-			ConsultarSaldo posicionEncontrada = BuscarConsultarSaldo(consultaModificada.get_montoConsultar());
+			ConsultarSaldo posicionEncontrada = BuscarConsultarSaldo(consultaModificada.get_saldoFinal());
 			
 			if(posicionEncontrada==null) {
 				lstConsultarSaldo.set(posicion, consultaModificada);
@@ -82,11 +82,11 @@ public class GestionConsultarSaldo {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public boolean EliminarConsultaSaldo(ConsultarSaldo ConsultaEliminadnar) {
-		if(BuscarConsultarSaldo(ConsultaEliminadnar.get_montoConsultar()) == null) {
+	public boolean EliminarConsultaSaldo(ConsultarSaldo ConsultaEliminada) {
+		if(BuscarConsultarSaldo(ConsultaEliminada.get_saldoFinal()) == null) {
 			return false;
 		}else {
-			lstConsultarSaldo.remove(ConsultaEliminadnar);
+			lstConsultarSaldo.remove(ConsultaEliminada);
 			return true;
 		}
 	}
