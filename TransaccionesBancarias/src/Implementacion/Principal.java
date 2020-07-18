@@ -26,6 +26,7 @@ public class Principal {
 		GestionNumeroCuenta gestionnumerocuenta = new GestionNumeroCuenta();
 		GestionTipoCuenta gestiontipocuenta = new GestionTipoCuenta();
 		GestionUsuario gestionusuario = new GestionUsuario();
+		GestionDepositar gestiondepositar = new GestionDepositar();
 		
 		while(centinalaPrincipal) {
 			
