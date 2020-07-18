@@ -1,7 +1,6 @@
 package GestionClases;
 
 import java.util.LinkedList;
-
 import clases.CuentaCheques;
 import clases.NumeroCuenta;
 
