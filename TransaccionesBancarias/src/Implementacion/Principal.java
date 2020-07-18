@@ -92,12 +92,13 @@ public class Principal {
 					System.out.println("4. Cuenta nomina.");
 					opcionTipoCuenta = scnum.nextByte();
 					
-					TipoCuenta tipocuenta1 = null;
+					//TipoCuenta tipocuenta1 = null;
 					
 					switch(opcionTipoCuenta) {
 					case 1: //CUENTA DE AHORRO
-						CuentaAhorro cuentaAhorro1 = new CuentaAhorro();
-						GestionDepositar deposito1 = new GestionDepositar();
+						//CuentaAhorro cuentaAhorro1 = new CuentaAhorro();
+						//GestionDepositar deposito1 = new GestionDepositar();
+						
 						
 						System.out.println("Apertura de Cuenta de Ahorro");
 						System.out.println("Monto inicial: ");
@@ -129,8 +130,8 @@ public class Principal {
 					}
 				}
 				
-				CrearCuenta crearcuenta1 = new CrearCuenta();
-				Usuario usuario1 = new Usuario(nombres, apellidos,direccion, telefono, rtn ,correo, crearcuenta1);
+				//CrearCuenta crearcuenta1 = new CrearCuenta();
+				//Usuario usuario1 = new Usuario(nombres, apellidos,direccion, telefono, rtn ,correo, crearcuenta1);
 				
 				gestionusuario.imprimirTodos();
 				

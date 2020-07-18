@@ -83,7 +83,7 @@ public class GestionUsuario {
 	 * MÉTODO PARA MODIFICAR USUARIO EN LA COLECCIÓN
 	 * @param usuarioModificado
 	 * @param posicion
-	 * @return false - SI NO LO RECUERDA EN LA COLECCION, CASO CONTRARIO return true (USUARIO MODIFICADO)
+	 * @return false - SI NO LO ENCUENTRA EN LA COLECCION, CASO CONTRARIO return true (USUARIO MODIFICADO)
 	 */
 	public boolean ModificarUsuario(Usuario usuarioModificado, int posicion) {
 		
