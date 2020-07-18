@@ -10,7 +10,6 @@ import clases.NumeroCuenta;
  *
  *FECHA 17/07/2020
  */
-
 public class GestionCuentaAhorro {
 	
 	//ATRIBUTOS (COLECCIÓN)

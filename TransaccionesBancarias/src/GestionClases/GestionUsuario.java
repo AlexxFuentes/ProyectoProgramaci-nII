@@ -3,7 +3,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.Usuario;
-import clases.NumeroCuenta;
 
 /**
  * CLASE GESTIÓN DE USUARIO: DONDE SE ADMINISTRAN LOS DATOS DEL USUARIO
@@ -41,10 +40,10 @@ public class GestionUsuario {
 	 * @param numCuenta
 	 * @return null - SI NO ENCUENTRA AL USUARIO, CASO CONTRARIO RETORNA OBJETOUSUARIO 
 	 */
-	public Usuario BuscarUsuario(NumeroCuenta numCuenta) {
+	public Usuario BuscarUsuario(String RTN) {
 		Usuario usuarioBuscado = null;
 		for(int i = 0; i < listaUsuario.size(); i++) {
-			if( listaUsuario.get(i).get_crearCuenta().get_numerocuenta().equals(numCuenta)) {
+			if( listaUsuario.get(i).get_rtn().equals(RTN)) {
 				usuarioBuscado = listaUsuario.get(i);
 			}
 		}
@@ -57,7 +56,7 @@ public class GestionUsuario {
 	 * @return true - SI SE AGREGO CORRECTAMENTE AL USUARIO, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarUsuario(Usuario usuario) {
-		if(BuscarUsuario(usuario.get_crearCuenta().get_numerocuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarUsuario(usuario.get_rtn()) == null) {//Si el usuario no esta agregado
 			listaUsuario.add(usuario);
 			return true;
 		}else {
@@ -70,11 +69,11 @@ public class GestionUsuario {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO EL USUARIO, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarUsuario(NumeroCuenta numCuenta) {
-		if(BuscarUsuario(numCuenta) == null) {//USUARIO NO ENCONTRADO
+	public boolean EliminarUsuario(Usuario usuario) {
+		if(BuscarUsuario(usuario.get_rtn()) == null) {//USUARIO NO ENCONTRADO
 			return false;
 		}else {
-			listaUsuario.remove(BuscarUsuario(numCuenta));//ELIMINA USUARIO ENCONTRADO
+			listaUsuario.remove(BuscarUsuario(usuario.get_rtn()));//ELIMINA USUARIO ENCONTRADO
 			return true;
 		}
 	}
@@ -91,7 +90,7 @@ public class GestionUsuario {
 			return false;
 		}else {
 			
-			if(BuscarUsuario(usuarioModificado.get_crearCuenta().get_numerocuenta()) != null) {
+			if(BuscarUsuario(usuarioModificado.get_rtn()) != null) {
 				listaUsuario.set(posicion, usuarioModificado);
 				return true;
 			}else {
