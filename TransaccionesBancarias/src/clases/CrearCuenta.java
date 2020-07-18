@@ -21,6 +21,7 @@ public class CrearCuenta {
 	private String _contrasena;
 	private String _Confirmarcontrasena;
 	private NumeroCuenta _numerocuenta;
+	private Depositar _depositar;
 	//private double _montoinicial;
 	
 	//CONSTRUCTOR POR DEFECTO
@@ -29,7 +30,8 @@ public class CrearCuenta {
 	}
 
 	public CrearCuenta(Usuario _usuario, TipoCuenta _tipocuenta, Referencia _referencia, String _nombreUsuario,
-			String _nombreUsuarioConfir, String _contrasena, String _Confirmarcontrasena, NumeroCuenta _numerocuenta) {
+			String _nombreUsuarioConfir, String _contrasena, String _Confirmarcontrasena, NumeroCuenta _numerocuenta,
+			Depositar _depositar) {
 		super();
 		this._usuario = _usuario;
 		this._tipocuenta = _tipocuenta;
@@ -39,6 +41,7 @@ public class CrearCuenta {
 		this._contrasena = _contrasena;
 		this._Confirmarcontrasena = _Confirmarcontrasena;
 		this._numerocuenta = _numerocuenta;
+		this._depositar = _depositar;
 	}
 
 	public Usuario get_usuario() {
@@ -105,13 +108,22 @@ public class CrearCuenta {
 		this._numerocuenta = _numerocuenta;
 	}
 
+	public Depositar get_depositar() {
+		return _depositar;
+	}
+
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
+	}
+
 	@Override
 	public String toString() {
 		return "CrearCuenta [_usuario=" + _usuario + ", _tipocuenta=" + _tipocuenta + ", _referencia=" + _referencia
 				+ ", _nombreUsuario=" + _nombreUsuario + ", _nombreUsuarioConfir=" + _nombreUsuarioConfir
 				+ ", _contrasena=" + _contrasena + ", _Confirmarcontrasena=" + _Confirmarcontrasena + ", _numerocuenta="
-				+ _numerocuenta + "]";
+				+ _numerocuenta + ", _depositar=" + _depositar + "]";
 	}
 
+	
 	
 }

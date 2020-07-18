@@ -16,6 +16,7 @@ public class Usuario {
 	private String _rtn;
 	private String _correoelectronico;
 	private CrearCuenta _crearCuenta;
+	private Depositar _depositar;
 	//private NumeroCuenta _numeroCuenta;
 	//private TipoCuenta _tipocuenta;
 	
@@ -25,7 +26,7 @@ public class Usuario {
 	}
 
 	public Usuario(String _nombre, String _apellido, String _direccion, String _telefono, String _rtn,
-			String _correoelectronico, CrearCuenta _crearCuenta) {
+			String _correoelectronico, CrearCuenta _crearCuenta, Depositar _depositar) {
 		super();
 		this._nombre = _nombre;
 		this._apellido = _apellido;
@@ -34,6 +35,7 @@ public class Usuario {
 		this._rtn = _rtn;
 		this._correoelectronico = _correoelectronico;
 		this._crearCuenta = _crearCuenta;
+		this._depositar = _depositar;
 	}
 
 	public String get_nombre() {
@@ -92,13 +94,21 @@ public class Usuario {
 		this._crearCuenta = _crearCuenta;
 	}
 
+	public Depositar get_depositar() {
+		return _depositar;
+	}
+
+	public void set_depositar(Depositar _depositar) {
+		this._depositar = _depositar;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
 				+ ", _telefono=" + _telefono + ", _rtn=" + _rtn + ", _correoelectronico=" + _correoelectronico
-				+ ", _crearCuenta=" + _crearCuenta + "]";
+				+ ", _crearCuenta=" + _crearCuenta + ", _depositar=" + _depositar + "]";
 	}
-	
+
 	
 	
 }
