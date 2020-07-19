@@ -1,27 +1,30 @@
 package clases;
 
-/*
- * autor: Alex Fuentes
- * Fecha: 12/07/20
- * 
- * clase: Usuario
- * Descripcion: datos del titular de la cuenta.
- * */
+/**
+ * CLASE USUARIO: ADMINISTRA LOS DATOS DEL USUARIO O
+ *                TUROR DE LA CUENTA A CREAR
+ * @author Alex Fuentes
+ *
+ *FECHA: 12/07/2020
+ */
 
 public class Usuario {
-	private String _nombre;
-	private String _apellido;
-	private String _direccion;
-	private String _telefono;
-	private String _rtn;
-	private String _correoelectronico;
-	private TipoCuenta _tipocuenta;
+	
+	//ATRIBUTOS
+	private String _nombre;//1
+	private String _apellido;//2
+	private String _direccion;//3
+	private String _telefono;//4
+	private String _rtn;//5
+	private String _correoelectronico;//6
+	private TipoCuenta _tipocuenta;//7
 	
 	//METODO CONSTRUCTOR POR DEFECTO
 	public Usuario() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public Usuario(String _nombre, String _apellido, String _direccion, String _telefono, String _rtn,
 			String _correoelectronico, TipoCuenta _tipocuenta) {
 		super();
@@ -34,6 +37,7 @@ public class Usuario {
 		this._tipocuenta = _tipocuenta;
 	}
 
+	//GETTER AND SETTER
 	public String get_nombre() {
 		return _nombre;
 	}
@@ -90,6 +94,7 @@ public class Usuario {
 		this._tipocuenta = _tipocuenta;
 	}
 
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
 		return "Usuario [_nombre=" + _nombre + ", _apellido=" + _apellido + ", _direccion=" + _direccion
@@ -97,6 +102,4 @@ public class Usuario {
 				+ ", _tipocuenta=" + _tipocuenta + "]";
 	}
 
-
-	
 }

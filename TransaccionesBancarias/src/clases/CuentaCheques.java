@@ -1,124 +1,61 @@
 package clases;
 
-/*
- * autor: Alex Fuentes
- * Fecha: 12/07/20
- * 
- * clase: CuentaCheques
- * Descripcion: toma los datos de operaciones que se 
- *              pueden realiar en cuenta de cheques
- * 
- * */
+/**
+ * CLASE DE CUENTA DE CHEQUES:  PARA APERTURAR CUENTA DE CHEQUES
+ * @author alexm
+ *
+ */
 
 public class CuentaCheques {
 	
-	private TipoCuenta _tipoCuenta;
+	//ATRIBUTOS
+	private String _numeroCuenta;
+	private double _montoInicial;
 	private double _interesremunerado;
-	private Depositar _depositar;
-	private Retirar _retirar;
-	private ConsultarSaldo _consultarSaldo;
-	private NumeroCuenta _numeroCuenta;
 	
-	
-
+	//CONSTRUCTOR POR DEFECTO
 	public CuentaCheques() {
 		super();
 	}
 
-
-
-	public CuentaCheques(TipoCuenta _tipoCuenta, double _interesremunerado, Depositar _depositar, Retirar _retirar,
-			ConsultarSaldo _consultarSaldo, NumeroCuenta _numeroCuenta) {
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
+	public CuentaCheques(String _numeroCuenta, double _montoInicial, double _interesremunerado) {
 		super();
-		this._tipoCuenta = _tipoCuenta;
+		this._numeroCuenta = _numeroCuenta;
+		this._montoInicial = _montoInicial;
 		this._interesremunerado = _interesremunerado;
-		this._depositar = _depositar;
-		this._retirar = _retirar;
-		this._consultarSaldo = _consultarSaldo;
+	}
+
+	//SETTER AND GETTER
+	public String get_numeroCuenta() {
+		return _numeroCuenta;
+	}
+
+	public void set_numeroCuenta(String _numeroCuenta) {
 		this._numeroCuenta = _numeroCuenta;
 	}
 
-
-
-	public TipoCuenta get_tipoCuenta() {
-		return _tipoCuenta;
+	public double get_montoInicial() {
+		return _montoInicial;
 	}
 
-
-
-	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
-		this._tipoCuenta = _tipoCuenta;
+	public void set_montoInicial(double _montoInicial) {
+		this._montoInicial = _montoInicial;
 	}
-
-
 
 	public double get_interesremunerado() {
 		return _interesremunerado;
 	}
 
-
-
 	public void set_interesremunerado(double _interesremunerado) {
 		this._interesremunerado = _interesremunerado;
 	}
 
-
-
-	public Depositar get_depositar() {
-		return _depositar;
-	}
-
-
-
-	public void set_depositar(Depositar _depositar) {
-		this._depositar = _depositar;
-	}
-
-
-
-	public Retirar get_retirar() {
-		return _retirar;
-	}
-
-
-
-	public void set_retirar(Retirar _retirar) {
-		this._retirar = _retirar;
-	}
-
-
-
-	public ConsultarSaldo get_consultarSaldo() {
-		return _consultarSaldo;
-	}
-
-
-
-	public void set_consultarSaldo(ConsultarSaldo _consultarSaldo) {
-		this._consultarSaldo = _consultarSaldo;
-	}
-
-
-
-	public NumeroCuenta get_numeroCuenta() {
-		return _numeroCuenta;
-	}
-
-
-
-	public void set_numeroCuenta(NumeroCuenta _numeroCuenta) {
-		this._numeroCuenta = _numeroCuenta;
-	}
-
-
-
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
-		return "CuentaCheques [_tipoCuenta=" + _tipoCuenta + ", _interesremunerado=" + _interesremunerado
-				+ ", _depositar=" + _depositar + ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo
-				+ ", _numeroCuenta=" + _numeroCuenta + "]";
+		return "CuentaCheques [_numeroCuenta=" + _numeroCuenta + ", _montoInicial=" + _montoInicial
+				+ ", _interesremunerado=" + _interesremunerado + "]";
 	}
-	
-	
 	
 }

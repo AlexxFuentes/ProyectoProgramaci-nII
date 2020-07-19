@@ -1,21 +1,23 @@
 package clases;
 
-/*
- * autor: Alex Fuentes
- * Fecha: 12/07/20
+/**
+ * CLASE REFERENCIA: AMINISTRA LOS DATOS DE REFERENCIA QUE 
+ * PROPONE EL USUARIO AL MOMENTO DE CREAR UNA CUENTA DE 
+ * CUALQUIER TIPO
  * 
- * clase: Referencia
- * Descripcion: toma los datos de una persona recomendada para
- *              la creacion de una nueva cuenta.
- * 
- * */
+ * @author Alex Fuentes
+ *
+ *Fecha: 12/07/2020
+ */
 public class Referencia {
-	private String _nombre;
-	private String _apellido;
-	private String _direccion;
-	private String _telefono;
-	private String  _correoElectronico;
-	private String _rtn;
+	
+	//ATRIBUTOS
+	private String _nombre;//1
+	private String _apellido;//2
+	private String _direccion;//3
+	private String _telefono;//4
+	private String  _correoElectronico;//6
+	private String _rtn;//5
 	
 	//CONSTRUCTOR POR DEFECTO
 	public Referencia() {
@@ -34,6 +36,7 @@ public class Referencia {
 		this._rtn = _rtn;
 	}
 
+	//GETTER AND SETTER
 	public String get_nombre() {
 		return _nombre;
 	}

@@ -1,25 +1,28 @@
 package clases;
 
-/*
- * autor: Alex Fuentes
- * Fecha: 12/07/20
+/**
+ * CLASE TIPO CUENTA: ADMINISTRA LOS TIPOS DE CUENTA
+ *                    CREADAS POR EL USUARIO
+ * @author Alex Fuentes
  * 
- * clase: TipoCcuenta
- * Descripcion: Tipo de cuenta que usa el usuario.
- * 
- * */
+ *FECHA: 18/07/2020
+ */
 
 public class TipoCuenta {
+	
+	//ATRIBUTOS
 	private CuentaAhorro _cuentaahorro;
 	private CuentaCorrientePersonal _cuentacorrientepersonal;
 	private CuentaCheques _cuentacheques;
 	private CuentaNomina _cuentanomina;
+	
 	
 	//CONSTRUCTOR POR DEFECTO
 	public TipoCuenta() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public TipoCuenta(CuentaAhorro _cuentaahorro, CuentaCorrientePersonal _cuentacorrientepersonal,
 			CuentaCheques _cuentacheques, CuentaNomina _cuentanomina) {
 		super();
@@ -29,6 +32,7 @@ public class TipoCuenta {
 		this._cuentanomina = _cuentanomina;
 	}
 
+	//SETTER AND GETTER
 	public CuentaAhorro get_cuentaahorro() {
 		return _cuentaahorro;
 	}
@@ -61,11 +65,11 @@ public class TipoCuenta {
 		this._cuentanomina = _cuentanomina;
 	}
 
+	//SOBREESCRITURA DE TO STRING
 	@Override
 	public String toString() {
 		return "TipoCuenta [_cuentaahorro=" + _cuentaahorro + ", _cuentacorrientepersonal=" + _cuentacorrientepersonal
 				+ ", _cuentacheques=" + _cuentacheques + ", _cuentanomina=" + _cuentanomina + "]";
 	}
 
-	
 }

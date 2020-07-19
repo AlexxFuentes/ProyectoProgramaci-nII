@@ -1,109 +1,62 @@
 package clases;
 
-/*
- * autor: Alex Fuentes
- * Fecha: 12/07/20
+/**
+ * CLASE CUENTA DE NOMINA: APERTURA DE CUENTA NOMINA
+ * @author Alex Fuentes
  * 
- * clase: CuentaNomina
- * Descripcion: toma los datos de operaciones que se 
- *              pueden realiar en cuenta de nomina
- * 
- * */
+ *FECHA: 12/07/20
+ */
 
 public class CuentaNomina {
 	
-	private TipoCuenta _tipoCuenta;
-	private String _empresa;
-	private Depositar _depositar;
-	private Retirar _retirar;
-	private ConsultarSaldo _consultarSaldo;
-	private NumeroCuenta _numeroCuenta;
+	//ATRIBUTOS
+	private String _numeroCuenta;
+	private double _montoInicial;
+	private String _empresaDepositante;
 	
-	
+	//CONSTRUCTOR POR DEFECTO
 	public CuentaNomina() {
 		super();
 	}
 
-
-	public CuentaNomina(TipoCuenta _tipoCuenta, String _empresa, Depositar _depositar, Retirar _retirar,
-			ConsultarSaldo _consultarSaldo, NumeroCuenta _numeroCuenta) {
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
+	public CuentaNomina(String _numeroCuenta, double _montoInicial, String _empresaDepositante) {
 		super();
-		this._tipoCuenta = _tipoCuenta;
-		this._empresa = _empresa;
-		this._depositar = _depositar;
-		this._retirar = _retirar;
-		this._consultarSaldo = _consultarSaldo;
 		this._numeroCuenta = _numeroCuenta;
+		this._montoInicial = _montoInicial;
+		this._empresaDepositante = _empresaDepositante;
 	}
 
-
-	public TipoCuenta get_tipoCuenta() {
-		return _tipoCuenta;
-	}
-
-
-	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
-		this._tipoCuenta = _tipoCuenta;
-	}
-
-
-	public String get_empresa() {
-		return _empresa;
-	}
-
-
-	public void set_empresa(String _empresa) {
-		this._empresa = _empresa;
-	}
-
-
-	public Depositar get_depositar() {
-		return _depositar;
-	}
-
-
-	public void set_depositar(Depositar _depositar) {
-		this._depositar = _depositar;
-	}
-
-
-	public Retirar get_retirar() {
-		return _retirar;
-	}
-
-
-	public void set_retirar(Retirar _retirar) {
-		this._retirar = _retirar;
-	}
-
-
-	public ConsultarSaldo get_consultarSaldo() {
-		return _consultarSaldo;
-	}
-
-
-	public void set_consultarSaldo(ConsultarSaldo _consultarSaldo) {
-		this._consultarSaldo = _consultarSaldo;
-	}
-
-
-	public NumeroCuenta get_numeroCuenta() {
+	//SETTERS AND GETTERS
+	public String get_numeroCuenta() {
 		return _numeroCuenta;
 	}
 
-
-	public void set_numeroCuenta(NumeroCuenta _numeroCuenta) {
+	public void set_numeroCuenta(String _numeroCuenta) {
 		this._numeroCuenta = _numeroCuenta;
 	}
 
+	public double get_montoInicial() {
+		return _montoInicial;
+	}
 
+	public void set_montoInicial(double _montoInicial) {
+		this._montoInicial = _montoInicial;
+	}
+
+	public String get_empresaDepositante() {
+		return _empresaDepositante;
+	}
+
+	public void set_empresaDepositante(String _empresaDepositante) {
+		this._empresaDepositante = _empresaDepositante;
+	}
+
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
-		return "CuentaNomina [_tipoCuenta=" + _tipoCuenta + ", _empresa=" + _empresa + ", _depositar=" + _depositar
-				+ ", _retirar=" + _retirar + ", _consultarSaldo=" + _consultarSaldo + ", _numeroCuenta=" + _numeroCuenta
-				+ "]";
+		return "CuentaNomina [_numeroCuenta=" + _numeroCuenta + ", _montoInicial=" + _montoInicial
+				+ ", _empresaDepositante=" + _empresaDepositante + "]";
 	}
-	
-	
-	
+
 }

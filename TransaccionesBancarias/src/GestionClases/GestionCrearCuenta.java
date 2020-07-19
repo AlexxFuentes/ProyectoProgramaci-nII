@@ -3,7 +3,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.CrearCuenta;
-import clases.NumeroCuenta;
 
 /**
  * CLASE QUE CREA UNA NUEVA CUENTA PARA EL USUARIO
@@ -40,7 +39,7 @@ public class GestionCrearCuenta {
 	 * @param numCuenta
 	 * @return null - SI NO EXISTE LA CUENTA, CASO CONTRARIO return OBJETOCREARCUENTA
 	 */
-	public CrearCuenta BuscarNumeroCuenta(NumeroCuenta numerocuenta) {//busca Usuario por número de cuenta
+	public CrearCuenta BuscarNumeroCuenta(String numerocuenta) {//busca Usuario por número de cuenta
 		CrearCuenta numerocuentaBuscada = null;
 
 		for(int i = 0; i < listaCrearCuenta.size(); i++) {
@@ -80,7 +79,7 @@ public class GestionCrearCuenta {
 	 * @param numCuenta
 	 * @return true - SI SE ELIMINO CORRECTAMENTE, CASO CONTRARIO return false.
 	 */
-	public boolean EliminarUsuarioCreado(NumeroCuenta numCuenta) {
+	public boolean EliminarUsuarioCreado(String numCuenta) {
 		CrearCuenta UsuarioEncontrado = BuscarNumeroCuenta(numCuenta);
 		
 		if(UsuarioEncontrado == null) {

@@ -3,7 +3,6 @@ package GestionClases;
 import java.util.LinkedList;
 
 import clases.CuentaCorrientePersonal;
-import clases.NumeroCuenta;
 
 /**
  * GESTIÓN CUENTA CORRIENTE PERSONAL: OPERACIONES QUE SE REALIZAN
@@ -40,10 +39,10 @@ public class GestionCuentaCorrientePersonal {
 	 * @param numCuenta
 	 * @return null - SI NO ENCUENTRA LA CUENTA_CORRIENTE_PERSONAL, CASO CONTRARIO RETORNA OBJ.CUENTA_CORRIENTE_PERSONAL
 	 */
-	public CuentaCorrientePersonal BuscarCuentaCorrientePersonal(NumeroCuenta numCuenta) {
+	public CuentaCorrientePersonal BuscarCuentaCorrientePersonal(String numCuenta) {
 		CuentaCorrientePersonal CuentaCorrientePersonalBuscada = null;
 		for(int i = 0; i < listaCuentaCorrientePersonal.size(); i++) {
-			if( listaCuentaCorrientePersonal.get(i).get_tipoCuenta().get_cuentacheques().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaCorrientePersonal.get(i).get_numeroCuenta().equals(numCuenta)) {
 				CuentaCorrientePersonalBuscada = listaCuentaCorrientePersonal.get(i);
 			}
 		}
@@ -56,7 +55,7 @@ public class GestionCuentaCorrientePersonal {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_CORRIENTE_PERSONAL, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaCorrientePersonal(CuentaCorrientePersonal cuentaCorrientePersonal) {
-		if(BuscarCuentaCorrientePersonal(cuentaCorrientePersonal.get_tipoCuenta().get_cuentacheques().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaCorrientePersonal(cuentaCorrientePersonal.get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaCorrientePersonal.add(cuentaCorrientePersonal);
 			return true;
 		}else {
@@ -69,7 +68,7 @@ public class GestionCuentaCorrientePersonal {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_CORRIENTE_PERSONAL, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaAhorro(NumeroCuenta numCuenta) {
+	public boolean EliminarCuentaAhorro(String numCuenta) {
 		if(BuscarCuentaCorrientePersonal(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {

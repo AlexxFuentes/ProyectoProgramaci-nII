@@ -2,7 +2,6 @@ package GestionClases;
 
 import java.util.LinkedList;
 import clases.CuentaCheques;
-import clases.NumeroCuenta;
 
 /**
  * GESTIÓN CUENTA DE CHEQUES: OPERACIONES QUE SE REALIZAN
@@ -38,10 +37,10 @@ public class GestionCuentaCheques {
 	 * @param numCuenta
 	 * @return null - SI NO ENCUENTRA LA CUENTA_CHEQUES, CASO CONTRARIO RETORNA OBJ.CUENTA_CHEQUES
 	 */
-	public CuentaCheques BuscarCuentaCheques(NumeroCuenta numCuenta) {
+	public CuentaCheques BuscarCuentaCheques(String numCuenta) {
 		CuentaCheques CuentaChequesBuscada = null;
 		for(int i = 0; i < listaCuentaCheques.size(); i++) {
-			if( listaCuentaCheques.get(i).get_tipoCuenta().get_cuentacheques().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaCheques.get(i).get_numeroCuenta().equals(numCuenta)) {
 				CuentaChequesBuscada = listaCuentaCheques.get(i);
 			}
 		}
@@ -54,7 +53,7 @@ public class GestionCuentaCheques {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_CHEQUES, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaCheques(CuentaCheques cuentaCheques) {
-		if(BuscarCuentaCheques(cuentaCheques.get_tipoCuenta().get_cuentacheques().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaCheques(cuentaCheques.get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaCheques.add(cuentaCheques);
 			return true;
 		}else {
@@ -67,7 +66,7 @@ public class GestionCuentaCheques {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_CHEQUES, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaCheques(NumeroCuenta numCuenta) {
+	public boolean EliminarCuentaCheques(String numCuenta) {
 		if(BuscarCuentaCheques(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
@@ -115,5 +114,28 @@ public class GestionCuentaCheques {
 			System.out.println(listaCuentaCheques.get(i));
 		}
 	}
+	
+	
+	public double InteresRemunerados(double MontoInicial) {
+		double Interesesremunerados = 0;
+		
+		if(MontoInicial >= 0 || MontoInicial <= 500000 ) {
+			Interesesremunerados = (MontoInicial*(0.0)); 
+			return Interesesremunerados;
+		} else if(MontoInicial >= 500000 || MontoInicial <= 1000000 ) {
+			Interesesremunerados =  (MontoInicial*(0.0025)); 
+			return Interesesremunerados;
+		} else if(MontoInicial >= 1000000 || MontoInicial <= 2000000 ) {
+			Interesesremunerados =  (MontoInicial*(0.005)); 
+			return Interesesremunerados;
+		} else if(MontoInicial >= 2000000 || MontoInicial > 2000000 ) {
+			Interesesremunerados = (MontoInicial*(0.0356)); 
+			return Interesesremunerados;
+		} else {
+			return Interesesremunerados;
+		}
+	}
+	
+	
 		
 }

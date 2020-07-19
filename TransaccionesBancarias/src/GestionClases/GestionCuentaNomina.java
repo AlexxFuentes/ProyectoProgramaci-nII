@@ -2,7 +2,6 @@ package GestionClases;
 
 import java.util.LinkedList;
 import clases.CuentaNomina;
-import clases.NumeroCuenta;
 
 /**
  * GESTIÓN DE CUENTA_NOMINA: OPERACIONES QUE SE PUEDEN REALIZAR
@@ -37,10 +36,10 @@ public class GestionCuentaNomina {
 	 * @param numCuenta
 	 * @return null - SI NO ENCUENTRA LA CUENTA_NOMINA, CASO CONTRARIO RETORNA OBJ.CUENTA_NOMINA
 	 */
-	public CuentaNomina BuscarCuentaNomina(NumeroCuenta numCuenta) {
+	public CuentaNomina BuscarCuentaNomina(String numCuenta) {
 		CuentaNomina CuentaNominaBuscada = null;
 		for(int i = 0; i < listaCuentaNomina.size(); i++) {
-			if( listaCuentaNomina.get(i).get_tipoCuenta().get_cuentanomina().get_numeroCuenta().equals(numCuenta)) {
+			if( listaCuentaNomina.get(i).get_numeroCuenta().equals(numCuenta)) {
 				CuentaNominaBuscada = listaCuentaNomina.get(i);
 			}
 		}
@@ -53,7 +52,7 @@ public class GestionCuentaNomina {
 	 * @return true - SI SE AGREGO CORRECTAMENTE LA CUENTA_NOMINA, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarCuentaNomina(CuentaNomina cuentaNomina) {
-		if(BuscarCuentaNomina(cuentaNomina.get_tipoCuenta().get_cuentanomina().get_numeroCuenta()) == null) {//Si el usuario no esta agregado
+		if(BuscarCuentaNomina(cuentaNomina.get_numeroCuenta()) == null) {//Si el usuario no esta agregado
 			listaCuentaNomina.add(cuentaNomina);
 			return true;
 		}else {
@@ -66,7 +65,7 @@ public class GestionCuentaNomina {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_NOMINA, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaNomina(NumeroCuenta numCuenta) {
+	public boolean EliminarCuentaNomina(String numCuenta) {
 		if(BuscarCuentaNomina(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
