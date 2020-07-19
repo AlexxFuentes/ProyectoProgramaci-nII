@@ -9,20 +9,20 @@ package GestionClases;
 */
 
 import java.util.LinkedList;
-import clases.ServiciosPublicos;
+import clases.ServiciosAPagar;
 
-public class GestionServiciosPublicos {
-     private LinkedList<ServiciosPublicos> listaServicios = new LinkedList<>();
+public class GestionServiciosAPagar {
+     private LinkedList<ServiciosAPagar> listaServicios = new LinkedList<>();
 
-	public GestionServiciosPublicos() {
+	public GestionServiciosAPagar() {
 		super();
 	}
 
-	public LinkedList<ServiciosPublicos> getListaServicios() {
+	public LinkedList<ServiciosAPagar> getListaServicios() {
 		return listaServicios;
 	}
 
-	public void setListaServicios(LinkedList<ServiciosPublicos> listaServicios) {
+	public void setListaServicios(LinkedList<ServiciosAPagar> listaServicios) {
 		this.listaServicios = listaServicios;
 	}
      
@@ -32,7 +32,7 @@ public class GestionServiciosPublicos {
       * return 
       */
 	
-	public ServiciosPublicos BuscarServicio(ServiciosPublicos servicios) {
+	public ServiciosAPagar BuscarServicio(ServiciosAPagar servicios) {
 		servicios = null;
 		
 		for(int i = 0; i < listaServicios.size(); i++) {
@@ -48,7 +48,7 @@ public class GestionServiciosPublicos {
 	 * @param servicioPagar
 	 * @return true - SI SE AGREGA CORRECTAMENTE, CASO CONTRARIO return false
 	 */
-	public boolean AgregarServiciosPublicos(ServiciosPublicos servicioPagar) {
+	public boolean AgregarServiciosPublicos(ServiciosAPagar servicioPagar) {
 		
 		if(BuscarServicio(servicioPagar) == null) {//Si la cuenta no esta agregada
 			
@@ -66,7 +66,7 @@ public class GestionServiciosPublicos {
 	 * @param posicion
 	 * @return true - SI SE MODIFICA CORRECTAMENTE, CASO CONTRARIO return false
 	 */
-	public boolean ModificarTipoCuenta(ServiciosPublicos servicioModificar, int posicion) {
+	public boolean ModificarTipoCuenta(ServiciosAPagar servicioModificar, int posicion) {
 		if(posicion<0 || posicion>listaServicios.size()) {
 			return false;
 		}else {
@@ -87,7 +87,7 @@ public class GestionServiciosPublicos {
 	 * @return true - SI TODOS SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public boolean EliminarServicio(ServiciosPublicos servicio) {
+	public boolean EliminarServicio(ServiciosAPagar servicio) {
 		
 		if(BuscarServicio(servicio) == null) {
 			return false;
@@ -102,7 +102,7 @@ public class GestionServiciosPublicos {
 	 * @param posicion
 	 * @return POSICIÓN O INDICE DE LA COLECIÓN
 	 */
-	public ServiciosPublicos getPosicion(int posicion) {
+	public ServiciosAPagar getPosicion(int posicion) {
 		return listaServicios.get(posicion);
 	}
 	

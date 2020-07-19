@@ -10,7 +10,7 @@ package clases;
  * 
  * */
 
-public class ServiciosPublicos {
+public class ServiciosAPagar {
     private double _telefonia;
     private double _cable;
     private double _internet;
@@ -18,11 +18,11 @@ public class ServiciosPublicos {
     private double _aguaPotable;
     private Seguros _seguros;
     
-	public ServiciosPublicos() {
+	public ServiciosAPagar() {
 		super();
 	}
 
-	public ServiciosPublicos(double telefonia, double cable, double internet, double energia,
+	public ServiciosAPagar(double telefonia, double cable, double internet, double energia,
 			double aguaPotable, Seguros seguros) {
 		super();
 		this._telefonia = telefonia;
