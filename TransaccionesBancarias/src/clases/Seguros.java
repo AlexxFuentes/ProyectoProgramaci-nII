@@ -11,48 +11,48 @@ package clases;
  * */
 
 public class Seguros {
-      private double _seguroaAuto;
-      private double _seguroMedico;
-      private double _seguroDeVida;
+      private String _seguroAuto;
+      private String _seguroMedico;
+      private String _seguroDeVida;
       
 	public Seguros() {
 		super();
 	}
 
-	public Seguros(double seguroaAuto, double seguroMedico, double seguroDeVida) {
+	public Seguros(String seguroAuto, String seguroMedico, String seguroDeVida) {
 		super();
-		this._seguroaAuto = seguroaAuto;
+		this._seguroAuto = seguroAuto;
 		this._seguroMedico = seguroMedico;
 		this._seguroDeVida = seguroDeVida;
 	}
 
-	public double get_seguroaAuto() {
-		return _seguroaAuto;
+	public String get_seguroAuto() {
+		return _seguroAuto;
 	}
 
-	public void set_seguroaAuto(double _seguroaAuto) {
-		this._seguroaAuto = _seguroaAuto;
+	public void set_seguroaAuto(String _seguroAuto) {
+		this._seguroAuto = _seguroAuto;
 	}
 
-	public double get_seguroMedico() {
+	public String get_seguroMedico() {
 		return _seguroMedico;
 	}
 
-	public void set_seguroMedico(double _seguroMedico) {
+	public void set_seguroMedico(String _seguroMedico) {
 		this._seguroMedico = _seguroMedico;
 	}
 
-	public double get_seguroDeVida() {
+	public String get_seguroDeVida() {
 		return _seguroDeVida;
 	}
 
-	public void set_seguroDeVida(double _seguroDeVida) {
+	public void set_seguroDeVida(String _seguroDeVida) {
 		this._seguroDeVida = _seguroDeVida;
 	}
 
 	@Override
 	public String toString() {
-		return "Seguros [_seguroaAuto=" + _seguroaAuto + ", _seguroMedico=" + _seguroMedico + ", _seguroDeVida="
+		return "Seguros [_seguroAuto=" + _seguroAuto + ", _seguroMedico=" + _seguroMedico + ", _seguroDeVida="
 				+ _seguroDeVida + "]";
 	}
 	
