@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import clases.Retirar;
 
 public class GestionRetirar {
+	
 	private LinkedList<Retirar> listaRetirar=new LinkedList<>();
 
 	public GestionRetirar() {

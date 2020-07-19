@@ -11,15 +11,17 @@ package clases;
 
 public class Depositar {
 	
+		//ATRIBUTOS 
 		private TipoCuenta _tipoCuenta;
         private double _montodepositado;
         private double _saldoFinal;
 
-
+        //CONSTRUCTOR POR DEFECTO
 		public Depositar() {
 			super();
 		}
         
+		//CONSTRUCTOR CON TODOS LOS CAMPOS
 		public Depositar(TipoCuenta tipoCuenta, double montodeposito, double saldoFinal) {
 			super();
 			this._tipoCuenta = tipoCuenta;
@@ -28,7 +30,7 @@ public class Depositar {
 			
 		}
 
-
+		//SETTERS AND GETTERS
 		public double get_montodepositado() {
 			return _montodepositado;
 		}
@@ -54,7 +56,7 @@ public class Depositar {
 			this._tipoCuenta = _tipoCuenta;
 		}
 
-
+		//SOBREESCRITURA DE TOSTRING
 		@Override
 		public String toString() {
 			return "Depositar [_tipoCuenta=" + _tipoCuenta + ", _montodeposito=" + _montodepositado + ", _saldoFinal="

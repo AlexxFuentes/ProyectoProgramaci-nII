@@ -10,19 +10,24 @@ package clases;
  * */
 
 public class ConsultarSaldo {
+	
+	//ATRIBUTOS
 	private TipoCuenta _tipoCuenta;
     private double _saldoFinal;
       
+    //CONSTRUCTOR POR DEFECTO
 	public ConsultarSaldo() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public ConsultarSaldo(TipoCuenta tipoCuenta, double saldoFinal) {
 		super();
 		this._tipoCuenta = tipoCuenta;
 		this._saldoFinal = saldoFinal;
 	}
 
+	//SETTERS AND GETTERS
 	public TipoCuenta get_tipoCuenta() {
 		return _tipoCuenta;
 	}
@@ -39,6 +44,7 @@ public class ConsultarSaldo {
 		this._saldoFinal = _saldoFinal;
 	}
 
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
 		return "ConsultarSaldo [_tipoCuenta=" + _tipoCuenta + ", _saldoFinal="

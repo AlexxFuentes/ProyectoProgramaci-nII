@@ -16,6 +16,17 @@ public class GestionNumeroCuenta {
 	//ATRIBUTOS (COLECCIÓN)
 	LinkedList<NumeroCuenta> listaNumeroCuenta = new LinkedList<>();
 	
+	//CONSTRUCTOR POR DEFECTO
+	public GestionNumeroCuenta() {
+		super();
+	}
+
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
+	public GestionNumeroCuenta(LinkedList<NumeroCuenta> listaNumeroCuenta) {
+		super();
+		this.listaNumeroCuenta = listaNumeroCuenta;
+	}
+
 	/**
 	 * MÉTODO QUE OBTIENE UN NÚMERO DE CUENTA DE LA COLECCIÓN.
 	 * @return NÚMERO DE CUENTA

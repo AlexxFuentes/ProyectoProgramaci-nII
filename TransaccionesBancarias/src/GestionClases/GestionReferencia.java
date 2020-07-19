@@ -16,6 +16,17 @@ public class GestionReferencia {
 	//ATRIBUTOS (COLECCIÓN)
 	LinkedList<Referencia> listaReferencia = new LinkedList<>();
 	
+	//CONSTRUCTOR POR DEFECTO
+	public GestionReferencia() {
+		super();
+	}
+
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
+	public GestionReferencia(LinkedList<Referencia> listaReferencia) {
+		super();
+		this.listaReferencia = listaReferencia;
+	}
+
 	/**
 	 * MÉTODO QUE OBTIENE ELEMENTO DE LA COLEECIÓN REFERENCIA
 	 * @return listaReferencia

@@ -15,6 +15,17 @@ public class GestionTipoCuenta {
 	//ATRIBUTOS (COLECCIÓN)
 	LinkedList<TipoCuenta> listaTipoCuenta = new LinkedList<>();
 	
+	//CONSTRUCTOR POR DEFECTO
+	public GestionTipoCuenta() {
+		super();
+	}
+	
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
+	public GestionTipoCuenta(LinkedList<TipoCuenta> listaTipoCuenta) {
+		super();
+		this.listaTipoCuenta = listaTipoCuenta;
+	}
+
 	/**
 	 * MÉTODO QUE OBTIENE TIPO DE CUENTA DE LA COLECCIÓN
 	 * @return TipoCuenta
@@ -30,7 +41,6 @@ public class GestionTipoCuenta {
 	 */
 	public TipoCuenta BucarTipoCuenta(TipoCuenta tipocuenta) {
 		 tipocuenta = null;
-		
 		for(int i = 0; i < listaTipoCuenta.size(); i++) {
 			if( listaTipoCuenta.get(i).equals(tipocuenta)) {
 				tipocuenta = listaTipoCuenta.get(i);
@@ -45,11 +55,8 @@ public class GestionTipoCuenta {
 	 * @return true - SI SE AGREGA CORRECTAMENTE, CASO CONTRARIO return false
 	 */
 	public boolean AgregarTipoCuenta(TipoCuenta tipocuenta) {
-		
 		if(BucarTipoCuenta(tipocuenta) == null) {//Si la cuenta no esta agregada
-			
 			listaTipoCuenta.add(tipocuenta);
-			
 			return true;
 		}else {
 			return false;

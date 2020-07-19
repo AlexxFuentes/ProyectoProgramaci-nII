@@ -16,16 +16,17 @@ public class GestionCuentaCorrientePersonal {
 	//ATRIBUTOS (COLECCIÓN)
 	private LinkedList<CuentaCorrientePersonal> listaCuentaCorrientePersonal = new LinkedList<>();
 
+	//CONSTRUCTOR POR DEFECTO
 	public GestionCuentaCorrientePersonal() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public GestionCuentaCorrientePersonal(LinkedList<CuentaCorrientePersonal> listaCuentaCorrientePersonal) {
 		super();
 		this.listaCuentaCorrientePersonal = listaCuentaCorrientePersonal;
 	}
 
-	
 	/**
 	 * MÉTODO QUE OBTIENE UN CUENTA_CORRIENTE_PERSONAL DE LA COLECCIÓN
 	 * @return ELEMETO COLECCIÓN

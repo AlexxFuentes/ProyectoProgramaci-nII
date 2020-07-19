@@ -14,10 +14,12 @@ public class GestionCuentaNomina {
 	//ATRIBUTOS (COLECCIÓN)
 	private LinkedList<CuentaNomina> listaCuentaNomina = new LinkedList<>();
 
+	//CONSTRUCTOR POR DEFECTO 
 	public GestionCuentaNomina() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public GestionCuentaNomina(LinkedList<CuentaNomina> listaCuentaNomina) {
 		super();
 		this.listaCuentaNomina = listaCuentaNomina;

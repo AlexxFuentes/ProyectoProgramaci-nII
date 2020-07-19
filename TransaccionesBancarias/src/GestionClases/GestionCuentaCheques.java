@@ -13,12 +13,14 @@ import clases.CuentaCheques;
 public class GestionCuentaCheques {
 
 	//ATRIBUTOS (COLECCIÓN)
-		private LinkedList<CuentaCheques> listaCuentaCheques = new LinkedList<>();
+	private LinkedList<CuentaCheques> listaCuentaCheques = new LinkedList<>();
 
+	//CONSTRUCTOR POR DEFECTO
 	public GestionCuentaCheques() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public GestionCuentaCheques(LinkedList<CuentaCheques> listaCuentaCheques) {
 		super();
 		this.listaCuentaCheques = listaCuentaCheques;

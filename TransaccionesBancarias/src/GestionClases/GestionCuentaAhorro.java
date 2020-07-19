@@ -14,10 +14,12 @@ public class GestionCuentaAhorro {
 	//ATRIBUTOS (COLECCIÓN)
 	private LinkedList<CuentaAhorro> listaCuentaAhorro = new LinkedList<>();
 
+	//CONSTRUCTOR POR DEFECTO
 	public GestionCuentaAhorro() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public GestionCuentaAhorro(LinkedList<CuentaAhorro> listaCuentaAhorro) {
 		super();
 		this.listaCuentaAhorro = listaCuentaAhorro;

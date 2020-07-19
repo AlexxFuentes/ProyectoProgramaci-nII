@@ -14,10 +14,12 @@ public class Retirar {
     private double _montoRetirar;
     private double _saldoFinal;
     
+    //CONSTRUCTOR POR DEFECTO
 	public Retirar() {
 		super();
 	}
 
+	//CONSTRUCTOR CON TODOS LOS CAMPOS
 	public Retirar(TipoCuenta tipoCuenta, double montoRetirar, double saldoFinal) {
 		super();
 		this._tipoCuenta = tipoCuenta;
@@ -25,6 +27,7 @@ public class Retirar {
 		this._saldoFinal = saldoFinal;
 	}
 
+	//SETTERS AND GETTERS
 	public TipoCuenta get_tipoCuenta() {
 		return _tipoCuenta;
 	}
@@ -49,11 +52,11 @@ public class Retirar {
 		this._saldoFinal = _saldoFinal;
 	}
 
+	//SOBREESCRITURA DE TOSTRING
 	@Override
 	public String toString() {
 		return "Retirar [_tipoCuenta=" + _tipoCuenta + ", _montoRetirar=" + _montoRetirar + ", _saldoFinal="
 				+ _saldoFinal + "]";
 	}
-
 	
 }

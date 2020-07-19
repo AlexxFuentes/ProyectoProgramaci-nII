@@ -27,16 +27,15 @@ public class GestionDepositar {
 	 * @param depModificado
 	 * @return usuarioEncontrado
 	 */
-	public Depositar BuscarDeposito(double monto) {
-		Depositar MontoBuscado = null;
-		
+	public Depositar BuscarDeposito(Depositar deposito) {
+		deposito = null;
 		for(int i=0;i<listatDepositar.size();i++) {
-			if(listatDepositar.get(i).get_montodepositado() == monto) {
-				MontoBuscado = listatDepositar.get(i);
+			if(listatDepositar.get(i).equals(deposito)) {
+				deposito = listatDepositar.get(i);
 				break;
 			}
 		}
-		return MontoBuscado;
+		return deposito;
 	}
 	
 	/**
@@ -45,13 +44,12 @@ public class GestionDepositar {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	public boolean AgregarDeposito(Depositar deposito) {
-		if(BuscarDeposito(deposito.get_montodepositado()) == null) {
-			return false;
-		}else {
+		if(BuscarDeposito(deposito) == null) {
 			listatDepositar.add(deposito);
 			return true;
+		}else {
+			return false;
 		}
-		
 	}
 	
 	/**
@@ -65,7 +63,7 @@ public class GestionDepositar {
 			return false;
 		}else {
 			
-			if(BuscarDeposito(depositoModificado.get_montodepositado()) != null) {
+			if(BuscarDeposito(depositoModificado) != null) {
 				listatDepositar.set(posicion, depositoModificado);
 				return true;
 			}else {
@@ -83,10 +81,10 @@ public class GestionDepositar {
 	 */
 	
 	public boolean EliminarMonto(Depositar depositoEliminado) {
-		if(BuscarDeposito(depositoEliminado.get_montodepositado()) == null) {
+		if(BuscarDeposito(depositoEliminado) == null) {
 			return false;
 		}else {
-			listatDepositar.remove(BuscarDeposito(depositoEliminado.get_montodepositado()));
+			listatDepositar.remove(BuscarDeposito(depositoEliminado));
 			return true;
 		}
 	}
