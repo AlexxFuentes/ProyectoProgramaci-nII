@@ -1,11 +1,18 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION TRANSFERENCIAS INTERBANCARIAS
+* DESCRIPCION: PERMITE QUE EL USUARIO REALICE UNA
+*              TRANSFERENCIA INTERBANCARIA.
+* FECHA: 18/07/2020
+*/
+
 import java.util.LinkedList;
 
-import clases.ServiciosPublicos;
 import clases.Transferencias;
 import clases.TransferenciasInterbancarias;
-import clases.Usuario;
 
 public class GestionTransferenciasInterbancarias {
 	//COLECCION
@@ -17,13 +24,13 @@ public class GestionTransferenciasInterbancarias {
 	       * return
 	       */
 		
-		public  TransferenciasInterbancarias BuscarTI(TransferenciasInterbancarias cuenta) {
+		public  TransferenciasInterbancarias BuscarTI(Transferencias transEncontrado) {
 			TransferenciasInterbancarias CuentaEncontrada=null;
 			
 			for(int j=0; j<listaTransCuentas.size();j++) {
-				if(listaTransCuentas.get(j).get_numeroCuenta().equals(cuenta)) {
+				if(listaTransCuentas.get(j).get_numeroCuenta().equals(transEncontrado)) {
 					
-					cuenta = listaTransCuentas.get(j);
+					CuentaEncontrada = listaTransCuentas.get(j);
 				}
 			}
 			return CuentaEncontrada;
@@ -74,12 +81,12 @@ public class GestionTransferenciasInterbancarias {
 		public boolean EliminarTI(TransferenciasInterbancarias transEliminar) {
 			Transferencias transEncontrado = null;
 			
-			if(transEncontrado == null) {
+			if(BuscarTI(transEncontrado) == null) {
 				return false;
 			}else {
-				listaTransCuentas.remove(BuscarTI(transEliminar));
-				return true;
-			}
+				listaTransCuentas.remove(transEliminar);
+		     	return true;
+		    }
 		}
 		
 		/**

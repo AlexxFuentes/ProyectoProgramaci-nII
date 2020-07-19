@@ -1,5 +1,14 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION CONSULTAR SALDO
+* DESCRIPCION: PERMITE QUE EL USUARIO CONSULTE EL
+*              SALDO EN SU CUENTA.
+* FECHA: 17/07/2020
+*/
+
 import java.util.LinkedList;
 
 import clases.ConsultarSaldo;

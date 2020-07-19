@@ -1,8 +1,17 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION TRANSFERENCIAS ENTRE CUENTAS
+* DESCRIPCION: PERMITE QUE EL USUARIO HAGA LAS
+*              TRANSFERENCIAS ENTRE CUENTA.
+* FECHA: 18/07/2020
+*/
+
 import java.util.LinkedList;
 
-import clases.Transferencias;
+
 import clases.TransferenciasEntreCuentas;
 
 public class GestionTransferenciasEntreCuentas {
@@ -34,7 +43,7 @@ public class GestionTransferenciasEntreCuentas {
 		for(int j=0; j<listaTransCuentas.size();j++) {
 			if(listaTransCuentas.get(j).get_cuentaDestino().equals(cuenta)) {
 				
-				cuenta = listaTransCuentas.get(j);
+				CuentaEncontrada = listaTransCuentas.get(j);
 			}
 		}
 		return CuentaEncontrada;
@@ -86,7 +95,7 @@ public class GestionTransferenciasEntreCuentas {
 		if(tecEliminado.get_cuentaDestino() == null) {
 			return false;
 		}else {
-			listaTransCuentas.remove(tecEliminado.get_cuentaDestino());
+			listaTransCuentas.remove(BuscarTEC(tecEliminado));
 			return true;
 		}
 	}

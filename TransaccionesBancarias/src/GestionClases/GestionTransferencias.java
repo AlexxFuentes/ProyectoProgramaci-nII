@@ -2,11 +2,14 @@ package GestionClases;
 
 /*
  * AUTORA: GLENY NIHIMAYA
+
  * CLASE: GESTION TRANSFERENCIAS
  * DESCRIPCION: PERMITE QUE EL USUARIO ELIJA EL TIPO
  *              DE TRANSFERENCIA QUE REALIZARA.
+ * FECHA: 18/07/2020
  */
 import java.util.LinkedList;
+
 
 import clases.Transferencias;
 
@@ -32,7 +35,7 @@ public class GestionTransferencias {
        * 
        */
 	
-	public Transferencias BuscarTransferencias(Transferencias transferencias) {
+	public Transferencias BuscarTransferencias(Transferencias transferencia) {
 		Transferencias transferenciaEncontrada = null;
 		 
 		for(int i=0; i<listaTransferencias.size();++i) {
@@ -96,7 +99,7 @@ public class GestionTransferencias {
 		if(transEliminada == null) {
 			return false;
 		}else {
-			listaTransferencias.remove(transEliminada.get_usuario());
+			listaTransferencias.remove(transEliminada);
 			return true;
 		}
 	}

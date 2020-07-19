@@ -11,7 +11,7 @@ package clases;
  * */
 public class PagoServiciosPublicos {
 
-	  private ServiciosPublicos _servicioaPagar;
+	  private ServiciosAPagar _servicioaPagar;
 	    private double _tasaSeguridad;
 	    private double _monto;
 	    private Usuario _usuario;
@@ -21,7 +21,7 @@ public class PagoServiciosPublicos {
 			super();
 		}
 
-		public PagoServiciosPublicos(ServiciosPublicos servicioaPagar, double tasaSeguridad, Usuario usuario,
+		public PagoServiciosPublicos(ServiciosAPagar servicioaPagar, double tasaSeguridad, Usuario usuario,
 				double monto, Retirar retirar) {
 			super();
 			this._servicioaPagar = servicioaPagar;
@@ -31,11 +31,11 @@ public class PagoServiciosPublicos {
 		
 		}
 
-		public ServiciosPublicos get_servicioaPagar() {
+		public ServiciosAPagar get_servicioaPagar() {
 			return _servicioaPagar;
 		}
 
-		public void set_servicioaPagar(ServiciosPublicos _servicioaPagar) {
+		public void set_servicioaPagar(ServiciosAPagar _servicioaPagar) {
 			this._servicioaPagar = _servicioaPagar;
 		}
 

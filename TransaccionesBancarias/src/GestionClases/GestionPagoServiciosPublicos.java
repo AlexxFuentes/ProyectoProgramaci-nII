@@ -1,9 +1,18 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION PAGO SERVICIOS PUBLICOS
+* DESCRIPCION: MUESTRA LAS OPERACIONES QUE SE
+*             PUEDEN HACER CON ESTA CLASE.
+* FECHA: 18/07/2020
+*/
+
 import java.util.LinkedList;
 
 import clases.PagoServiciosPublicos;
-import clases.ServiciosPublicos;
+import clases.ServiciosAPagar;
 
 public class GestionPagoServiciosPublicos {
 	private LinkedList<PagoServiciosPublicos> lstPagoServicios=new LinkedList<>();
@@ -26,7 +35,7 @@ public class GestionPagoServiciosPublicos {
 	 * @return TRUE-SI SE REALIZO CORRECTAMENTE, CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public PagoServiciosPublicos BuscarPago(ServiciosPublicos serviciopagar) {
+	public PagoServiciosPublicos BuscarPago(ServiciosAPagar serviciopagar) {
 		PagoServiciosPublicos servicioBuscado = null;
 		
 		for(int i=0;i<lstPagoServicios.size();i++) {
