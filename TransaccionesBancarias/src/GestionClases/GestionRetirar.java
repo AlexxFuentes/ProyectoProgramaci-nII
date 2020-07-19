@@ -1,5 +1,13 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION RETIRAR
+* DESCRIPCION: OPERAACIONES REALIZADAS CON DICHA CLASE.
+* FECHA: 17/07/2020
+*/
+
 import java.util.LinkedList;
 
 import clases.Retirar;

@@ -1,5 +1,13 @@
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION SERVICIOS A PAGAR
+* DESCRIPCION: OPERACIONES REALIZADAS CON ESTA CLASE.
+* FECHA: 18/07/2020
+*/
+
 import java.util.LinkedList;
 import clases.ServiciosPublicos;
 

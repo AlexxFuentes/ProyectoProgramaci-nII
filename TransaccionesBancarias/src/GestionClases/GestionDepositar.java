@@ -1,6 +1,14 @@
 
 package GestionClases;
 
+/*
+* AUTORA: GLENY NIHIMAYA
+
+* CLASE: GESTION DEPOSITAR
+* DESCRIPCION: OPERACIONES A REALIZAR CON DEPOSITO.
+* FECHA: 17/07/2020
+*/
+
 import java.util.LinkedList;
 
 import clases.Depositar;
