@@ -10,48 +10,28 @@ package clases;
  * */
 
 public class TransferenciasInterbancarias {
-    private Usuario _usuario;
-    private String _cuentaAtransferir;
+
+    private String _numeroCuenta;
     private double _monto;
     private String _tipoMoneda;
-    private Retirar _retirar;
     private String _bancoDeDestino;
     
 	public TransferenciasInterbancarias() {
 		super();
 	}
 
-	public TransferenciasInterbancarias(double monto, Usuario usuario, String cuentaAtransferir, 
-			String tipoMoneda, Retirar retirar, String bancoDeDestino) {
+	public TransferenciasInterbancarias(double monto,
+			String tipoMoneda, String numeroCuenta, String bancoDeDestino) {
 		super();
 		this._monto = monto;
-		this._usuario = usuario;
-		this._cuentaAtransferir = cuentaAtransferir;
 		this._tipoMoneda = tipoMoneda;
-		this._retirar = retirar;
+		this._numeroCuenta = numeroCuenta;
 		this._bancoDeDestino = bancoDeDestino;
 	}
 
 	
-
-	public Usuario get_usuario() {
-		return _usuario;
-	}
-
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
-	}
-
-	public String get_cuentaAtransferir() {
-		return _cuentaAtransferir;
-	}
-
-	public void set_cuentaAtransferir(String _cuentaAtransferir) {
-		this._cuentaAtransferir = _cuentaAtransferir;
-	}
-
+    //GENERAR GET Y SET
 	
-
 	public double get_monto() {
 		return _monto;
 	}
@@ -68,12 +48,12 @@ public class TransferenciasInterbancarias {
 		this._tipoMoneda = _tipoMoneda;
 	}
 
-	public Retirar get_retirar() {
-		return _retirar;
+	public String get_numeroCuenta() {
+		return _numeroCuenta;
 	}
 
-	public void set_retirar(Retirar _retirar) {
-		this._retirar = _retirar;
+	public void set_numeroCuenta(String _numeroCuenta) {
+		this._numeroCuenta = _numeroCuenta;
 	}
 
 	public String get_bancoDeDestino() {
@@ -86,9 +66,8 @@ public class TransferenciasInterbancarias {
 
 	@Override
 	public String toString() {
-		return "TransferenciasInterbancarias [_monto=" + _monto + ", _usuario=" + _usuario
-				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _tipoMoneda=" + _tipoMoneda + ", _retirar=" + _retirar
-				+ ", _bancoDeDestino=" + _bancoDeDestino + "]";
+		return "TransferenciasInterbancarias [_numeroCuenta=" + _numeroCuenta + ", _monto=" + _monto + ", _tipoMoneda="
+				+ _tipoMoneda + ", _bancoDeDestino=" + _bancoDeDestino + "]";
 	}
 
 	

@@ -11,22 +11,21 @@ package clases;
 
 public class Depositar {
 	
-		private Usuario _usuario;
+		private TipoCuenta _tipoCuenta;
         private double _montodepositado;
         private double _saldoFinal;
-        private PagoServiciosPublicos _pagoServicios;
 
 
 		public Depositar() {
 			super();
 		}
         
-		public Depositar(Usuario usuario, double montodeposito, double saldoFinal, PagoServiciosPublicos pagoServicios) {
+		public Depositar(TipoCuenta tipoCuenta, double montodeposito, double saldoFinal) {
 			super();
-			this._usuario = usuario;
+			this._tipoCuenta = tipoCuenta;
 			this._montodepositado = montodeposito;
 			this._saldoFinal = saldoFinal;
-			this._pagoServicios = pagoServicios;
+			
 		}
 
 
@@ -47,26 +46,19 @@ public class Depositar {
 		}
 
 		
-		public Usuario get_usuario() {
-			return _usuario;
+		public TipoCuenta get_tipoCuenta() {
+			return _tipoCuenta;
 		}
 
-		public void set_usuario(Usuario _usuario) {
-			this._usuario = _usuario;
+		public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+			this._tipoCuenta = _tipoCuenta;
 		}
 
-		public PagoServiciosPublicos get_pagoServicios() {
-			return _pagoServicios;
-		}
-
-		public void set_pagoServicios(PagoServiciosPublicos _pagoServicios) {
-			this._pagoServicios = _pagoServicios;
-		}
 
 		@Override
 		public String toString() {
-			return "Depositar [_usuario=" + _usuario + ", _montodeposito=" + _montodepositado + ", _saldoFinal="
-					+ _saldoFinal + ", _pagoServicio=" + _pagoServicios + "]";
+			return "Depositar [_tipoCuenta=" + _tipoCuenta + ", _montodeposito=" + _montodepositado + ", _saldoFinal="
+					+ _saldoFinal + "]";
 		}
 		
 }

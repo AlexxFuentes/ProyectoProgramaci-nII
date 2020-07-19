@@ -10,7 +10,7 @@ package clases;
  * */
 
 public class Retirar {
-	private Usuario _usuario;
+	private TipoCuenta _tipoCuenta;
     private double _montoRetirar;
     private double _saldoFinal;
     
@@ -18,19 +18,19 @@ public class Retirar {
 		super();
 	}
 
-	public Retirar(Usuario usuario, double montoRetirar, double saldoFinal) {
+	public Retirar(TipoCuenta tipoCuenta, double montoRetirar, double saldoFinal) {
 		super();
-		this._usuario = usuario;
+		this._tipoCuenta = tipoCuenta;
 		this._montoRetirar = montoRetirar;
 		this._saldoFinal = saldoFinal;
 	}
 
-	public Usuario get_usuario() {
-		return _usuario;
+	public TipoCuenta get_tipoCuenta() {
+		return _tipoCuenta;
 	}
 
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
+	public void set_tipoCuenta(TipoCuenta _tipoCuenta) {
+		this._tipoCuenta = _tipoCuenta;
 	}
 
 	public double get_montoRetirar() {
@@ -51,7 +51,7 @@ public class Retirar {
 
 	@Override
 	public String toString() {
-		return "Retirar [_usuario=" + _usuario + ", _montoRetirar=" + _montoRetirar + ", _saldoFinal="
+		return "Retirar [_tipoCuenta=" + _tipoCuenta + ", _montoRetirar=" + _montoRetirar + ", _saldoFinal="
 				+ _saldoFinal + "]";
 	}
 

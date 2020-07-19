@@ -107,20 +107,20 @@ public class GestionSeguros {
 	/**
 	 * METODO PARA IMPRIMIR TODO
 	 */
-	/*public void imprimirTodos() {
-		for(int i=0;i<listatDepositar.size();i++) {
-			System.out.println(listatDepositar.get(i));
+	public void imprimirTodos() {
+		for(int i=0;i<listaSeguros.size();i++) {
+			System.out.println(listaSeguros.get(i));
 		}
-	}*/
+	}
 	
 	/**
 	 * MÉTODO PARA OBTENER POSICIÓN DE LA COLECCIÓN DEPOSITAR
 	 * @param posicion
 	 * @return POSICIÓN O INDICE DE LA COLECIÓN
 	 */
-	/*public Depositar getPosicion(int posicion) {
-		return listatDepositar.get(posicion);
+	public Seguros getPosicion(int posicion) {
+		return listaSeguros.get(posicion);
 	}
-	*/
+	
 	
 }

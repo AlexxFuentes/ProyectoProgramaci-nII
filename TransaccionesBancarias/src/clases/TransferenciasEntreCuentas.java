@@ -11,27 +11,25 @@ package clases;
 
 public class TransferenciasEntreCuentas {
 	private double _monto;
-    private Usuario _usuario;
-    private String _cuentaAtransferir;
-    private Depositar _depositar;
-    private Retirar _retirar;
-    
+    private String _cuentaDestino;
+    private String _tipoMoneda;
+
+    //CONSTRUCTOR POR DEFECTO
 	public TransferenciasEntreCuentas() {
 		super();
 	}
 
-	public TransferenciasEntreCuentas(double monto, Usuario usuario, String cuentaAtransferir,
-			Depositar depositar, Retirar retirar) {
+	//CONSTRUCTOR CON TODOS LOS PARAMETROS
+	public TransferenciasEntreCuentas(double monto, Usuario usuario, String _cuentaDestino,
+			String _tipoMoneda) {
 		super();
 		this._monto = monto;
-		this._usuario = usuario;
-		this._cuentaAtransferir = cuentaAtransferir;
-		this._depositar = depositar;
-		this._retirar = retirar;
+		this._cuentaDestino = _cuentaDestino;
+		this._tipoMoneda = _tipoMoneda;
 	}
 
 
-
+    //GETTERS Y SETTERS
 	public double get_monto() {
 		return _monto;
 	}
@@ -40,43 +38,27 @@ public class TransferenciasEntreCuentas {
 		this._monto = _monto;
 	}
 
-	public Usuario get_usuario() {
-		return _usuario;
+	public String get_cuentaDestino() {
+		return _cuentaDestino;
 	}
 
-	public void set_usuario(Usuario _usuario) {
-		this._usuario = _usuario;
+	public void set_cuentaDestino(String _cuentaAtransferir) {
+		this._cuentaDestino = _cuentaAtransferir;
 	}
 
-	public String get_cuentaAtransferir() {
-		return _cuentaAtransferir;
+	public String get_tipoMoneda() {
+		return _tipoMoneda;
 	}
 
-	public void set_cuentaAtransferir(String _cuentaAtransferir) {
-		this._cuentaAtransferir = _cuentaAtransferir;
+	public void set_tipoMoneda(String _tipoMoneda) {
+		this._tipoMoneda = _tipoMoneda;
 	}
 
-	public Depositar get_depositar() {
-		return _depositar;
-	}
-
-	public void set_depositar(Depositar _depositar) {
-		this._depositar = _depositar;
-	}
-
-	public Retirar get_retirar() {
-		return _retirar;
-	}
-
-	public void set_retirar(Retirar _retirar) {
-		this._retirar = _retirar;
-	}
 
 	@Override
 	public String toString() {
-		return "TransferenciasEntreCuentas [_monto=" + _monto +"_usuario=" + _usuario
-				+ ", _cuentaAtransferir=" + _cuentaAtransferir + ", _depositar=" + _depositar + ", _retirar=" + _retirar
-				+ "]";
+		return "TransferenciasEntreCuentas [_monto=" + _monto + ", _cuentaDestino=" + _cuentaDestino + ", _tipoMoneda="
+				+ _tipoMoneda + "]";
 	}
 
 	
