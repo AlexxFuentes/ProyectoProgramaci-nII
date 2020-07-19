@@ -1,14 +1,7 @@
 package GestionClases;
 
 import java.util.LinkedList;
-
-import clases.CrearCuenta;
-import clases.Depositar;
-import clases.PagoServiciosPublicos;
 import clases.ServiciosPublicos;
-import clases.TipoCuenta;
-import clases.Transferencias;
-import clases.Usuario;
 
 public class GestionServiciosPublicos {
      private LinkedList<ServiciosPublicos> listaServicios = new LinkedList<>();
@@ -83,13 +76,12 @@ public class GestionServiciosPublicos {
 	/**
 	 * METODO UTILIZADO PARA ELIMINAR EL SERVICIO A PAGAR
 	 * @param MONTO 
-	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
+	 * @return true - SI TODOS SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
 	public boolean EliminarServicio(ServiciosPublicos servicio) {
-		Usuario UsuarioEncontrado = null;
 		
-		if(UsuarioEncontrado == null) {
+		if(BuscarServicio(servicio) == null) {
 			return false;
 		}else {
 			listaServicios.remove(BuscarServicio(servicio));

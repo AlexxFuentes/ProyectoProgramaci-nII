@@ -92,6 +92,7 @@ public class GestionTransferencias {
 	 */
 	
 	public boolean EliminarTransferencia(Transferencias transEliminada) {
+		
 		if(transEliminada == null) {
 			return false;
 		}else {

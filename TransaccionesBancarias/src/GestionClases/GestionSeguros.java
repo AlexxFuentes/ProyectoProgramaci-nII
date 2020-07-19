@@ -1,10 +1,8 @@
 package GestionClases;
 
 import java.util.LinkedList;
-
-import clases.Depositar;
 import clases.Seguros;
-import clases.ServiciosPublicos;
+
 
 public class GestionSeguros {
 	//COLECCIÓN
