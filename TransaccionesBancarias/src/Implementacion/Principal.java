@@ -17,7 +17,7 @@ public class Principal {
 		String nombres, apellidos, constrasena, constrasenaconfirm, correo, direccion, rtn, telefono, usuarioConfir, usuario;
 		
 		String nombresReferencia, apellidoReferencia, direccionReferencia, telefonoReferencia, correoReferencia, rtnReferencia;
-		
+		String NumCuenta = null;
 		double montoInicial = 0, interesRemunerado = 0;
 		
 		//CENTINELAS
@@ -40,13 +40,14 @@ public class Principal {
 		while(centinalaPrincipal) {
 			
 			System.out.println("MENÚ PRINCIPAL");
-			System.out.println("1. CREAR CUENTA");
+			System.out.println("1. REGISTRAR SUS DATOS Y CREAR UNA CUENTA BANCARIA.");
 			System.out.println("2. INGRESAR USUARIO Y CONTRASEÑA");
 			System.out.println("3. SALIR");
 			opcionPrincipal = scnum.nextByte();
 			
 			//TIPO CUENTA, USUARIO, CREAR CUENTA, REFERENCIA,
 			//TipoCuenta tipoCuentaCreada = new TipoCuenta();//
+			TipoCuenta tipoCuentaCreada1 = new TipoCuenta();
 			Usuario UsuarioCreado = new Usuario();//
 			CrearCuenta CuentaCreada = new CrearCuenta();
 			Referencia referencia1 = new Referencia();//
@@ -54,7 +55,9 @@ public class Principal {
 			switch(opcionPrincipal) {
 			case 1: //CREAR CUENTA
 				
-				System.out.println("CREAR CUENTA");
+				System.out.println("CREAR NUEVA CUENTA");
+				System.out.println("\nDATOS PERSONALES DEL TITULAR DE LA CUENTA\n");
+				
 				System.out.println("Nombres: ");
 				nombres = sc.nextLine();
 				UsuarioCreado.set_nombre(nombres);
@@ -79,209 +82,27 @@ public class Principal {
 				correo = sc.nextLine();
 				UsuarioCreado.set_correoelectronico(correo);
 				
-				//CREAR TIPO DE CUENTA
-				while(centinelaTipoCuenta) {
-					System.out.println("Seleccione Tipo de cuenta a crear: ");
-					System.out.println("1. Cuenta de ahorro.");
-					System.out.println("2. Cuenta de cheques.");
-					System.out.println("3. Cuenta corriente persoanl.");
-					System.out.println("4. Cuenta nomina.");
-					opcionTipoCuenta = scnum.nextByte();
+				//CREAR NOMBRE DE USUARIO
+				System.out.println("Cree un nombre de usuario.\n");
+				while(centinelaUsuario) {
+					System.out.println("Usuario: ");
+					usuario = sc.nextLine();
+					CuentaCreada.set_nombreUsuario(usuario);
 					
-					//double montoInicial = 0, interesRemunerado;
-					String NumCuenta;
+					System.out.println("Confirmar Usuario: ");
+					usuarioConfir = sc.nextLine();
+					CuentaCreada.set_nombreUsuarioConfir(usuarioConfir);
 					
-					switch(opcionTipoCuenta) {
-					
-					case 1: //CUENTA DE AHORRO
-						
-						System.out.println("Apertura de Cuenta de Ahorro");
-						System.out.println("Monto inicial: ");
-						montoInicial = scnum.nextDouble();
-						
-						interesRemunerado = gestionCuentaAhorro.InteresRemunerado(montoInicial);
-						
-						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
-						
-						System.out.println("\nSu número de cuenta es:" + NumCuenta);
-						
-						CuentaAhorro cuentaAhorroCreada = new CuentaAhorro(NumCuenta,montoInicial,interesRemunerado);
-						
-						//tipoCuentaCreada.set_cuentaahorro(cuentaAhorroCreada);
-						if(gestionCuentaAhorro.AgregarCuentaAhorro(cuentaAhorroCreada)) {
-							System.out.println("Cuenta de ahorro creada exitosamente.");
-						}else {
-							System.out.println("Error al crear cuenta de ahorro.");
-						}
-						TipoCuenta tipoCuentaCreada1 = new TipoCuenta();
-						tipoCuentaCreada1.set_cuentaahorro(cuentaAhorroCreada);
-						UsuarioCreado.set_tipocuenta(tipoCuentaCreada1);
-						
-						//AGREGAR TIPO CUENTA
-						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada1)) {
-							System.out.println("Tipo Cuenta Agregada correctamente");
-						}else {
-							System.out.println("Error al crear Tipo cuenta.");
-						}
-						
-						Depositar deposito1 = new Depositar(tipoCuentaCreada1,montoInicial,(montoInicial + interesRemunerado ));
-						if(gestionDepositar.AgregarDeposito(deposito1)) {
-							System.out.println("Deposito de apertura realizado correctamente.");
-						}else {
-							System.out.println("Error al realizar deposito de apertura.");
-						}
-						
-						break;
-						
-					case 2: //CUENTA DE CHEQUES
-						
-						System.out.println("Apertura de Cuenta de Cheques");
-						System.out.println("Monto inicial: ");
-						montoInicial = scnum.nextDouble();
-						
-						interesRemunerado = gestionCuentaCheques.InteresRemunerados(montoInicial);
-						
-						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
-						
-						System.out.println("\n Su número de cuenta es:" + NumCuenta);
-						
-						CuentaCheques cuentaChequeCreada = new CuentaCheques(NumCuenta,montoInicial,interesRemunerado);
-						
-						//tipoCuentaCreada.set_cuentacheques(cuentaChequeCreada);
-						
-						if(gestionCuentaCheques.AgregarCuentaCheques(cuentaChequeCreada) == true) {
-							System.out.println("Cuenta de cheques creada exitosamente.");
-						}else {
-							System.out.println("Error al crear cuenta de ahorro.");
-						}
-						
-						TipoCuenta tipoCuentaCreada2 = new TipoCuenta();
-						tipoCuentaCreada2.set_cuentacheques(cuentaChequeCreada);
-						UsuarioCreado.set_tipocuenta(tipoCuentaCreada2);
-						
-						//AGREGAR TIPO CUENTA
-						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada2)) {
-							System.out.println("Tipo Cuenta Agregada correctamente");
-						}else {
-							System.out.println("Error al crear Tipo cuenta.");
-						}
-						
-						Depositar deposito2 = new Depositar(tipoCuentaCreada2,montoInicial,(montoInicial + interesRemunerado ));
-						
-						if(gestionDepositar.AgregarDeposito(deposito2)) {
-							System.out.println("Deposito de apertura realizado correctamente.");
-						}else {
-							System.out.println("Error al realizar deposito de apertura.");
-						}
-						
-						break;
-
-					case 3: //CUENTA DE CORRIENTE PERSONAL
-						
-						System.out.println("Apertura de Cuenta Corriente Personal");
-						System.out.println("Monto inicial: ");
-						montoInicial = scnum.nextDouble();
-						
-						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
-						
-						System.out.println("\n Su número de cuenta es:" + NumCuenta);
-						
-						CuentaCorrientePersonal cuentaCorrientePersonalCreada = new CuentaCorrientePersonal(NumCuenta,montoInicial);
-						
-						//tipoCuentaCreada.set_cuentacorrientepersonal(cuentaCorrientePersonalCreada);
-						
-						if(gestionCuenCorrienPersonal.AgregarCuentaCorrientePersonal(cuentaCorrientePersonalCreada) == true) {
-							System.out.println("Cuenta Corriente personal creada exitosamente.");
-						}else {
-							System.out.println("Error al crear cuenta corriente personal.");
-						}
-						
-						TipoCuenta tipoCuentaCreada3 = new TipoCuenta();
-						tipoCuentaCreada3.set_cuentacorrientepersonal(cuentaCorrientePersonalCreada);
-						
-						UsuarioCreado.set_tipocuenta(tipoCuentaCreada3);
-						//AGREGAR TIPO CUENTA
-						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada3) == true) {
-							System.out.println("Tipo Cuenta Agregada correctamente");
-						}else {
-							System.out.println("Error al crear Tipo cuenta.");
-						}
-						
-						Depositar deposito3 = new Depositar(tipoCuentaCreada3,montoInicial,(montoInicial + interesRemunerado ));
-						
-						if(gestionDepositar.AgregarDeposito(deposito3)) {
-							System.out.println("Deposito de apertura realizado correctamente.");
-						}else {
-							System.out.println("Error al realizar deposito de apertura.");
-						}
-						
-						break;
-						
-					case 4: //CUENTA NOMINA
-
-						System.out.println("Apertura de Cuenta Nomina");
-						System.out.println("Empresa que le realizara sus depositos:");
-						String empresa = sc.nextLine();
-						
-						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
-						
-						System.out.println("\nSu número de cuenta es:" + NumCuenta + "\n");
-						
-						CuentaNomina cuentaNominaCreada = new CuentaNomina(NumCuenta,montoInicial,empresa);
-						
-						//tipoCuentaCreada.set_cuentanomina(cuentaNominaCreada);
-						
-						if(gestionCuentaNomina.AgregarCuentaNomina(cuentaNominaCreada) == true) {
-							System.out.println("Cuenta nomina creada exitosamente.");
-						}else {
-							System.out.println("Error al crear cuenta nomina.");
-						}
-						
-						TipoCuenta tipoCuentaCreada4 = new TipoCuenta();
-						tipoCuentaCreada4.set_cuentanomina(cuentaNominaCreada);
-						
-						UsuarioCreado.set_tipocuenta(tipoCuentaCreada4);
-						//AGREGAR TIPO CUENTA
-						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada4) == true) {
-							System.out.println("Tipo Cuenta Agregada correctamente");
-						}else {
-							System.out.println("Error al crear Tipo cuenta.");
-						}
-						
-						
-						break;
-						
-						default:
-							System.out.println("Opción no valida.");
-							break;
-					}
-					System.out.println("¿Desea crear otro tipo de cuenta? 1. Si 2.NO");
-					byte opcioncrearcuenta = scnum.nextByte();
-					if(opcioncrearcuenta == 2) {
-						centinelaTipoCuenta = false;
-					}
-					/*
-					//UsuarioCreado.set_tipocuenta(tipoCuentaCreada);
-					
-					//AGREGAR TIPO CUENTA
-					if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada) == true) {
-						System.out.println("Tipo Cuenta Agregada correctamente");
+					if(gestioncrearcuenta.Confirmar(usuario, usuarioConfir)) {
+						System.out.println("Nombre de usuario creado correctamente.");
+						centinelaUsuario = false;
 					}else {
-						System.out.println("Error al crear Tipo cuenta.");
+						System.out.println("Los nombres de usuario no coinciden.");
 					}
-					
-					Depositar deposito1 = new Depositar(tipoCuentaCreada,montoInicial,(montoInicial + interesRemunerado ));
-					
-					if(gestionDepositar.AgregarDeposito(deposito1)) {
-						System.out.println("Deposito de apertura realizado correctamente.");
-					}else {
-						System.out.println("Error al realizar deposito de apertura.");
-					}
-					*/
-					
-				}//FIN DE CODIGO PARA AGREGAR OTRO TIPO DE CUENTA
+				}//FIN DE CODIGO PARA CREAR NOMBRE DE USUARIO
 				
 				//CREAR CONTRASEÑA
+				System.out.println("Cree una contraseña. \n");
 				while(centinelaContraseña) {
 					System.out.println("Contraseña: ");
 					constrasena = sc.nextLine();
@@ -299,23 +120,169 @@ public class Principal {
 					}
 				}//FIN DE CODIGO PARA CREAR CONTRASEÑA
 				
-				//CREAR NOMBRE DE USUARIO
-				while(centinelaUsuario) {
-					System.out.println("Usuario: ");
-					usuario = sc.nextLine();
-					CuentaCreada.set_nombreUsuario(usuario);
+				//CREAR TIPO DE CUENTA
+				while(centinelaTipoCuenta) {
+					System.out.println("\nCREAR CUENTA BANCARIA");
+					System.out.println("SELECCIONES EL TIPO DE CUENTA A CREAR");
+					System.out.println("1. Cuenta de ahorro.");
+					System.out.println("2. Cuenta de cheques.");
+					System.out.println("3. Cuenta corriente persoanl.");
+					System.out.println("4. Cuenta nomina.");
+					opcionTipoCuenta = scnum.nextByte();
 					
-					System.out.println("Confirmar Usuario: ");
-					usuarioConfir = sc.nextLine();
-					CuentaCreada.set_nombreUsuarioConfir(usuarioConfir);
+					//CREACIÓN DEL TIPO DE CUENTA SELECCIONADA
+					switch(opcionTipoCuenta) {
 					
-					if(gestioncrearcuenta.Confirmar(usuario, usuarioConfir)) {
-						System.out.println("Nombre de usuario creado correctamente.");
-						centinelaUsuario = false;
-					}else {
-						System.out.println("Los nombres de usuario no coinciden.");
+					case 1: //CUENTA DE AHORRO
+						
+						System.out.println("APERTURA DE CUENTA DE AHORRO\n");
+						System.out.println("Monto inicial: ");
+						montoInicial = scnum.nextDouble();
+						interesRemunerado = gestionCuentaAhorro.InteresRemunerado(montoInicial);
+						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
+						System.out.println("Su número de cuenta es:" + NumCuenta + "\n");
+						
+						CuentaAhorro cuentaAhorroCreada = new CuentaAhorro(NumCuenta,montoInicial,interesRemunerado);
+						
+						//COMPROBACIÓN DE QUE SE CREO LA CUENTA DE AHORRO
+						if(gestionCuentaAhorro.AgregarCuentaAhorro(cuentaAhorroCreada)) {
+							System.out.println("CUENTA DE AHORRO CREADA EXITOSAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL CREAR CUENTA DE AHORRO.\n");
+						}
+						tipoCuentaCreada1.set_cuentaahorro(cuentaAhorroCreada);
+						UsuarioCreado.set_tipocuenta(tipoCuentaCreada1);
+						
+						//AGREGAR TIPO CUENTA: CUENTA DE AHORRO
+						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada1)) {
+							System.out.println("TIPO DE CUENTA AGREGADA CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR TIPO DE CUENTA.\n");
+						}
+						
+						//REALIZACIÓN DE DEPOSITO DE APERTURA
+						Depositar deposito1 = new Depositar(tipoCuentaCreada1,montoInicial,(montoInicial + interesRemunerado ));
+						if(gestionDepositar.AgregarDeposito(deposito1)) {
+							System.out.println("DEPOSITO DE APERTURA REALIZADO CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL REALIZAR DEPOSITO DE APERTURA.\n");
+						}
+						
+						break;
+						
+					case 2: //CUENTA DE CHEQUES
+						
+						System.out.println("APERTURA DE CUENTA DE CHEQUES\n");
+						System.out.println("Monto inicial: ");
+						montoInicial = scnum.nextDouble();
+						interesRemunerado = gestionCuentaCheques.InteresRemunerados(montoInicial);
+						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
+						
+						System.out.println("Su número de cuenta es:" + NumCuenta + "\n");
+						
+						CuentaCheques cuentaChequeCreada = new CuentaCheques(NumCuenta,montoInicial,interesRemunerado);
+						
+						//COMPROBACIÓN DE QUE SE AGREGO LA CUENTA DE AHORRO
+						if(gestionCuentaCheques.AgregarCuentaCheques(cuentaChequeCreada) == true) {
+							System.out.println("CUENTA DE CHEQUES AGREGADA CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR CUENTA DE CHEQUES");
+						}
+						tipoCuentaCreada1.set_cuentacheques(cuentaChequeCreada);
+						UsuarioCreado.set_tipocuenta(tipoCuentaCreada1);
+						
+						//AGREGAR TIPO CUENTA: CUENTA DE CHEQUES
+						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada1)) {
+							System.out.println("TIPO DE CUENTA AGREGADA CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR TIPO DE CUENTA.\n");
+						}
+						
+						//REALIZACIÓN DE DEPOSITO DE APERTURA
+						Depositar deposito2 = new Depositar(tipoCuentaCreada1,montoInicial,(montoInicial + interesRemunerado ));
+						if(gestionDepositar.AgregarDeposito(deposito2)) {
+							System.out.println("DEPOSITO DE APERTURA REALIZADO CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL REALIZAR DEPOSITO DE APERTURA.\n");
+						}
+						
+						break;
+
+					case 3: //CUENTA DE CORRIENTE PERSONAL
+						
+						System.out.println("APERTURA DE CUENTA CORRIENTE PERSONAL.\n");
+						System.out.println("Monto inicial: ");
+						montoInicial = scnum.nextDouble();
+						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
+						System.out.println("Su número de cuenta es:" + NumCuenta + "\n");
+						
+						CuentaCorrientePersonal cuentaCorrientePersonalCreada = new CuentaCorrientePersonal(NumCuenta,montoInicial);
+						
+						//COMPROBACIÓN DE QUE SE AGREGO LA CUENTA CORRIENTE PERSONAL
+						if(gestionCuenCorrienPersonal.AgregarCuentaCorrientePersonal(cuentaCorrientePersonalCreada)) {
+							System.out.println("CUENTA CORRIENTE PERSONAL AGREGADA CON EXITO.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR LA CUENTA CORRIENTE PERSONAL.\n");
+						}
+						tipoCuentaCreada1.set_cuentacorrientepersonal(cuentaCorrientePersonalCreada);
+						UsuarioCreado.set_tipocuenta(tipoCuentaCreada1);
+						
+						//AGREGAR TIPO CUENTA: CUENTA CORRIENTE PERSONAL
+						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada1)) {
+							System.out.println("TIPO DE CUENTA AGREGADA CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR TIPO DE CUENTA.\n");
+						}
+						
+						//REALIZACIÓN DE DEPOSITO DE APERTURA
+						Depositar deposito3 = new Depositar(tipoCuentaCreada1,montoInicial,(montoInicial + interesRemunerado ));
+						if(gestionDepositar.AgregarDeposito(deposito3)) {
+							System.out.println("DEPOSITO DE APERTURA REALIZADO CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL REALIZAR DEPOSITO DE APERTURA.\n");
+						}
+						
+						break;
+						
+					case 4: //CUENTA NOMINA
+
+						System.out.println("APERTURA DE CUENTA NOMINA.\n");
+						System.out.println("Empresa que le realizara sus depositos:");
+						String empresa = sc.nextLine();
+						NumCuenta = gestionNumeroCuenta.GeneraNumeroCuenta();
+						System.out.println("Su número de cuenta es:" + NumCuenta + "\n");
+						
+						CuentaNomina cuentaNominaCreada = new CuentaNomina(NumCuenta,montoInicial,empresa);
+						
+						//COMPROBACIÓN DE QUE SE AGREGO LA CUENTA NOMINA
+						if(gestionCuentaNomina.AgregarCuentaNomina(cuentaNominaCreada)) {
+							System.out.println("CUENTA NOMINA CREADA EXITOSAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL CREAR CUENTA NOMINA.\n");
+						}
+						tipoCuentaCreada1.set_cuentanomina(cuentaNominaCreada);
+						UsuarioCreado.set_tipocuenta(tipoCuentaCreada1);
+						
+						//AGREGAR TIPO CUENTA: CUENTA NOMINA
+						if(gestionTipoCuenta.AgregarTipoCuenta(tipoCuentaCreada1)) {
+							System.out.println("TIPO DE CUENTA AGREGADA CORRECTAMENTE.\n");
+						}else {
+							System.out.println("ERROR AL AGREGAR TIPO DE CUENTA.\n");
+						}
+						
+						break;
+						
+						default:
+							System.out.println("OPCIÓN NO VALIDA.\n");
+							break;
 					}
-				}//FIN DE CODIGO PARA CREAR NOMBRE DE USUARIO
+					System.out.println("¿Desea crear otro tipo de cuenta?\n 1. Si \n 2.NO");
+					byte opcioncrearcuenta = scnum.nextByte();
+					if(opcioncrearcuenta == 2) {
+						centinelaTipoCuenta = false;
+					}
+					
+				}//FIN DE CODIGO PARA AGREGAR OTRO TIPO DE CUENTA
 				
 				//PEDIR DATOS DE REFERENCIA AL USUARIO
 				boolean CentinelaReferencia = true;
@@ -368,7 +335,6 @@ public class Principal {
 				}else {
 					System.out.println("Error al agregar Usuario.");
 				}
-				
 				
 				
 				if(gestioncrearcuenta.AgregarNuevaCuenta(CuentaCreada) == true) {
