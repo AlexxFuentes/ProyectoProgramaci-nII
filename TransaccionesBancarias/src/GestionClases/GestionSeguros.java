@@ -29,15 +29,15 @@ public class GestionSeguros {
      * return seguroEncontrado
      */ 
 	
-	public Seguros BuscarSeguro(String seguro) {
-		Seguros seguroEncontrado = null;
+	public Seguros BuscarSeguro(Seguros seguroBuscado) {
+		seguroBuscado = null;
 		for(int i=0; i<listaSeguros.size();i++) {
-			if(listaSeguros.get(i).get_seguroAuto().equals(seguro) || listaSeguros.get(i).get_seguroMedico().equals(seguro) || listaSeguros.get(i).get_seguroDeVida().equals(seguro)) {
+			if(listaSeguros.get(i).equals(seguroBuscado)) {
 				
-				seguroEncontrado = listaSeguros.get(i);
+				seguroBuscado = listaSeguros.get(i);
 			}
 		}
-		return seguroEncontrado;
+		return seguroBuscado;
 	}
 	
 	/**
@@ -47,15 +47,12 @@ public class GestionSeguros {
      */ 
 	
 	public boolean AgregarSeguro(Seguros agregarSeguro) {
-		if(BuscarSeguro(agregarSeguro.get_seguroAuto()) == null ||
-		   BuscarSeguro(agregarSeguro.get_seguroMedico()) == null ||
-		   BuscarSeguro(agregarSeguro.get_seguroDeVida()) == null) {
-			
-			return false;
-		}else {
+		if(BuscarSeguro(agregarSeguro) == null) {
 			listaSeguros.add(agregarSeguro);
+			return true;
+		}else {
+			return false;
 		}
-		return true;
 	}
 	
 	/**
@@ -68,19 +65,13 @@ public class GestionSeguros {
 		if(posicion<0 || posicion>listaSeguros.size()) {
 			return false;
 		}else {
-			
-			if(BuscarSeguro(seguroModificado.get_seguroAuto()) != null || 
-				BuscarSeguro(seguroModificado.get_seguroMedico()) != null ||
-				BuscarSeguro(seguroModificado.get_seguroDeVida()) != null) {
-				
+			if(BuscarSeguro(seguroModificado) != null) {
 				listaSeguros.set(posicion, seguroModificado);
 				return true;
 			}else {
 				return false;
 			}
-			
 		}
-		
 	}
 	
 	/**
@@ -90,17 +81,13 @@ public class GestionSeguros {
 	 */
 	
 	public boolean EliminarSeguro(Seguros seguroEliminado) {
-		if(BuscarSeguro(seguroEliminado.get_seguroAuto()) == null ||
-			BuscarSeguro(seguroEliminado.get_seguroMedico()) == null ||
-			BuscarSeguro(seguroEliminado.get_seguroDeVida()) == null) {
-			
+		if(BuscarSeguro(seguroEliminado) == null) {
 			return false;
 		}else {
-			listaSeguros.remove(BuscarSeguro(seguroEliminado.get_seguroAuto()));
+			listaSeguros.remove(seguroEliminado);
 			return true;
 		}
 	}
-	
 	
 	/**
 	 * METODO PARA IMPRIMIR TODO

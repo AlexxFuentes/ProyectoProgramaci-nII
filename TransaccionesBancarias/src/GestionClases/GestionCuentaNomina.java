@@ -67,11 +67,11 @@ public class GestionCuentaNomina {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_NOMINA, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaNomina(String numCuenta) {
-		if(BuscarCuentaNomina(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
+	public boolean EliminarCuentaNomina(CuentaNomina cuentaNomina) {
+		if(BuscarCuentaNomina(cuentaNomina.get_numeroCuenta()) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
-			listaCuentaNomina.remove(BuscarCuentaNomina(numCuenta));//ELIMINA CUENTA_AHORRO ENCONTRADO
+			listaCuentaNomina.remove(cuentaNomina);//ELIMINA CUENTA_AHORRO ENCONTRADO
 			return true;
 		}
 	}
@@ -87,8 +87,8 @@ public class GestionCuentaNomina {
 		if(posicion<0 || posicion>listaCuentaNomina.size()) {
 			return false;
 		}else {
-			
-			if(BuscarCuentaNomina(CuentaNominaModificado.get_numeroCuenta()) != null) {
+			CuentaNomina CuentaBuscada = BuscarCuentaNomina(CuentaNominaModificado.get_numeroCuenta());
+			if(CuentaBuscada != null) {
 				listaCuentaNomina.set(posicion, CuentaNominaModificado);
 				return true;
 			}else {

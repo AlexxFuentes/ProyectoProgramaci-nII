@@ -36,21 +36,15 @@ public class GestionTransferencias {
        */
 	
 	public Transferencias BuscarTransferencias(Transferencias transferencia) {
-		Transferencias transferenciaEncontrada = null;
-		 
+		transferencia = null; 
 		for(int i=0; i<listaTransferencias.size();++i) {
-			if(listaTransferencias.get(i).get_tipoMoneda()==null ||
-				listaTransferencias.get(i).get_usuario()==null ||
-			   listaTransferencias.get(i).get_transferenciasEntreCuentas()==null ||
-			   listaTransferencias.get(i).get_transferenciasInterbancarias()==null) {
-				
+			if(listaTransferencias.get(i).equals(transferencia)) {
+				transferencia = listaTransferencias.get(i);
 			}
 		}
-		return transferenciaEncontrada;
+		return transferencia;
 	}
-	
 
-	
 	/**
 	 * METODO PARA AGREGAR TRANSFERENCIA
 	 * @param agregarTransferencia
@@ -59,7 +53,6 @@ public class GestionTransferencias {
 	
 	public boolean AgregarTransferencia(Transferencias agregarTransferencia) {
 		if(BuscarTransferencias(agregarTransferencia) == null) {
-			 
 			listaTransferencias.add(agregarTransferencia);
 			return true;
 		}else {

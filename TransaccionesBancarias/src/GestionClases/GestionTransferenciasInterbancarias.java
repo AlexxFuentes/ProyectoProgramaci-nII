@@ -11,12 +11,11 @@ package GestionClases;
 
 import java.util.LinkedList;
 
-import clases.Transferencias;
 import clases.TransferenciasInterbancarias;
 
 public class GestionTransferenciasInterbancarias {
 	//COLECCION
-		private LinkedList<TransferenciasInterbancarias> listaTransCuentas=new LinkedList<>();
+		private LinkedList<TransferenciasInterbancarias> listaTransCuentas = new LinkedList<>();
 
 	      /**
 	       * METODO PARA BUSCAR LA TRASNFERENCIA ENTRE CUENTA
@@ -24,16 +23,14 @@ public class GestionTransferenciasInterbancarias {
 	       * return
 	       */
 		
-		public  TransferenciasInterbancarias BuscarTI(Transferencias transEncontrado) {
-			TransferenciasInterbancarias CuentaEncontrada=null;
-			
+		public TransferenciasInterbancarias BuscarTI(TransferenciasInterbancarias transEncontrado) {
+			transEncontrado = null;
 			for(int j=0; j<listaTransCuentas.size();j++) {
-				if(listaTransCuentas.get(j).get_numeroCuenta().equals(transEncontrado)) {
-					
-					CuentaEncontrada = listaTransCuentas.get(j);
+				if(listaTransCuentas.get(j).equals(transEncontrado)) {
+					transEncontrado = listaTransCuentas.get(j);
 				}
 			}
-			return CuentaEncontrada;
+			return transEncontrado;
 		}
 		
 		/**
@@ -42,12 +39,13 @@ public class GestionTransferenciasInterbancarias {
 	     * return
 	     */
 		
-		public boolean agregarTEC(TransferenciasInterbancarias tec) {
-			if(tec.get_numeroCuenta() == null){
-				listaTransCuentas.add(tec);
+		public boolean agregarTEC(TransferenciasInterbancarias transferncia) {
+			if(BuscarTI(transferncia) == null){
+				listaTransCuentas.add(transferncia);
+				return true;
+			}else {
+				return false;
 			}
-			return false;
-			
 		}
 		
 		/**
@@ -62,15 +60,13 @@ public class GestionTransferenciasInterbancarias {
 				return false;
 			}else {
 				
-				if(tecModificado.get_numeroCuenta() != null) {
+				if(BuscarTI(tecModificado) != null) {
 					listaTransCuentas.set(posicion, tecModificado);
 					return true;
 				}else {
 					return false;
 				}
-				
 			}
-			
 		}
 		
 		/**
@@ -79,9 +75,7 @@ public class GestionTransferenciasInterbancarias {
 	     * return
 	     */
 		public boolean EliminarTI(TransferenciasInterbancarias transEliminar) {
-			Transferencias transEncontrado = null;
-			
-			if(BuscarTI(transEncontrado) == null) {
+			if(BuscarTI(transEliminar) == null) {
 				return false;
 			}else {
 				listaTransCuentas.remove(transEliminar);

@@ -96,7 +96,7 @@ public class GestionPagoServiciosPublicos {
 	}
 	
 	/**
-	 * METODO PARA IMPRIMIR TODO
+	 * METODO PARA IMPRIMIR TODOS
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<lstPagoServicios.size();i++) {

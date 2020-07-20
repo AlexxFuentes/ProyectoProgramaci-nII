@@ -34,16 +34,15 @@ public class GestionConsultarSaldo {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	
-	public ConsultarSaldo BuscarConsultarSaldo(double montoConsultado) {
-		ConsultarSaldo usuarioEncontrado = null;
-		//int posicion=-1;
+	public ConsultarSaldo BuscarConsultarSaldo(ConsultarSaldo consultar_saldo) {
+		consultar_saldo = null;
 		for(int i=0;i<lstConsultarSaldo.size();i++) {
-			if(lstConsultarSaldo.get(i).get_saldoFinal() == montoConsultado) {
-			    usuarioEncontrado = lstConsultarSaldo.get(i);
+			if( lstConsultarSaldo.get(i).equals(consultar_saldo) ) {
+				consultar_saldo = lstConsultarSaldo.get(i);
 				break;
 			}
 		}
-		return usuarioEncontrado;
+		return consultar_saldo;
 	}
 	
 	/**
@@ -53,13 +52,12 @@ public class GestionConsultarSaldo {
 	 */
 	
 	public boolean AgregarColsulaSaldo(ConsultarSaldo consultarSaldo) {
-		if(BuscarConsultarSaldo(consultarSaldo.get_saldoFinal())==null) {
+		if(BuscarConsultarSaldo(consultarSaldo) == null) {
 			lstConsultarSaldo.add(consultarSaldo);
 			return true;
 		}else {
 			return false;
 		}
-		
 	}
 	
 	/**
@@ -72,17 +70,14 @@ public class GestionConsultarSaldo {
 		if(posicion<0 || posicion>lstConsultarSaldo.size()) {
 			return false;
 		}else {
-			ConsultarSaldo posicionEncontrada = BuscarConsultarSaldo(consultaModificada.get_saldoFinal());
-			
+			ConsultarSaldo posicionEncontrada = BuscarConsultarSaldo(consultaModificada);
 			if(posicionEncontrada==null) {
 				lstConsultarSaldo.set(posicion, consultaModificada);
 				return true;
 			}else {
 				return false;
-			}
-			
+			}	
 		}
-		
 	}
 		
 	/**
@@ -92,19 +87,16 @@ public class GestionConsultarSaldo {
 	 */
 	
 	public boolean EliminarConsultaSaldo(ConsultarSaldo ConsultaEliminada) {
-		if(BuscarConsultarSaldo(ConsultaEliminada.get_saldoFinal()) == null) {
+		if(BuscarConsultarSaldo(ConsultaEliminada) == null) {
 			return false;
 		}else {
-			lstConsultarSaldo.remove(ConsultaEliminada);
+			lstConsultarSaldo.remove(BuscarConsultarSaldo(ConsultaEliminada));
 			return true;
 		}
 	}
 	
-	
-	
-	
 	/**
-	 * Metodo para imprimir todo
+	 * MÉTODO PARA IMPRIMIR TODA LA COLECCIÓN
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<lstConsultarSaldo.size();i++) {

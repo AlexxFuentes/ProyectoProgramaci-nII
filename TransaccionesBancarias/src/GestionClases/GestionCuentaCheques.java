@@ -68,11 +68,11 @@ public class GestionCuentaCheques {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_CHEQUES, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaCheques(String numCuenta) {
-		if(BuscarCuentaCheques(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
+	public boolean EliminarCuentaCheques(clases.CuentaCheques CuentaCheques) {
+		if(BuscarCuentaCheques(CuentaCheques.get_numeroCuenta()) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
-			listaCuentaCheques.remove(BuscarCuentaCheques(numCuenta));//ELIMINA CUENTA_AHORRO ENCONTRADO
+			listaCuentaCheques.remove(CuentaCheques);//ELIMINA CUENTA_AHORRO ENCONTRADO
 			return true;
 		}
 	}
@@ -95,7 +95,6 @@ public class GestionCuentaCheques {
 			}else {
 				return false;
 			}
-		
 		}
 	}
 	
@@ -117,7 +116,11 @@ public class GestionCuentaCheques {
 		}
 	}
 	
-	
+	/**
+	 * MÉTODO PARA CALCULAR EL INTERES REMUNERADO DE CUENTA DE CHEQUES
+	 * @param MontoInicial
+	 * @return Interesesremunerados
+	 */
 	public double InteresRemunerados(double MontoInicial) {
 		double Interesesremunerados = 0;
 		
@@ -138,6 +141,4 @@ public class GestionCuentaCheques {
 		}
 	}
 	
-	
-		
 }

@@ -69,11 +69,11 @@ public class GestionCuentaCorrientePersonal {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_CORRIENTE_PERSONAL, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaAhorro(String numCuenta) {
-		if(BuscarCuentaCorrientePersonal(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
+	public boolean EliminarCuentaAhorro(CuentaCorrientePersonal CuentaCorriPersonal) {
+		if(BuscarCuentaCorrientePersonal(CuentaCorriPersonal.get_numeroCuenta()) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
-			listaCuentaCorrientePersonal.remove(BuscarCuentaCorrientePersonal(numCuenta));//ELIMINA CUENTA_AHORRO ENCONTRADO
+			listaCuentaCorrientePersonal.remove(CuentaCorriPersonal);//ELIMINA CUENTA_AHORRO ENCONTRADO
 			return true;
 		}
 	}

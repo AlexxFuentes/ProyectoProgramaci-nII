@@ -67,11 +67,11 @@ public class GestionCuentaAhorro {
 	 * @param numCuenta
 	 * @return false - SI NO SE ENCONTRO LA CUENTA_AHORRO, CASO CONTRARIO return true.
 	 */
-	public boolean EliminarCuentaAhorro(String numCuenta) {
-		if(BuscarCuentaAhorro(numCuenta) == null) {//CUENTA_AHORRO NO ENCONTRADO
+	public boolean EliminarCuentaAhorro(CuentaAhorro CuentaAhorro) {
+		if(BuscarCuentaAhorro(CuentaAhorro.get_numeroCuenta()) == null) {//CUENTA_AHORRO NO ENCONTRADO
 			return false;
 		}else {
-			listaCuentaAhorro.remove(BuscarCuentaAhorro(numCuenta));//ELIMINA CUENTA_AHORRO ENCONTRADO
+			listaCuentaAhorro.remove(CuentaAhorro);//ELIMINA CUENTA_AHORRO ENCONTRADO
 			return true;
 		}
 	}
@@ -94,7 +94,6 @@ public class GestionCuentaAhorro {
 			}else {
 				return false;
 			}
-		
 		}
 	}
 	
@@ -116,6 +115,11 @@ public class GestionCuentaAhorro {
 		}
 	}
 	
+	/**
+	 * MÉTODO QUE CALCULA EL INTERES REMUNERADO DE UNA CUENTA DE AHORRO
+	 * @param MontoInicial
+	 * @return Interesesremunerados
+	 */
 	public double InteresRemunerado(double MontoInicial) {
 		double Interesesremunerados = 0;
 		
@@ -153,5 +157,4 @@ public class GestionCuentaAhorro {
 			return Interesesremunerados;
 		}
 	}
-	
 }

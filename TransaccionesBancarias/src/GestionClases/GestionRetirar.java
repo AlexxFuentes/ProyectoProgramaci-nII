@@ -33,16 +33,16 @@ public class GestionRetirar {
 	 * @param retModificado
 	 * @return usuarioEncontrado
 	 */
-	public Retirar BuscarRetiro(double monto) {
-		Retirar MontoBuscado = null;
+	public Retirar BuscarRetiro(Retirar retiro) {
+		retiro = null;
 		
 		for(int i=0;i<listaRetirar.size();i++) {
-			if(listaRetirar.get(i).get_montoRetirar() == monto) {
-				MontoBuscado = listaRetirar.get(i);
+			if(listaRetirar.get(i).equals(retiro)) {
+				retiro = listaRetirar.get(i);
 				break;
 			}
 		}
-		return MontoBuscado;
+		return retiro;
 	}
 	
 	/**
@@ -51,13 +51,12 @@ public class GestionRetirar {
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
 	public boolean AgregarRetiro(Retirar retiro) {
-		if(BuscarRetiro(retiro.get_montoRetirar()) == null) {
+		if(BuscarRetiro(retiro) == null) {
 			return false;
 		}else {
 			listaRetirar.add(retiro);
 			return true;
-		}
-		
+		}	
 	}
 	
 	/**
@@ -71,7 +70,7 @@ public class GestionRetirar {
 			return false;
 		}else {
 			
-			if(BuscarRetiro(retiroModificado.get_montoRetirar()) != null) {
+			if(BuscarRetiro(retiroModificado) != null) {
 				listaRetirar.set(posicion, retiroModificado);
 				return true;
 			}else {
@@ -89,17 +88,17 @@ public class GestionRetirar {
 	 */
 	
 	public boolean EliminarMonto(Retirar retiroModificado) {
-		if(BuscarRetiro(retiroModificado.get_montoRetirar()) == null) {
+		if(BuscarRetiro(retiroModificado) == null) {
 			return false;
 		}else {
-			listaRetirar.remove(BuscarRetiro(retiroModificado.get_montoRetirar()));
+			listaRetirar.remove(retiroModificado);
 			return true;
 		}
 	}
 	
 	
 	/**
-	 * METODO PARA IMPRIMIR TODO
+	 * METODO PARA IMPRIMIR TODOS
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<listaRetirar.size();i++) {

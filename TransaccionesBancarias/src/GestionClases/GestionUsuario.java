@@ -43,7 +43,7 @@ public class GestionUsuario {
 	public Usuario BuscarUsuario(Usuario usuario) {
 		usuario = null;
 		for(int i = 0; i < listaUsuario.size(); i++) {
-			if( listaUsuario.get(i).equals(usuario)) {
+			if( listaUsuario.get(i).equals(usuario) ) {
 				usuario = listaUsuario.get(i);
 			}
 		}
@@ -85,18 +85,15 @@ public class GestionUsuario {
 	 * @return false - SI NO LO ENCUENTRA EN LA COLECCION, CASO CONTRARIO return true (USUARIO MODIFICADO)
 	 */
 	public boolean ModificarUsuario(Usuario usuarioModificado, int posicion) {
-		
 		if(posicion<0 || posicion>listaUsuario.size()) {
 			return false;
 		}else {
-			
 			if(BuscarUsuario(usuarioModificado) != null) {
 				listaUsuario.set(posicion, usuarioModificado);
 				return true;
 			}else {
 				return false;
 			}
-		
 		}
 	} 
 	

@@ -37,16 +37,14 @@ public class GestionTransferenciasEntreCuentas {
        * @param
        * return
        */
-	public TransferenciasEntreCuentas BuscarTEC(TransferenciasEntreCuentas cuenta) {
-		TransferenciasEntreCuentas CuentaEncontrada=null;
-		
+	public TransferenciasEntreCuentas BuscarTrasnEntreCuentas(TransferenciasEntreCuentas trasn_entre_cuentas) {
+		trasn_entre_cuentas = null;
 		for(int j=0; j<listaTransCuentas.size();j++) {
-			if(listaTransCuentas.get(j).get_cuentaDestino().equals(cuenta)) {
-				
-				CuentaEncontrada = listaTransCuentas.get(j);
+			if( listaTransCuentas.get(j).equals(trasn_entre_cuentas) ) {
+				trasn_entre_cuentas = listaTransCuentas.get(j);
 			}
 		}
-		return CuentaEncontrada;
+		return trasn_entre_cuentas;
 	}
 	
 	/**
@@ -54,13 +52,13 @@ public class GestionTransferenciasEntreCuentas {
      * @param
      * return
      */
-	
-	public boolean agregarTEC(TransferenciasEntreCuentas tec) {
-		if(tec.get_cuentaDestino() == null){
-			listaTransCuentas.add(tec);
+	public boolean agregarTrasEntreCuentas(TransferenciasEntreCuentas trasn_entre_cuentas) {
+		if(BuscarTrasnEntreCuentas(trasn_entre_cuentas) == null){
+			listaTransCuentas.add(trasn_entre_cuentas);
+			return true;
+		} else {
+			return false;
 		}
-		return false;
-		
 	}
 	
 	/**
@@ -69,20 +67,18 @@ public class GestionTransferenciasEntreCuentas {
      * return
      */
 	
-	public boolean ModificarTEC(TransferenciasEntreCuentas tecModificado, int posicion ) {
+	public boolean ModificarTransEntreCuentas(TransferenciasEntreCuentas tecModificado, int posicion ) {
 		if(posicion<0 || posicion>listaTransCuentas.size()) {
 			return false;
 		}else {
 			
-			if(tecModificado.get_cuentaDestino() != null) {
+			if(BuscarTrasnEntreCuentas(tecModificado) != null) {
 				listaTransCuentas.set(posicion, tecModificado);
 				return true;
 			}else {
 				return false;
 			}
-			
 		}
-		
 	}
 	
 	/**
@@ -91,17 +87,17 @@ public class GestionTransferenciasEntreCuentas {
 	 * @return true - SI TODOs SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public boolean EliminarMonto(TransferenciasEntreCuentas tecEliminado) {
-		if(tecEliminado.get_cuentaDestino() == null) {
+	public boolean EliminarTransEntreCuenta(TransferenciasEntreCuentas tecEliminado) {
+		if(BuscarTrasnEntreCuentas(tecEliminado) == null) {
 			return false;
 		}else {
-			listaTransCuentas.remove(BuscarTEC(tecEliminado));
+			listaTransCuentas.remove(BuscarTrasnEntreCuentas(tecEliminado));
 			return true;
 		}
 	}
 	
 	/**
-	 * METODO PARA IMPRIMIR TODOs
+	 * METODO PARA IMPRIMIR TODOS
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<listaTransCuentas.size();i++) {

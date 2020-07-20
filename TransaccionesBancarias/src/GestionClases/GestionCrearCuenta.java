@@ -41,10 +41,8 @@ public class GestionCrearCuenta {
 	 */
 	public CrearCuenta BuscarCrearCuenta(CrearCuenta cuentacreada) {
 		cuentacreada = null;
-
 		for(int i = 0; i < listaCrearCuenta.size(); i++) {
 			if( listaCrearCuenta.get(i).equals(cuentacreada)) {
-				
 				cuentacreada = listaCrearCuenta.get(i);
 			}
 		}
@@ -57,7 +55,6 @@ public class GestionCrearCuenta {
 	 * @return
 	 */
 	public boolean BuscarNombreUsuario(String nombre_usuario) {
-
 		for(int i = 0; i < listaCrearCuenta.size();) {
 			if(listaCrearCuenta.get(i).get_nombreUsuario().equals(nombre_usuario)) {
 				return true;
@@ -67,6 +64,11 @@ public class GestionCrearCuenta {
 		}
 		return false;
 	}
+	/**
+	 * MÉTODO QUE BUSCA CONTRASEÑA PARA CONFIRMARLO EN EL PRINCIPAL
+	 * @param contrasena
+	 * @return true - SI SE ENCONTRO LA CONTRASEÑA, CASO CONTRARIO return false
+	 */
 	public boolean BuscarContrasena(String contrasena) {
 
 		for(int i = 0; i < listaCrearCuenta.size();) {
@@ -100,7 +102,6 @@ public class GestionCrearCuenta {
 	 * @return true - SI SE ELIMINO CORRECTAMENTE, CASO CONTRARIO return false.
 	 */
 	public boolean EliminarUsuarioCreado(CrearCuenta Cuenta_creada) {
-		
 		if(BuscarCrearCuenta(Cuenta_creada) == null) {
 			return false;
 		}else {
