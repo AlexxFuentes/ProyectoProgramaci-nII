@@ -353,68 +353,92 @@ public class Principal {
 				break;
 			case 2: //INGRESAR USUARIO Y CONTRASEÑA
 				
-				boolean centinelaConfirmarUsuario = true; 
+				boolean centinelaConfirmarUsuario = true, centinelaSubmenu = true, centinelaMenuTransferencias = true; 
 				
-				while(centinelaConfirmarUsuario) {
+				byte opcion1 = 0;
 				
-					System.out.println("Ingrese su nombre de usuario:");
-					usuario = sc.nextLine();
+				while(centinelaSubmenu) {
+					System.out.println("Sub_menu");
+					System.out.println("1. Iniciar sesion.");
+					System.out.println("2. salir.");
+					opcion1 = scnum.nextByte();
 					
-					System.out.println("Ingrese su contraseña: ");
-					constrasena = sc.nextLine();
-					
-					//corregir
-					
-					if(gestioncrearcuenta.BuscarNombreUsuario(usuario) && gestioncrearcuenta.BuscarContrasena(constrasena)) {
-						centinelaConfirmarUsuario = false;
-					}else {
-						System.out.println("Usuario y contraseña incorrecto o Usuario no registrado.");
-					}
-				}
-				
-				boolean centinelaMenuTransferencias = true;
-				byte opcionMenuTransferencias, opcion_menu;
-				
-				while(centinelaMenuTransferencias) {
-					
-					System.out.println("MENU DE OPERACIONES BANCARIAS");
-					System.out.println("1. Depositar.");
-					System.out.println("2. Retirar.");
-					System.out.println("3. Consultar saldo.");
-					System.out.println("4. Transferencias.");
-					System.out.println("5. Pago de servicios publicos.");
-					System.out.println("6. salir.");
-					System.out.println("Ingrese una de las opciones: ");
-					opcion_menu = scnum.nextByte();
-					
-					
-					switch(opcion_menu) {
-					case 1: // DEPOSITAR
+					switch(opcion1) {
+					case 1: // iniciar sesión
+						
+						while(centinelaConfirmarUsuario) {
+							
+							System.out.println("Ingrese su nombre de usuario:");
+							usuario = sc.nextLine();
+							
+							System.out.println("Ingrese su contraseña: ");
+							constrasena = sc.nextLine();
+							
+							//corregir
+							
+							if(gestioncrearcuenta.BuscarNombreUsuario(usuario) && gestioncrearcuenta.BuscarContrasena(constrasena)) {
+								centinelaConfirmarUsuario = false;
+							}else {
+								System.out.println("Usuario y contraseña incorrecto o Usuario no registrado.");
+								break;
+							}
+							
+							byte opcionMenuTransferencias, opcion_menu;
+							
+							while(centinelaMenuTransferencias) {
+								
+								System.out.println("MENU DE OPERACIONES BANCARIAS");
+								System.out.println("1. Depositar.");
+								System.out.println("2. Retirar.");
+								System.out.println("3. Consultar saldo.");
+								System.out.println("4. Transferencias.");
+								System.out.println("5. Pago de servicios publicos.");
+								System.out.println("6. salir.");
+								System.out.println("Ingrese una de las opciones: ");
+								opcion_menu = scnum.nextByte();
+								
+								switch(opcion_menu) {
+								
+								case 1: // DEPOSITAR
+									break;
+								case 2: //RETIRAR
+									break;
+								case 3: // CONSULTAR SALDO
+									break;
+								case 4: //TRANSFERENCIAS
+									break;
+								case 5: //PAGO DE SERVICIOS PUBLICOS
+									break;
+								case 6: //SALIR
+									centinelaMenuTransferencias = false;
+									break;
+									default:
+										System.out.println("Opcion no valida.");
+										break;
+								
+								}
+								System.out.println("¿Desea realizar otra Transacción?\n1. SI\n2.NO");
+								opcionMenuTransferencias = scnum.nextByte();
+								if(opcionMenuTransferencias == 2) {
+									centinelaMenuTransferencias = false;
+								}
+							}
+						}
+						
 						break;
-					case 2: //RETIRAR
-						break;
-					case 3: // CONSULTAR SALDO
-						break;
-					case 4: //TRANSFERENCIAS
-						break;
-					case 5: //PAGO DE SERVICIOS PUBLICOS
-						break;
-					case 6: //SALIR
-						centinelaMenuTransferencias = false;
+						
+					case 2: // salir de sub-menu
+						centinelaSubmenu = false;
 						break;
 						default:
-							System.out.println("Opcion no valida.");
+							System.out.println("Opción no valida.");
 							break;
-					}
+					} //fin del swicth sud menu
 					
-					System.out.println("¿Desea realizar otra Transacción?\n1. SI\n2.NO");
-					opcionMenuTransferencias = scnum.nextByte();
-					if(opcionMenuTransferencias == 2) {
-						centinelaMenuTransferencias = false;
-					}
-				}//FIN DE CODIGO DE TRANSFERENCIAS
-				
+				} //fin de submenu
+					
 				break;
+				
 			case 3://SALIR
 				centinalaPrincipal = false;
 				break;
