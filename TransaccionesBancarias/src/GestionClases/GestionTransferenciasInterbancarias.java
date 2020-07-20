@@ -23,6 +23,7 @@ public class GestionTransferenciasInterbancarias {
 	       * return
 	       */
 		
+
 		public TransferenciasInterbancarias BuscarTI(TransferenciasInterbancarias transEncontrado) {
 			transEncontrado = null;
 			for(int j=0; j<listaTransCuentas.size();j++) {
@@ -74,11 +75,12 @@ public class GestionTransferenciasInterbancarias {
 	     * @param transEliminar
 	     * return
 	     */
+
 		public boolean EliminarTI(TransferenciasInterbancarias transEliminar) {
 			if(BuscarTI(transEliminar) == null) {
 				return false;
 			}else {
-				listaTransCuentas.remove(transEliminar);
+				listaTransCuentas.remove(BuscarTI(transEliminar));
 		     	return true;
 		    }
 		}

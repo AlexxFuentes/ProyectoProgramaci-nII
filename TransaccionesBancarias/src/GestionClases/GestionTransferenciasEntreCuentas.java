@@ -37,6 +37,7 @@ public class GestionTransferenciasEntreCuentas {
        * @param
        * return
        */
+
 	public TransferenciasEntreCuentas BuscarTrasnEntreCuentas(TransferenciasEntreCuentas trasn_entre_cuentas) {
 		trasn_entre_cuentas = null;
 		for(int j=0; j<listaTransCuentas.size();j++) {
@@ -87,8 +88,9 @@ public class GestionTransferenciasEntreCuentas {
 	 * @return true - SI TODOs SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
+
 	public boolean EliminarTransEntreCuenta(TransferenciasEntreCuentas tecEliminado) {
-		if(BuscarTrasnEntreCuentas(tecEliminado) == null) {
+		if(tecEliminado == null) {
 			return false;
 		}else {
 			listaTransCuentas.remove(BuscarTrasnEntreCuentas(tecEliminado));
