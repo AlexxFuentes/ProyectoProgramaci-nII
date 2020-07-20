@@ -83,7 +83,7 @@ public class Principal {
 				UsuarioCreado.set_correoelectronico(correo);
 				
 				//CREAR NOMBRE DE USUARIO
-				System.out.println("Cree un nombre de usuario.\n");
+				System.out.println("\nCree un nombre de usuario.\n");
 				while(centinelaUsuario) {
 					System.out.println("Usuario: ");
 					usuario = sc.nextLine();
@@ -102,7 +102,7 @@ public class Principal {
 				}//FIN DE CODIGO PARA CREAR NOMBRE DE USUARIO
 				
 				//CREAR CONTRASEÑA
-				System.out.println("Cree una contraseña. \n");
+				System.out.println("\nCree una contraseña. \n");
 				while(centinelaContraseña) {
 					System.out.println("Contraseña: ");
 					constrasena = sc.nextLine();
@@ -354,6 +354,7 @@ public class Principal {
 			case 2: //INGRESAR USUARIO Y CONTRASEÑA
 				
 				boolean centinelaConfirmarUsuario = true; 
+				
 				while(centinelaConfirmarUsuario) {
 				
 					System.out.println("Ingrese su nombre de usuario:");
@@ -363,7 +364,8 @@ public class Principal {
 					constrasena = sc.nextLine();
 					
 					//corregir
-					if(CuentaCreada.get_contrasena().equals(constrasena) && CuentaCreada.get_contrasena().equals(constrasena)) {
+					
+					if(gestioncrearcuenta.BuscarNombreUsuario(usuario) && gestioncrearcuenta.BuscarContrasena(constrasena)) {
 						centinelaConfirmarUsuario = false;
 					}else {
 						System.out.println("Usuario y contraseña incorrecto o Usuario no registrado.");
@@ -410,7 +412,7 @@ public class Principal {
 					if(opcionMenuTransferencias == 2) {
 						centinelaMenuTransferencias = false;
 					}
-				}
+				}//FIN DE CODIGO DE TRANSFERENCIAS
 				
 				break;
 			case 3://SALIR
