@@ -31,12 +31,12 @@ public class GestionTransferenciasEntreCuentas {
 	public void setListaTransCuentas(LinkedList<TransferenciasEntreCuentas> listaTransCuentas) {
 		this.listaTransCuentas = listaTransCuentas;
 	}
-       
-      /**
-       * METODO PARA BUSCAR LA TRASNFERENCIA ENTRE CUENTA
-       * @param
-       * return
-       */
+	
+     /**
+      * METODO PARA BUSCAR LA TRASNFERENCIA ENTRE CUENTA
+      * @param
+      * return
+      */
 
 	public TransferenciasEntreCuentas BuscarTrasnEntreCuentas(TransferenciasEntreCuentas trasn_entre_cuentas) {
 		trasn_entre_cuentas = null;
