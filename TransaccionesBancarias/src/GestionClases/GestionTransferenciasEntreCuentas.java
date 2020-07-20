@@ -37,7 +37,7 @@ public class GestionTransferenciasEntreCuentas {
        * @param
        * return
        */
-	public TransferenciasEntreCuentas BuscarTEC(TransferenciasEntreCuentas cuenta) {
+	public TransferenciasEntreCuentas BuscarTEC(String cuenta) {
 		TransferenciasEntreCuentas CuentaEncontrada=null;
 		
 		for(int j=0; j<listaTransCuentas.size();j++) {
@@ -91,8 +91,8 @@ public class GestionTransferenciasEntreCuentas {
 	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
-	public boolean EliminarMonto(TransferenciasEntreCuentas tecEliminado) {
-		if(tecEliminado.get_cuentaDestino() == null) {
+	public boolean EliminarMonto(String tecEliminado) {
+		if(tecEliminado == null) {
 			return false;
 		}else {
 			listaTransCuentas.remove(BuscarTEC(tecEliminado));

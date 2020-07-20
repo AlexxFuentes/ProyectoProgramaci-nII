@@ -11,7 +11,6 @@ package GestionClases;
 
 import java.util.LinkedList;
 
-import clases.Transferencias;
 import clases.TransferenciasInterbancarias;
 
 public class GestionTransferenciasInterbancarias {
@@ -24,7 +23,7 @@ public class GestionTransferenciasInterbancarias {
 	       * return
 	       */
 		
-		public  TransferenciasInterbancarias BuscarTI(Transferencias transEncontrado) {
+		public  TransferenciasInterbancarias BuscarTI(String transEncontrado) {
 			TransferenciasInterbancarias CuentaEncontrada=null;
 			
 			for(int j=0; j<listaTransCuentas.size();j++) {
@@ -78,13 +77,13 @@ public class GestionTransferenciasInterbancarias {
 	     * @param transEliminar
 	     * return
 	     */
-		public boolean EliminarTI(TransferenciasInterbancarias transEliminar) {
-			Transferencias transEncontrado = null;
+		public boolean EliminarTI(String transEliminar) {
+			String transEncontrado = null;
 			
 			if(BuscarTI(transEncontrado) == null) {
 				return false;
 			}else {
-				listaTransCuentas.remove(transEliminar);
+				listaTransCuentas.remove(BuscarTI(transEliminar));
 		     	return true;
 		    }
 		}
