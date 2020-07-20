@@ -40,14 +40,14 @@ public class GestionUsuario {
 	 * @param numCuenta
 	 * @return null - SI NO ENCUENTRA AL USUARIO, CASO CONTRARIO RETORNA OBJETOUSUARIO 
 	 */
-	public Usuario BuscarUsuario(String RTN) {
-		Usuario usuarioBuscado = null;
+	public Usuario BuscarUsuario(Usuario usuario) {
+		usuario = null;
 		for(int i = 0; i < listaUsuario.size(); i++) {
-			if( listaUsuario.get(i).get_rtn().equals(RTN)) {
-				usuarioBuscado = listaUsuario.get(i);
+			if( listaUsuario.get(i).equals(usuario)) {
+				usuario = listaUsuario.get(i);
 			}
 		}
-		return usuarioBuscado;
+		return usuario;
 	}
 	
 	/**
@@ -56,7 +56,7 @@ public class GestionUsuario {
 	 * @return true - SI SE AGREGO CORRECTAMENTE AL USUARIO, CASO CONTRARIO return false.
 	 */
 	public boolean AgregarUsuario(Usuario usuario) {
-		if(BuscarUsuario(usuario.get_rtn()) == null) {//Si el usuario no esta agregado
+		if(BuscarUsuario(usuario) == null) {//Si el usuario no esta agregado
 			listaUsuario.add(usuario);
 			return true;
 		}else {
@@ -70,10 +70,10 @@ public class GestionUsuario {
 	 * @return false - SI NO SE ENCONTRO EL USUARIO, CASO CONTRARIO return true.
 	 */
 	public boolean EliminarUsuario(Usuario usuario) {
-		if(BuscarUsuario(usuario.get_rtn()) == null) {//USUARIO NO ENCONTRADO
+		if(BuscarUsuario(usuario) == null) {//USUARIO NO ENCONTRADO
 			return false;
 		}else {
-			listaUsuario.remove(BuscarUsuario(usuario.get_rtn()));//ELIMINA USUARIO ENCONTRADO
+			listaUsuario.remove(BuscarUsuario(usuario));//ELIMINA USUARIO ENCONTRADO
 			return true;
 		}
 	}
@@ -90,7 +90,7 @@ public class GestionUsuario {
 			return false;
 		}else {
 			
-			if(BuscarUsuario(usuarioModificado.get_rtn()) != null) {
+			if(BuscarUsuario(usuarioModificado) != null) {
 				listaUsuario.set(posicion, usuarioModificado);
 				return true;
 			}else {

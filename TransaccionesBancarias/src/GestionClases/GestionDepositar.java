@@ -65,7 +65,6 @@ public class GestionDepositar {
 	 * @param depModificado
 	 * @return true - si todo se realizó correctamente , caso contrario retorna false
 	 */
-	
 	public boolean ModificarDeposito(Depositar depositoModificado, int posicion ) {
 		if(posicion<0 || posicion>listatDepositar.size()) {
 			return false;
@@ -77,15 +76,13 @@ public class GestionDepositar {
 			}else {
 				return false;
 			}
-			
 		}
-		
 	}
 		
 	/**
 	 * METODO UTILIZADO PARA ELIMINAR EL DEPOSITO
 	 * @param MONTO 
-	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
+	 * @return true - SI TODOS SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
 	public boolean EliminarMonto(Depositar depositoEliminado) {
@@ -99,7 +96,7 @@ public class GestionDepositar {
 	
 	
 	/**
-	 * METODO PARA IMPRIMIR TODO
+	 * METODO PARA IMPRIMIR TODOS
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<listatDepositar.size();i++) {

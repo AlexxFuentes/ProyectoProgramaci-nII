@@ -88,7 +88,7 @@ public class GestionTransferenciasEntreCuentas {
 	/**
 	 * METODO UTILIZADO PARA ELIMINAR EL DEPOSITO
 	 * @param MONTO 
-	 * @return true - SI TODO SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
+	 * @return true - SI TODOs SE REALIZO CORRECTAMENTE , CASO CONTRARIO RETORNA FALSE
 	 */
 	
 	public boolean EliminarMonto(String tecEliminado) {
@@ -101,7 +101,7 @@ public class GestionTransferenciasEntreCuentas {
 	}
 	
 	/**
-	 * METODO PARA IMPRIMIR TODO
+	 * METODO PARA IMPRIMIR TODOs
 	 */
 	public void imprimirTodos() {
 		for(int i=0;i<listaTransCuentas.size();i++) {
