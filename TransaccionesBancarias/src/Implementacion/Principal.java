@@ -422,8 +422,11 @@ public class Principal {
 								if(opcionMenuTransferencias == 2) {
 									centinelaMenuTransferencias = false;
 								}
-							}
-						}
+								
+							}//fin del while transacciones
+							
+							
+						}//fin del while de inicio de sesion
 						
 						break;
 						
